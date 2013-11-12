@@ -2,7 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe50ecac-d13e-4bff-9b64-77a46be93545" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/clusterManagement.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/javascripts/vendors/d3.v3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stylesheets/vendors/nv.d3.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/javascripts/vendors/nv.d3.min.js" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\javascripts\bootstrap.js" afterPath="$PROJECT_DIR$/javascripts/vendors/bootstrap.js" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\javascripts\bootstrap.min.js" afterPath="$PROJECT_DIR$/javascripts/vendors/bootstrap.min.js" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\javascripts\jquery-2.0.3.js" afterPath="$PROJECT_DIR$/javascripts/vendors/jquery-2.0.3.js" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\javascripts\jquery-2.0.3.min.js" afterPath="$PROJECT_DIR$/javascripts/vendors/jquery-2.0.3.min.js" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\javascripts\jquery-2.0.3.min.map" afterPath="$PROJECT_DIR$/javascripts/vendors/jquery-2.0.3.min.map" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\bootstrap.min.css" afterPath="$PROJECT_DIR$/stylesheets/vendors/bootstrap.min.css" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\css\font-awesome.css" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/css/font-awesome.css" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\css\font-awesome.min.css" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\fonts\FontAwesome.otf" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\fonts\fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\fonts\fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\fonts\fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\fonts\fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\bordered-pulled.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/bordered-pulled.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\core.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/core.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\fixed-width.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/fixed-width.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\font-awesome.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/font-awesome.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\icons.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/icons.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\larger.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/larger.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\list.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/list.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\mixins.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/mixins.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\path.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/path.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\rotated-flipped.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/rotated-flipped.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\spinning.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/spinning.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\stacked.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/stacked.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\less\variables.less" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/less/variables.less" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_bordered-pulled.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_bordered-pulled.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_core.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_core.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_fixed-width.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_fixed-width.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_icons.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_icons.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_larger.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_larger.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_list.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_list.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_mixins.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_mixins.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_path.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_path.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_rotated-flipped.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_rotated-flipped.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_spinning.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_spinning.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_stacked.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_stacked.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\_variables.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/_variables.scss" />
+      <change type="MOVED" beforePath="C:\Workspace\Github\pa-manager-proto\stylesheets\font-awesome\scss\font-awesome.scss" afterPath="$PROJECT_DIR$/stylesheets/vendors/font-awesome/scss/font-awesome.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pa-manager-proto.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,28 +67,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="bootstrap.min.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stylesheets/bootstrap.min.css">
+      <file leaf-file-name="d3.v3.min.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/javascripts/vendors/d3.v3.min.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="294">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="7" selection-start="116" selection-end="116" vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="336">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="clusterManagement.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/clusterManagement.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="815">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="832">
               <folding />
             </state>
           </provider>
@@ -131,6 +155,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pa-manager-proto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pa-manager-proto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pa-manager-proto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pa-manager-proto" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -142,6 +198,16 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Github\pa-manager-proto\javascripts" />
+      <recent name="C:\Workspace\Github\pa-manager-proto\stylesheets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Github\pa-manager-proto\stylesheets\vendors" />
+      <recent name="C:\Workspace\Github\pa-manager-proto\javascripts\vendors" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
@@ -243,16 +309,9 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/stylesheets/bootstrap.min.css">
+    <entry file="file://$PROJECT_DIR$/stylesheets/vendors/nv.d3.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="832">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="7" selection-start="116" selection-end="116" vertical-scroll-proportion="-7.0" vertical-offset="0" max-vertical-offset="336">
           <folding />
         </state>
       </provider>
@@ -260,6 +319,27 @@
     <entry file="file://$PROJECT_DIR$/views/clusterManagement.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="7" selection-start="116" selection-end="116" vertical-scroll-proportion="0.2576687" vertical-offset="0" max-vertical-offset="815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stylesheets/vendors/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="832">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascripts/vendors/d3.v3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="832">
           <folding />
         </state>
       </provider>
