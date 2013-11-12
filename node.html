@@ -7,22 +7,240 @@
     <link rel="stylesheet" href="./stylesheets/vendors/font-awesome/css/font-awesome.css" />
     <link href="stylesheets/plugins-1.5.1.css" rel="stylesheet" />
     <link rel="stylesheet" href="./stylesheets/main.css" />
-
+    <style>
+        .navbar.navbar-inverse {
+            background: #666666; /* Old browsers */
+            background: -moz-linear-gradient(top, #666666 0%, #3b3b3b 51%, #646464 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#666666), color-stop(51%,#3b3b3b), color-stop(100%,#646464)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #666666 0%,#3b3b3b 51%,#646464 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #666666 0%,#3b3b3b 51%,#646464 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #666666 0%,#3b3b3b 51%,#646464 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #666666 0%,#3b3b3b 51%,#646464 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#646464',GradientType=0 ); /* IE6-9 */
+            border-bottom: 1px solid #333;
+        }
+    </style>
 
 </head>
 <body>
 
     <div class="page-container">
-        <nav class="navbar navbar-default" role="navigation">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-nav">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#" style="color: white;">
-                <img src="img/cisco-logo.png" class="img-responsive" style="height: 30px;" />PA Manager</a>
-        </nav>
+        <header class="navbar navbar-inverse">
+            <ul class="navbar-nav-custom pull-right hidden-md hidden-lg">
+                <li class="divider-vertical"></li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="icon-reorder"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <a class="navbar-brand" href="#">
+                <img src="img/cisco-logo.png" class="img-responsive" style="height: 30px;" />
+                PA Manager</a>
+
+            <ul id="widgets" class="navbar-nav-custom pull-right">
+                <li class="divider-vertical"></li>
+
+                <li id="messages-widget" class="dropdown dropdown-left-responsive">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-envelope"></i>
+                        <span class="badge badge-success">1</span>
+                    </a>
+
+                    <ul class="dropdown-menu pull-right widget">
+                        <li class="widget-heading">
+                            <i class="fa fa-comment pull-right"></i>Latest Messages
+                        </li>
+
+                        <li class="new-on">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading">
+                                        <a href="#">George</a>
+                                        <span class="label label-success">2 min ago</span>
+                                    </h6>
+
+                                    <div class="media">Thanks for your help! The tutorial really helped me a lot!</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading">
+                                        <a href="#">Mike</a>
+                                        <span class="label label-default">6 hours ago</span>
+                                    </h6>
+
+                                    <div class="media">The logo is ready, have a look and let me know what you think!</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading">
+                                        <a href="#">Julia</a>
+                                        <span class="label label-default">1 day ago</span>
+                                    </h6>
+
+                                    <div class="media">We should better consider our social media marketing strategy!</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li class="text-center"><a href="page_inbox.php">View All Messages</a></li>
+                    </ul>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li id="notifications-widget" class="dropdown dropdown-center-responsive">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-flag"></i>
+                        <span class="badge badge-danger">1</span>
+                        <span class="badge badge-warning">2</span>
+                    </a>
+
+                    <ul class="dropdown-menu pull-right widget">
+                        <li class="widget-heading">
+                            <a href="#" class="pull-right widget-link">
+                                <i class="fa fa-cog"></i>
+                            </a>
+                            <a href="#" class="widget-link">System</a>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-danger">20 min ago</li>
+                                <li class="text-danger">Support system is down for maintenance!</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-warning">3 hours ago</li>
+                                <li class="text-warning">PHP upgrade started!</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-warning">5 hours ago</li>
+                                <li class="text-warning">
+                                    <a href="#" class="widget-link">1 support ticket</a>
+                                    just opened!
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="widget-heading">
+                            <a href="#" class="pull-right widget-link">
+                                <i class="fa fa-bookmark"></i>
+                            </a>
+                            <a href="#" class="widget-link">Project #3</a>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-success">3 weeks ago</li>
+                                <li class="text-success">Project #3
+                                <a href="#" class="widget-link">published</a>
+                                    successfully!
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-info">1 month ago</li>
+                                <li class="text-info">Milestone #3 achieved!</li>
+                                <li class="text-info">
+                                    <a href="#" class="widget-link">John Doe</a>
+                                    joined the project!
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-default">1 year ago</li>
+                                <li class="text-muted">This is an old notification</li>
+                            </ul>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li class="text-center"><a href="#">View All Notifications</a></li>
+                    </ul>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li class="dropdown pull-right dropdown-user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-cog"></i>
+                        <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#" class="loading-on">
+                                <i class="fa fa-refresh"></i>
+                                Refresh
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="#modal-user-settings" role="button" data-toggle="modal">
+                                <i class="fa fa-user"></i>
+                                User Profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-wrench"></i>
+                                App Settings
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="page_login.php">
+                                <i class="fa fa-sign-out"></i>
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
 
         <div class="inner-container">
             <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
