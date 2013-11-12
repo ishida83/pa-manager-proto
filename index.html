@@ -1,11 +1,96 @@
 <!doctype html>
 <html lang="en-US">
 <head>
-<title></title>
-<meta charset="utf-8" />
+    <title>DEMO - PA Manager</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="./stylesheets/vendors/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./stylesheets/vendors/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="./stylesheets/main.css"/>
+
+    <script src="./javascripts/vendors/jquery-2.0.3.min.js"></script>
+    <script src="./javascripts/vendors/bootstrap.min.js"></script>
 </head>
 <body>
 
+<div class="page-container">
+    <nav class="navbar navbar-default" role="navigation">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-nav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">PA Manager</a>
+    </nav>
+
+    <div class="inner-container">
+        <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+            <form id="sidebar-search" action="" method="post">
+                <div class="input-group">
+                    <input type="text" id="sidebar-search-term" name="sidebar-search-term" placeholder="Search..">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+
+            <nav id="primary-nav">
+                <ul>
+                    <li>
+                        <a class="active" href="#">
+                            <i class="fa fa-home"></i>
+                            Homepage
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-sitemap"></i>
+                            Cluster
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i>
+                            Node
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-gear"></i>
+                            Service
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-terminal"></i>
+                            Log info
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-list"></i>
+                            Schemas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                            Administration
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-lock"></i>
+                            Account
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div id="page-content" style="min-height: 877px;"></div>
+        <footer>
+            <span id="year-copy">2013</span> © <strong>PA Manager</strong>
+        </footer>
+    </div>
+</div>
 
 </body>
 </html>
