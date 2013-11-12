@@ -712,7 +712,7 @@
 
     <script src="./javascripts/vendors/jquery-2.0.3.min.js"></script>
     <script src="./javascripts/vendors/bootstrap.min.js"></script>
-
+    <script src="javascripts/vendors/jquery.dataTables.min.js"></script>
     <script>
         $(function () {
             $('[data-toggle="tabs"] a').click(function (e) { e.preventDefault(), $(this).tab("show") });
@@ -740,7 +740,14 @@
     </script>
     <script>
         $(function () {
-            $("#example-datatables").dataTable({ aoColumnDefs: [{ bSortable: !1, aTargets: [0] }] }),
+            $("#example-datatables").dataTable({
+                aoColumnDefs: [{ bSortable: !1, aTargets: [0] }],
+                "bPaginate": false,
+                "bLengthChange": false,
+                "bFilter": false,                
+                "bInfo": false,
+                "bAutoWidth": false
+            }),
             $("#example-datatables2").dataTable(),
             $("#example-datatables3").dataTable(),
             $(".dataTables_filter input").addClass("form-control").attr("placeholder", "Search")
