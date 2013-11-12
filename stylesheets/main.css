@@ -4,9 +4,6 @@
  *  Document   : main.css
  *  Author     : pixelcave
  */
-body {
-    font-family: "Open Sans", sans-serif !important;
-}
 
 body.login {
     padding: 80px 0 0;
