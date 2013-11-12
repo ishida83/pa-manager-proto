@@ -25,53 +25,60 @@
 
     <div class="inner-container">
         <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+            <form id="sidebar-search" action="" method="post">
+                <div class="input-group">
+                    <input type="text" id="sidebar-search-term" name="sidebar-search-term" placeholder="Search..">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+
             <nav id="primary-nav">
                 <ul>
-                    <li class="active">
-                        <a href="#">
-                            <i class="fa fa-fire"></i>
+                    <li>
+                        <a class="active" href="#">
+                            <i class="fa fa-home"></i>
                             Homepage
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-glass"></i>
+                            <i class="fa fa-sitemap"></i>
                             Cluster
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-font"></i>
+                            <i class="fa fa-circle-o"></i>
                             Node
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-th-list"></i>
+                            <i class="fa fa-gear"></i>
                             Service
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-table"></i>
+                            <i class="fa fa-terminal"></i>
                             Log info
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-leaf"></i>
+                            <i class="fa fa-list"></i>
                             Schemas
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-tint"></i>
+                            <i class="fa fa-user"></i>
                             Administration
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-file-alt"></i>
+                            <i class="fa fa-lock"></i>
                             Account
                         </a>
                     </li>
@@ -79,6 +86,9 @@
             </nav>
         </aside>
         <div id="page-content" style="min-height: 877px;"></div>
+        <footer>
+            <span id="year-copy">2013</span> © <strong>PA Manager</strong>
+        </footer>
     </div>
 </div>
 
