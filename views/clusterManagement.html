@@ -9,302 +9,304 @@
 
     <script src="../javascripts/vendors/jquery-2.0.3.min.js"></script>
     <script src="../javascripts/vendors/bootstrap.min.js"></script>
+    <script src="../javascripts/clusterManagement.js"></script>
 </head>
 <body>
 
-<div class="page-container">
-<header class="navbar navbar-inverse">
-<ul class="navbar-nav-custom pull-right hidden-md hidden-lg">
-    <li class="divider-vertical"></li>
-    <li>
-        <a href="#" data-toggle="collapse" data-target=".navbar-main-collapse">
-            <i class="icon-reorder"></i>
-        </a>
-    </li>
-</ul>
-
-<a href="#" class="navbar-brand">PA Manager</a>
-
-<ul id="widgets" class="navbar-nav-custom pull-right">
-    <li class="divider-vertical"></li>
-
-    <li id="messages-widget" class="dropdown dropdown-left-responsive">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-envelope"></i>
-            <span class="badge badge-success">1</span>
-        </a>
-
-        <ul class="dropdown-menu pull-right widget">
-            <li class="widget-heading">
-                <i class="fa fa-comment pull-right"></i>Latest Messages
-            </li>
-
-            <li class="new-on">
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <i class="fa fa-user fa-2x"></i>
-                    </a>
-
-                    <div class="media-body">
-                        <h6 class="media-heading">
-                            <a href="#">George</a>
-                            <span class="label label-success">2 min ago</span>
-                        </h6>
-
-                        <div class="media">Thanks for your help! The tutorial really helped me a lot!</div>
-                    </div>
-                </div>
-            </li>
-
-            <li class="divider"></li>
-
-            <li>
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <i class="fa fa-user fa-2x"></i>
-                    </a>
-
-                    <div class="media-body">
-                        <h6 class="media-heading">
-                            <a href="#">Mike</a>
-                            <span class="label label-default">6 hours ago</span>
-                        </h6>
-
-                        <div class="media">The logo is ready, have a look and let me know what you think!</div>
-                    </div>
-                </div>
-            </li>
-
-            <li class="divider"></li>
-
-            <li>
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <i class="fa fa-user fa-2x"></i>
-                    </a>
-
-                    <div class="media-body">
-                        <h6 class="media-heading">
-                            <a href="#">Julia</a>
-                            <span class="label label-default">1 day ago</span>
-                        </h6>
-
-                        <div class="media">We should better consider our social media marketing strategy!</div>
-                    </div>
-                </div>
-            </li>
-
-            <li class="divider"></li>
-
-            <li class="text-center"><a href="page_inbox.php">View All Messages</a></li>
-        </ul>
-    </li>
-
-    <li class="divider-vertical"></li>
-
-    <li id="notifications-widget" class="dropdown dropdown-center-responsive">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-flag"></i>
-            <span class="badge badge-danger">1</span>
-            <span class="badge badge-warning">2</span>
-        </a>
-
-        <ul class="dropdown-menu pull-right widget">
-            <li class="widget-heading">
-                <a href="#" class="pull-right widget-link">
-                    <i class="fa fa-cog"></i>
-                </a>
-                <a href="#" class="widget-link">System</a>
-            </li>
-
-            <li>
-                <ul>
-                    <li class="label label-danger">20 min ago</li>
-                    <li class="text-danger">Support system is down for maintenance!</li>
-                </ul>
-            </li>
-
-            <li>
-                <ul>
-                    <li class="label label-warning">3 hours ago</li>
-                    <li class="text-warning">PHP upgrade started!</li>
-                </ul>
-            </li>
-
-            <li>
-                <ul>
-                    <li class="label label-warning">5 hours ago</li>
-                    <li class="text-warning">
-                        <a href="#" class="widget-link">1 support ticket</a>
-                        just opened!
-                    </li>
-                </ul>
-            </li>
-
-            <li class="widget-heading">
-                <a href="#" class="pull-right widget-link">
-                    <i class="fa fa-bookmark"></i>
-                </a>
-                <a href="#" class="widget-link">Project #3</a>
-            </li>
-
-            <li>
-                <ul>
-                    <li class="label label-success">3 weeks ago</li>
-                    <li class="text-success">
-                        Project #3
-                        <a href="#" class="widget-link">published</a>
-                        successfully!
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <ul>
-                    <li class="label label-info">1 month ago</li>
-                    <li class="text-info">Milestone #3 achieved!</li>
-                    <li class="text-info">
-                        <a href="#" class="widget-link">John Doe</a>
-                        joined the project!
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <ul>
-                    <li class="label label-default">1 year ago</li>
-                    <li class="text-muted">This is an old notification</li>
-                </ul>
-            </li>
-
-            <li class="divider"></li>
-
-            <li class="text-center"><a href="#">View All Notifications</a></li>
-        </ul>
-    </li>
-
-    <li class="divider-vertical"></li>
-
-    <li class="dropdown pull-right dropdown-user">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="fa fa-cog"></i>
-            <b class="caret"></b>
-        </a>
-
-        <ul class="dropdown-menu">
-            <li>
-                <a href="#" class="loading-on">
-                    <i class="fa fa-refresh"></i>
-                    Refresh
-                </a>
-            </li>
-
-            <li class="divider"></li>
-
-            <li>
-                <a href="#modal-user-settings" role="button" data-toggle="modal">
-                    <i class="fa fa-user"></i>
-                    User Profile
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    <i class="fa fa-wrench"></i>
-                    App Settings
-                </a>
-            </li>
-
-            <li class="divider"></li>
-
-            <li>
-                <a href="page_login.php">
-                    <i class="fa fa-sign-out"></i>
-                    Log out
-                </a>
-            </li>
-        </ul>
-    </li>
-</ul>
-</header>
-
-<div class="inner-container">
-    <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
-        <form id="sidebar-search" action="" method="post">
-            <div class="input-group">
-                <input type="text" id="sidebar-search-term" name="sidebar-search-term" placeholder="Search..">
-                <button><i class="fa fa-search"></i></button>
-            </div>
-        </form>
-
-        <nav id="primary-nav">
-            <ul>
+    <div class="page-container">
+        <header class="navbar navbar-inverse">
+            <ul class="navbar-nav-custom pull-right hidden-md hidden-lg">
+                <li class="divider-vertical"></li>
                 <li>
-                    <a href="../index.html">
-                        <i class="fa fa-home"></i>
-                        Homepage
-                    </a>
-                </li>
-                <li>
-                    <a class="active" href="./clusterManagement.html">
-                        <i class="fa fa-sitemap"></i>
-                        Cluster
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-circle-o"></i>
-                        Node
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-cloud"></i>
-                        Service
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-terminal"></i>
-                        Log info
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-list"></i>
-                        Schema
-                    </a>
-                </li>
-                <li>
-                    <a href="./administration.html">
-                        <i class="fa fa-user"></i>
-                        Administration
-                    </a>
-                </li>
-                <li>
-                    <a href="./account.html">
-                        <i class="fa fa-lock"></i>
-                        Account
+                    <a href="#" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="icon-reorder"></i>
                     </a>
                 </li>
             </ul>
-        </nav>
-    </aside>
-    <div id="page-content" style="min-height: 877px;">
-        <ul id="nav-info" class="breadcrumb clearfix">
-            <li>
-                <a href="../index.html">
-                    <i class="fa fa-home"></i>
-                </a>
-            </li>
-            <li class="active"><a href="">Cluster</a></li>
-        </ul>
-    </div>
-    <footer>
-        <span id="year-copy">2013</span> © <strong>PA Manager</strong>
-    </footer>
-</div>
-</div>
 
+            <a href="#" class="navbar-brand">Cisco PA Manager</a>
+
+            <ul id="widgets" class="navbar-nav-custom pull-right">
+                <li class="divider-vertical"></li>
+
+                <li id="messages-widget" class="dropdown dropdown-left-responsive">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-envelope"></i>
+                        <span class="badge badge-success">1</span>
+                    </a>
+
+                    <ul class="dropdown-menu pull-right widget">
+                        <li class="widget-heading">
+                            <i class="fa fa-comment pull-right"></i>Latest Messages
+                        </li>
+
+                        <li class="new-on">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading">
+                                        <a href="#">George</a>
+                                        <span class="label label-success">2 min ago</span>
+                                    </h6>
+
+                                    <div class="media">Thanks for your help! The tutorial really helped me a lot!</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading">
+                                        <a href="#">Mike</a>
+                                        <span class="label label-default">6 hours ago</span>
+                                    </h6>
+
+                                    <div class="media">The logo is ready, have a look and let me know what you think!</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading">
+                                        <a href="#">Julia</a>
+                                        <span class="label label-default">1 day ago</span>
+                                    </h6>
+
+                                    <div class="media">We should better consider our social media marketing strategy!</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li class="text-center"><a href="page_inbox.php">View All Messages</a></li>
+                    </ul>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li id="notifications-widget" class="dropdown dropdown-center-responsive">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-flag"></i>
+                        <span class="badge badge-danger">1</span>
+                        <span class="badge badge-warning">2</span>
+                    </a>
+
+                    <ul class="dropdown-menu pull-right widget">
+                        <li class="widget-heading">
+                            <a href="#" class="pull-right widget-link">
+                                <i class="fa fa-cog"></i>
+                            </a>
+                            <a href="#" class="widget-link">System</a>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-danger">20 min ago</li>
+                                <li class="text-danger">Support system is down for maintenance!</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-warning">3 hours ago</li>
+                                <li class="text-warning">PHP upgrade started!</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-warning">5 hours ago</li>
+                                <li class="text-warning">
+                                    <a href="#" class="widget-link">1 support ticket</a>
+                                    just opened!
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="widget-heading">
+                            <a href="#" class="pull-right widget-link">
+                                <i class="fa fa-bookmark"></i>
+                            </a>
+                            <a href="#" class="widget-link">Project #3</a>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-success">3 weeks ago</li>
+                                <li class="text-success">
+                                    Project #3
+                                    <a href="#" class="widget-link">published</a>
+                                    successfully!
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-info">1 month ago</li>
+                                <li class="text-info">Milestone #3 achieved!</li>
+                                <li class="text-info">
+                                    <a href="#" class="widget-link">John Doe</a>
+                                    joined the project!
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-default">1 year ago</li>
+                                <li class="text-muted">This is an old notification</li>
+                            </ul>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li class="text-center"><a href="#">View All Notifications</a></li>
+                    </ul>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li class="dropdown pull-right dropdown-user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-cog"></i>
+                        <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#" class="loading-on">
+                                <i class="fa fa-refresh"></i>
+                                Refresh
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="#modal-user-settings" role="button" data-toggle="modal">
+                                <i class="fa fa-user"></i>
+                                User Profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-wrench"></i>
+                                App Settings
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="page_login.php">
+                                <i class="fa fa-sign-out"></i>
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+        <div class="inner-container">
+            <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+                <form id="sidebar-search" action="" method="post">
+                    <div class="input-group">
+                        <input type="text" id="sidebar-search-term" name="sidebar-search-term" placeholder="Search..">
+                        <button><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+
+                <nav id="primary-nav">
+                    <ul>
+                        <li>
+                            <a href="../index.html">
+                                <i class="fa fa-home"></i>
+                                Homepage
+                            </a>
+                        </li>
+                        <li>
+                            <a class="active" href="./clusterManagement.html">
+                                <i class="fa fa-sitemap"></i>
+                                Cluster
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-circle-o"></i>
+                                Node
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-cloud"></i>
+                                Service
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-terminal"></i>
+                                Log info
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-list"></i>
+                                Schema
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./administration.html">
+                                <i class="fa fa-user"></i>
+                                Administration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./account.html">
+                                <i class="fa fa-lock"></i>
+                                Account
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <div id="page-content" style="min-height: 877px;">
+                <ul id="nav-info" class="breadcrumb clearfix">
+                    <li>
+                        <a href="../index.html">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li class="active"><a href="">Cluster</a></li>
+                </ul>
+            </div>
+
+            <footer>
+                <span id="year-copy">2013</span> © <strong>Cisco</strong>
+            </footer>
+        </div>
+    </div>
 </body>
 </html>
