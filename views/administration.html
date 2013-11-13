@@ -331,45 +331,229 @@
                 </li>
             </ul>
 
-            <table class="table table-bordered table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th><input type="checkbox"></th>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
+            <br/>
 
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>1</td>
-                        <td>Username1</td>
-                        <td>Username1@example.com</td>
-                        <td><span class="label label-success">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>2</td>
-                        <td>Username2</td>
-                        <td>Username2@example.com</td>
-                        <td><span class="label label-danger">Locked</span></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>3</td>
-                        <td>Username3</td>
-                        <td>Username3@example.com</td>
-                        <td><span class="label label-success">Active</span></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="tab-container">
+                <form class="row form-inline" role="form">
+                    <div class="form-group col-xs-8">
+                        <button type="button" class="btn btn-success">
+                            <i class="fa fa-plus"></i>
+                            Create User...
+                        </button>
+                    </div>
+                    <div class="form-group pull-right col-xs-4">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </div>
+                </form>
+
+                <table class="table table-bordered table-hover table-striped">
+                    <colgroup>
+                        <col style="width:64px;"/>
+                        <col style="width:48px;"/>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th class="text-right">#</th>
+                            <th>
+                                <i class="fa fa-user"></i>
+                                Name
+                            </th>
+                            <th>
+                                <i class="fa fa-envelope-o"></i>
+                                Email
+                            </th>
+                            <th>
+                                <i class="fa fa-bolt"></i>
+                                Status
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">1</td>
+                            <td>Username1</td>
+                            <td>Username1@example.com</td>
+                            <td><span class="label label-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">2</td>
+                            <td>Username2</td>
+                            <td>Username2@example.com</td>
+                            <td><span class="label label-danger">Locked</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">3</td>
+                            <td>Username3</td>
+                            <td>Username3@example.com</td>
+                            <td><span class="label label-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">4</td>
+                            <td>Username4</td>
+                            <td>Username4@example.com</td>
+                            <td><span class="label label-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">5</td>
+                            <td>Username5</td>
+                            <td>Username5@example.com</td>
+                            <td><span class="label label-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">6</td>
+                            <td>Username6</td>
+                            <td>Username6@example.com</td>
+                            <td><span class="label label-success">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">7</td>
+                            <td>Username7</td>
+                            <td>Username7@example.com</td>
+                            <td><span class="label label-danger">Locked</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">8</td>
+                            <td>Username8</td>
+                            <td>Username8@example.com</td>
+                            <td><span class="label label-danger">Locked</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">9</td>
+                            <td>Username9</td>
+                            <td>Username9@example.com</td>
+                            <td><span class="label label-danger">Locked</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-success">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                            <td class="text-right">10</td>
+                            <td>Username10</td>
+                            <td>Username10@example.com</td>
+                            <td><span class="label label-danger">Locked</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="col-xs-4"><strong>10</strong> of <strong>25</strong></div>
+                    <div class="col-xs-8 text-right">
+                        <ul class="pagination" style="margin-top:0">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer>
-            <span id="year-copy">2013</span> © <strong>Cisco Systems</strong>
+            <span id="year-copy">2013</span> &copy; <strong>Cisco Systems</strong>
         </footer>
     </div>
 </div>
