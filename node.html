@@ -888,7 +888,7 @@
             $("#example-datatables3").dataTable(),
             $(".dataTables_filter input").addClass("form-control").attr("placeholder", "Search");
 			
-			$(document).on("click", ".icon-remove", function (e) {
+			$('.icon-remove').parent().on("click", function (e) {
                 $('#example-modal').on('show.bs.modal',function(){
 					$('.modal-body').html('<p>Are you sure?</p>');
 					$('.modal-footer').html('<button class="btn" data-dismiss="modal">Close</button><button class="btn btn-success">Confirm</button>');
