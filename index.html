@@ -5,10 +5,23 @@
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="./stylesheets/vendors/bootstrap.min.css"/>
     <link rel="stylesheet" href="./stylesheets/vendors/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="./stylesheets/vendors/nv.d3.min.css"/>
     <link rel="stylesheet" href="./stylesheets/main.css"/>
+
+    <style>
+        *:not(i) {
+            font-family: "Open Sans Light", "Open Sans", sans-serif !important;
+        }
+
+        svg {
+            background-color: #FFF;
+        }
+    </style>
 
     <script src="./javascripts/vendors/jquery-2.0.3.min.js"></script>
     <script src="./javascripts/vendors/bootstrap.min.js"></script>
+    <script src="./javascripts/vendors/d3.v3.min.js"></script>
+    <script src="./javascripts/vendors/nv.d3.min.js"></script>
     <script src="./javascripts/homepage.js"></script>
 </head>
 <body>
@@ -248,19 +261,19 @@
                         </li>
                         <li>
                             <a href="./views/clusterManagement.html">
-                                <i class="fa fa-sitemap"></i>
+                                <i class="fa fa-cloud"></i>
                                 Cluster
                             </a>
                         </li>
                         <li>
                             <a href="./node.html">
-                                <i class="fa fa-circle-o"></i>
+                                <i class="fa fa-sitemap"></i>
                                 Node
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-cloud"></i>
+                                <i class="fa fa-rocket"></i>
                                 Service
                             </a>
                         </li>
@@ -293,7 +306,173 @@
             </aside>
 
             <div id="page-content" style="min-height: 877px;">
+                <ul id="nav-info" class="clearfix">
+                    <li>
+                        <a href="../index.html">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li class="active"><a href="">Dashboard</a></li>
+                </ul>
 
+                <div class="dash-tiles row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="dash-tile dash-tile-ocean clearfix">
+                            <div class="dash-tile-header">
+                                Total Clusters
+                            </div>
+
+                            <div class="dash-tile-icon">
+                                <i class="fa fa-cloud"></i>
+                            </div>
+
+                            <div class="dash-tile-text">
+                                2
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="dash-tile dash-tile-ocean clearfix">
+                            <div class="dash-tile-header">
+                                Total Nodes
+                            </div>
+
+                            <div class="dash-tile-icon">
+                                <i class="fa fa-sitemap"></i>
+                            </div>
+
+                            <div class="dash-tile-text">
+                                18
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="dash-tile dash-tile-balloon clearfix">
+                            <div class="dash-tile-header">
+                                TruCQs Running
+                            </div>
+
+                            <div class="dash-tile-icon">
+                                <i class="fa fa-hdd"></i>
+                            </div>
+
+                            <div class="dash-tile-text">
+                                5
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="dash-tile dash-tile-balloon clearfix">
+                            <div class="dash-tile-header">
+                                TruLinks Running
+                            </div>
+
+                            <div class="dash-tile-icon">
+                                <i class="fa fa-rocket"></i>
+                            </div>
+
+                            <div class="dash-tile-text">
+                                10
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-tiles row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="dash-tile dash-tile-fruit clearfix">
+                            <div class="dash-tile-header">
+                                Users Online
+                            </div>
+
+                            <div class="dash-tile-icon">
+                                <i class="fa fa-group"></i>
+                            </div>
+
+                            <div class="dash-tile-text">
+                                29
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="dash-tile dash-tile-fruit clearfix">
+                            <div class="dash-tile-header">
+                                Duration
+                            </div>
+
+                            <div class="dash-tile-icon">
+                                <i class="fa fa-clock-o"></i>
+                            </div>
+
+                            <div class="dash-tile-text">
+                                5d13h
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="dash-tile dash-tile-dark clearfix">
+                            <div class="dash-tile-header">
+                                Network Flow
+                            </div>
+
+                            <div class="dash-tile-icon">
+                                <i class="fa fa-globe"></i>
+                            </div>
+
+                            <div class="dash-tile-text">
+                                12.34G
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="dash-tile dash-tile-dark clearfix">
+                            <div class="dash-tile-header">
+                                Free system resources
+                            </div>
+
+                            <div class="dash-tile-icon">
+                                <i class="fa fa-dashboard"></i>
+                            </div>
+
+                            <div class="dash-tile-text">
+                                42%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <div class="dash-tile dash-tile-2x">
+                            <div class="dash-tile-header">System Resources Consumption</div>
+                            <div class="dash-tile-content">
+                                <svg></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="dash-tile dash-tile-2x">
+                            <div class="dash-tile-header">
+                                5 Most Active Nodes
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="dash-tile dash-tile-2x">
+                            <div class="dash-tile-header">
+                                Alerts
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <footer>
