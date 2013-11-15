@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./stylesheets/vendors/font-awesome/css/font-awesome.css" />
     <link href="stylesheets/plugins-1.5.1.css" rel="stylesheet" />
     <link rel="stylesheet" href="./stylesheets/main.css" />
+	
     <style>
         .navbar.navbar-inverse {
             background: #666666; /* Old browsers */
@@ -19,6 +20,28 @@
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#646464',GradientType=0 ); /* IE6-9 */
             border-bottom: 1px solid #333;
         }
+		.navbar-inverse .navbar-brand{color:white;}
+		::-webkit-scrollbar {
+			width: 7px;
+		}
+		 
+		/* Track */
+		::-webkit-scrollbar-track {
+			-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.3); 
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+		}
+		 
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			background: rgba(128,128,128,0.8); 
+			-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.5); 
+		}
+		::-webkit-scrollbar-thumb:window-inactive {
+			background: rgba(255,0,0,0.4); 
+		}
     </style>
 
 </head>
@@ -321,7 +344,7 @@
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="dash-example-tabs-admin">
-                                <div id="example-datatables_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <!-- <div id="example-datatables_wrapper" class="dataTables_wrapper form-inline" role="grid"> -->
                                    <!-- <div class="row">
                                         <div class="col-sm-6 col-xs-5">
                                             <div id="example-datatables_length" class="dataTables_length">
@@ -345,137 +368,194 @@
                                             </div>
                                         </div>
                                     </div> -->
+									<div id="example-datatables_wrapper" class="dataTables_wrapper form-inline" role="grid">
+										<div class="row">
+											<div class="col-sm-12">
+											<div class="btn-group">
+													<button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">Actions for Selected <span class="caret"></span></button>
+													<ul class="dropdown-menu">
+														<li>
+														<a href="#">Assign to Cluster</a>
+														</li>
+														<li>
+														<a href="#">UnAssgin from Cluster</a>
+														</li>
+														<li>
+														<a href="#">Apply Template</a>
+														</li>
+														<li>
+														<a href="#">Edit</a>
+														</li>
+														<li class="divider"></li>
+														<li>
+														<a href="#">Remove</a>
+														</li>
+													</ul>
+													<button class="btn btn-sm node-inspector" data-target="#example-modal" role="button" data-toggle="modal">Node Inspector</button>
+											</div>
+											</div>
+										</div>
+									</div>
                                     <table id="example-datatables" class="table table-striped table-bordered table-hover dataTable" aria-describedby="example-datatables_info">
                                         <thead>
-                                            <tr role="row">
-                                                <th class="cell-small sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 67px;"></th>
+                                            <tr role="row">                                                
                                                 <th class="cell-small text-center hidden-xs hidden-sm sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label="#: activate to sort column ascending" style="width: 67px;">#</th>
-                                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Name: activate to sort column ascending" style="width: 220px;"><i class="icon-user"></i>Name</th>
-                                                <th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" IP: activate to sort column ascending" style="width: 375px;"><i class="icon-envelope-alt"></i>IP</th>
-                                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending" style="width: 288px;"><i class="icon-bolt"></i>Status</th>
+                                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Name: activate to sort column ascending"><i class="icon-user"></i> Name</th>
+                                                <th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" IP: activate to sort column ascending"><i class="icon-envelope-alt"></i> IP</th>
+                                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending"><i class="icon-bolt"></i> Status</th>
+												<th class="cell-small sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 107px;">Action</th>
                                             </tr>
                                         </thead>
 
                                         <tbody role="alert" aria-live="polite" aria-relevant="all">
-                                            <tr class="odd">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                            <tr class="odd">                                                
                                                 <td class="text-center hidden-xs hidden-sm ">1</td>
                                                 <td class=" "><a href="javascript:void(0)">username1</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user1@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.101</td>
                                                 <td class=" "><span class="label label-default">Inactive</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                             <tr class="even">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                                
                                                 <td class="text-center hidden-xs hidden-sm ">2</td>
                                                 <td class=" "><a href="javascript:void(0)">username2</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user2@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.102</td>
                                                 <td class=" "><span class="label label-danger">Bad Health</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                             <tr class="odd">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                                
                                                 <td class="text-center hidden-xs hidden-sm ">3</td>
                                                 <td class=" "><a href="javascript:void(0)">username3</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user3@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.103</td>
                                                 <td class=" "><span class="label label-warning">Pending..</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                             <tr class="even">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                                
                                                 <td class="text-center hidden-xs hidden-sm ">4</td>
                                                 <td class=" "><a href="javascript:void(0)">username4</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user4@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.104</td>
                                                 <td class=" "><span class="label label-warning">Pending..</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                             <tr class="odd">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                                
                                                 <td class="text-center hidden-xs hidden-sm ">5</td>
                                                 <td class=" "><a href="javascript:void(0)">username5</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user5@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.105</td>
                                                 <td class=" "><span class="label label-warning">Pending..</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                             <tr class="even">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                               
                                                 <td class="text-center hidden-xs hidden-sm ">6</td>
                                                 <td class=" "><a href="javascript:void(0)">username6</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user6@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.106</td>
                                                 <td class=" "><span class="label label-danger">Bad Health</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                             <tr class="odd">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                               
                                                 <td class="text-center hidden-xs hidden-sm ">7</td>
                                                 <td class=" "><a href="javascript:void(0)">username7</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user7@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.107</td>
                                                 <td class=" "><span class="label label-success">Good Health</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                             <tr class="even">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                                
                                                 <td class="text-center hidden-xs hidden-sm ">8</td>
                                                 <td class=" "><a href="javascript:void(0)">username8</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user8@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.108</td>
                                                 <td class=" "><span class="label label-default">Inactive</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                             <tr class="odd">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                                
                                                 <td class="text-center hidden-xs hidden-sm ">9</td>
                                                 <td class=" "><a href="javascript:void(0)">username9</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user9@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.109</td>
                                                 <td class=" "><span class="label label-danger">Bad Health</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                             <tr class="even">
-                                                <td class="text-center  sorting_1">
-                                                    <div class="btn-group">
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-pencil"></i></a>
-                                                        <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                    </div>
-                                                </td>
+                                                
                                                 <td class="text-center hidden-xs hidden-sm ">10</td>
                                                 <td class=" "><a href="javascript:void(0)">username10</a></td>
-                                                <td class="hidden-xs hidden-sm hidden-md ">user10@example.com</td>
+                                                <td class="hidden-xs hidden-sm hidden-md ">10.74.125.110</td>
                                                 <td class=" "><span class="label label-warning">Pending..</span></td>
+												<td class="text-center  sorting_1">
+												<div class="btn-group">
+												  <button class="btn btn-xs btn-info" data-original-title="Edit" data-toggle="tooltip"><i class="icon-edit"></i></button>
+												  <button class="btn btn-xs btn-danger" data-original-title="Delete" data-toggle="tooltip"><i class="icon-remove"></i></button>
+												  <button class="btn btn-xs btn-inverse" data-original-title="UnAssign" data-toggle="tooltip"><i class=" icon-remove-sign"></i></button>
+												  <button class="btn btn-xs btn-success" data-original-title="Assign" data-toggle="tooltip"><i class=" icon-ok"></i></button>
+												</div>                                                    
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -495,14 +575,14 @@
                                             </div>
                                         </div>
                                     </div>  -->
-                                </div>
+                                <!-- </div> -->
                             </div>
                             <div class="tab-pane" id="dash-example-tabs-mods">
                                 <ul class="thumbnails clearfix remove-margin" data-toggle="gallery-options">
                                     <li>
                                         <div class="thumbnails-options">
                                             <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
+                                                <button class="btn btn-xs btn-success"><i class="icon-edit"></i></button>
                                                 <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
                                             </div>
                                         </div>
@@ -514,7 +594,7 @@
                                     <li>
                                         <div class="thumbnails-options">
                                             <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
+                                                <button class="btn btn-xs btn-success"><i class="icon-edit"></i></button>
                                                 <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
                                             </div>
                                         </div>
@@ -526,7 +606,7 @@
                                     <li>
                                         <div class="thumbnails-options">
                                             <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
+                                                <button class="btn btn-xs btn-success"><i class="icon-edit"></i></button>
                                                 <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
                                             </div>
                                         </div>
@@ -538,7 +618,7 @@
                                     <li>
                                         <div class="thumbnails-options">
                                             <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
+                                                <button class="btn btn-xs btn-success"><i class="icon-edit"></i></button>
                                                 <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
                                             </div>
                                         </div>
@@ -550,7 +630,7 @@
                                     <li>
                                         <div class="thumbnails-options">
                                             <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
+                                                <button class="btn btn-xs btn-success"><i class="icon-edit"></i></button>
                                                 <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
                                             </div>
                                         </div>
@@ -562,7 +642,7 @@
                                     <li>
                                         <div class="thumbnails-options">
                                             <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
+                                                <button class="btn btn-xs btn-success"><i class="icon-edit"></i></button>
                                                 <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
                                             </div>
                                         </div>
@@ -574,7 +654,7 @@
                                     <li>
                                         <div class="thumbnails-options">
                                             <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
+                                                <button class="btn btn-xs btn-success"><i class="icon-edit"></i></button>
                                                 <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
                                             </div>
                                         </div>
@@ -586,7 +666,7 @@
                                     <li>
                                         <div class="thumbnails-options">
                                             <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
+                                                <button class="btn btn-xs btn-success"><i class="icon-edit"></i></button>
                                                 <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
                                             </div>
                                         </div>
@@ -598,104 +678,79 @@
                                 </ul>
                             </div>
                             <div class="tab-pane" id="dash-example-tabs-newusers">
-                                <ul class="thumbnails clearfix remove-margin" data-toggle="gallery-options">
-                                    <li>
-                                        <div class="thumbnails-options">
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
-                                                <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:void(0)" class="thumbnail">
-                                            <img src="img/placeholders/image_light_64x64.png" class="img-circle" alt="fakeimg">
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail thumbnail-borderless text-center">User1</a>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnails-options">
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
-                                                <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:void(0)" class="thumbnail">
-                                            <img src="img/placeholders/image_light_64x64.png" class="img-circle" alt="fakeimg">
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail thumbnail-borderless text-center">User2</a>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnails-options">
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
-                                                <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:void(0)" class="thumbnail">
-                                            <img src="img/placeholders/image_light_64x64.png" class="img-circle" alt="fakeimg">
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail thumbnail-borderless text-center">User3</a>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnails-options">
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
-                                                <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:void(0)" class="thumbnail">
-                                            <img src="img/placeholders/image_light_64x64.png" class="img-circle" alt="fakeimg">
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail thumbnail-borderless text-center">User4</a>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnails-options">
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
-                                                <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:void(0)" class="thumbnail">
-                                            <img src="img/placeholders/image_light_64x64.png" class="img-circle" alt="fakeimg">
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail thumbnail-borderless text-center">User5</a>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnails-options">
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
-                                                <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:void(0)" class="thumbnail">
-                                            <img src="img/placeholders/image_light_64x64.png" class="img-circle" alt="fakeimg">
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail thumbnail-borderless text-center">User6</a>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnails-options">
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
-                                                <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:void(0)" class="thumbnail">
-                                            <img src="img/placeholders/image_light_64x64.png" class="img-circle" alt="fakeimg">
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail thumbnail-borderless text-center">User7</a>
-                                    </li>
-                                    <li>
-                                        <div class="thumbnails-options">
-                                            <div class="btn-group">
-                                                <button class="btn btn-xs btn-success"><i class="icon-pencil"></i></button>
-                                                <button class="btn btn-xs btn-danger"><i class="icon-remove"></i></button>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:void(0)" class="thumbnail">
-                                            <img src="img/placeholders/image_light_64x64.png" class="img-circle" alt="fakeimg">
-                                        </a>
-                                        <a href="javascript:void(0)" class="thumbnail thumbnail-borderless text-center">User8</a>
-                                    </li>
-                                </ul>
+							<div id="example-datatables_wrapper" class="dataTables_wrapper form-inline" role="grid">										
+										<div class="row">
+											<div class="col-sm-12">
+											<h3>Template for Cluster1</h3>					
+											<div class="btn-group">													
+													<button class="btn btn-sm btn-primary create-template"><i class="icon-white icon-plus"></i> Create...</button>
+											</div>
+											</div>
+										</div>
+								</div>	
+								<table class="table table-bordered">
+								<thead>
+								<tr>
+								<th class="cell-small text-center" data-toggle="tooltip" title="" data-original-title="Toggle all!"><input type="checkbox" id="check5-all" name="check5-all"></th>
+								<th>Template Name</th>
+								<th class="hidden-xs hidden-sm">Services</th>
+								<th class="cell-small text-center"><i class="icon-bolt"></i> Actions</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+								<td class="cell-small text-center"><input type="checkbox" id="check5-td1" name="check5-td1"></td>
+								<td><a href="javascript:void(0)">username1</a></td>
+								<td class="hidden-xs hidden-sm">TruCQ, TruLink, BI platform</td>							
+								<td class="text-center">
+								<div class="btn-group">
+								
+								<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-edit"></i></a>
+								<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
+								</div>
+								</td>
+								</tr>
+								<tr>
+								<td class="cell-small text-center"><input type="checkbox" id="check5-td2" name="check5-td2"></td>
+								<td><a href="javascript:void(0)">username2</a></td>
+								<td class="hidden-xs hidden-sm">BI platform</td>
+								
+								<td class="text-center">
+								<div class="btn-group">
+								
+								<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-edit"></i></a>
+								<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
+								</div>
+								</td>
+								</tr>
+								<tr>
+								<td class="cell-small text-center"><input type="checkbox" id="check5-td3" name="check5-td3"></td>
+								<td><a href="javascript:void(0)">username3</a></td>
+								<td class="hidden-xs hidden-sm">TruCQ, TruLink</td>
+								
+								<td class="text-center">
+								<div class="btn-group">
+								
+								<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-edit"></i></a>
+								<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
+								</div>
+								</td>
+								</tr>
+								<tr>
+								<td class="cell-small text-center"><input type="checkbox" id="check5-td4" name="check5-td4"></td>
+								<td><a href="javascript:void(0)">username4</a></td>
+								<td class="hidden-xs hidden-sm">TruCQ, BI platform</td>
+								
+								<td class="text-center">
+								<div class="btn-group">
+								
+								<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-edit"></i></a>
+								<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
+								</div>
+								</td>
+								</tr>
+								</tbody>
+								</table>
                             </div>
                         </div>
                     </div>
@@ -709,10 +764,90 @@
     </div>
 
     <a href="javascript:void(0)" id="to-top" style="display: inline;"><i class="icon-chevron-up"></i></a>
+	
+	<div id="example-modal" class="modal" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+		<div class="modal-content">
+		<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal">×</button>
+		<h4>Dialog</h4>
+		</div>
+		<div class="modal-body">
+		
+		</div>
+		<div class="modal-footer">
+		<button class="btn" data-dismiss="modal">Close</button>
+		<button class="btn btn-success">Confirm</button>
+		</div>
+		</div>
+		</div>
+	</div>
+	
+	
+	<div id="create-template" class="hidden">
+	<form action="page_form_components.php" method="post" class="form-horizontal form-box" onsubmit="return false;">
+
+		<div class="form-box-content">
+		<div class="form-group">
+		<label class="control-label col-md-3" for="example-input-small">Name</label>
+		<div class="col-md-3">
+		<input type="text" id="example-input-small" name="example-input-small" class="form-control input-sm">
+		</div>
+		<div class="col-md-6">
+		<span class="help-block"><code></code></span>
+		</div>
+		</div>
+		<div class="form-group">
+		<label class="control-label col-md-3" for="example-select-chosen">TruCQ</label>
+		<div class="col-md-3">
+		<select id="example-select-chosen" class="form-control select-chosen">
+		<option>none</option>
+		<option>Default</option>		
+		</select>
+		</div>
+		<div class="col-md-6">
+		<span class="help-block"><code></code></span>
+		</div>
+		</div>
+		<div class="form-group">
+		<label class="control-label col-md-3" for="example-select-chosen">TruLink</label>
+		<div class="col-md-3">
+		<select id="example-select-chosen" class="form-control select-chosen">
+		<option>none</option>
+		<option>Default</option>		
+		</select>
+		</div>
+		<div class="col-md-6">
+		<span class="help-block"><code></code></span>
+		</div>
+		</div>
+		<div class="form-group">
+		<label class="control-label col-md-3" for="example-select-chosen">BI platform</label>
+		<div class="col-md-3">
+		<select id="example-select-chosen" class="form-control select-chosen">
+		<option>none</option>
+		<option>Default</option>		
+		</select>
+		</div>
+		<div class="col-md-6">
+		<span class="help-block"><code></code></span>
+		</div>
+		</div>
+
+		<!-- <div class="form-group form-actions">
+		<div class="col-md-10 col-md-offset-2">
+		<input type="submit" class="btn btn-success" value="Save changes">
+		<input type="submit" class="btn btn-danger" value="Cancel">
+		</div>
+		</div> -->
+		</div>
+	</form>
+	</div>
 
     <script src="./javascripts/vendors/jquery-2.0.3.min.js"></script>
     <script src="./javascripts/vendors/bootstrap.min.js"></script>
     <script src="javascripts/vendors/jquery.dataTables.min.js"></script>
+
     <script>
         $(function () {
             $('[data-toggle="tabs"] a').click(function (e) { e.preventDefault(), $(this).tab("show") });
@@ -741,7 +876,7 @@
     <script>
         $(function () {
             $("#example-datatables").dataTable({
-                aoColumnDefs: [{ bSortable: !1, aTargets: [0] }],
+                aoColumnDefs: [{ bSortable: !1, aTargets: [4] }],
                 //"bPaginate": false,
                 //"bLengthChange": false,
                 //"bFilter": false,                
@@ -751,7 +886,40 @@
             }),
             $("#example-datatables2").dataTable(),
             $("#example-datatables3").dataTable(),
-            $(".dataTables_filter input").addClass("form-control").attr("placeholder", "Search")
+            $(".dataTables_filter input").addClass("form-control").attr("placeholder", "Search");
+			
+			$(document).on("click", ".icon-remove", function (e) {
+                $('#example-modal').on('show.bs.modal',function(){
+					$('.modal-body').html('<p>Are you sure?</p>');
+					$('.modal-footer').html('<button class="btn" data-dismiss="modal">Close</button><button class="btn btn-success">Confirm</button>');
+				}).modal();
+            });
+			
+			$(document).on("click", ".create-template", function (e) {
+                $('#example-modal').on('show.bs.modal',function(){
+					$('.modal-body').html($('#create-template').html());
+					$('.modal-footer').html('<input type="submit" class="btn" value="Cancel"><input type="submit" class="btn btn-success" value="Save changes">');
+				}).modal();
+            });
+			
+			$(document).on("click", ".node-inspector", function (e) {
+                
+				$('#example-modal')
+					.on('show.bs.modal', function () {
+						$('.modal-body').html('Node Inspector');
+						$('.modal-footer').html('<input type="submit" class="btn btn-primary" value="Close">');
+					})
+					.modal();
+				e.preventDefault();
+            });
+			
+			$('.btn-group').tooltip({
+			  selector: "[data-toggle=tooltip]",
+			  container: "body"
+			})
+
+
+
         });
     </script>
 </body>
