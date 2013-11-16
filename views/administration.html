@@ -544,16 +544,16 @@
                                 <div class="col-sm-10">
                                     <button id="role-selection" type="button" class="btn btn-default text-left form-control">
                                         Click to choose role
-                                        <i class="fa fa-chevron-circle-right pull-right"></i>
+                                        <i class="fa fa-chevron-right"></i>
                                     </button>
                                     <ul class="list-group">
                                         <li class="list-group-item">
-                                            <i class="fa fa-square-o fa-lg"></i>
+                                            <input type="checkbox" name="role"/>
                                             <strong>Administrator</strong>
                                         </li>
 
                                         <li class="list-group-item">
-                                            <i class="fa fa-square-o fa-lg"></i> Guest
+                                            <input type="checkbox" name="role"/> Guest
                                         </li>
                                     </ul>
                                 </div>
@@ -566,12 +566,12 @@
 
                                 <div class="col-sm-10">
                                     <div>
-                                        <i class="fa fa-circle-o fa-lg"></i>
+                                        <input type="radio" name="status"/>
                                         <label class="text-success">Active</label>
                                     </div>
 
                                     <div>
-                                        <i class="fa fa-circle-o fa-lg"></i>
+                                        <input type="radio" name="status"/>
                                         <label class="text-danger">Locked</label>
                                     </div>
                                 </div>
@@ -629,16 +629,16 @@
                                 <div class="col-sm-10">
                                     <button id="authority-selection" type="button" class="btn btn-default text-left form-control">
                                         Click to choose authority
-                                        <i class="fa fa-chevron-right pull-right" style="line-height: 20px;"></i>
+                                        <i class="fa fa-chevron-right"></i>
                                     </button>
                                     <ul class="list-group">
                                         <li class="list-group-item">
-                                            <i class="fa fa-square-o fa-lg"></i>
+                                            <input type="checkbox" name="auth"/>
                                             <strong>Select All</strong>
                                         </li>
 
                                         <li class="list-group-item" ng-repeat="a in role.auth">
-                                            <i class="fa fa-square-o fa-lg"></i>
+                                            <input type="checkbox" name="auth"/>
                                             {{a}}
                                         </li>
                                     </ul>
