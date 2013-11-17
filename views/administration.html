@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en-US" ng-app>
 <head>
     <title>DEMO - PA Manager</title>
     <meta charset="utf-8"/>
@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="../stylesheets/vendors/font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="../stylesheets/main.css"/>
 
-    <script src="../javascripts/vendors/jquery-2.0.3.min.js"></script>
-    <script src="../javascripts/vendors/bootstrap.min.js"></script>
-    <script src="../javascripts/vendors/jquery.dataTables.min.js"></script>
-    <script src="../javascripts/administration.js"></script>
+    <style>
+        *:not(i) {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .list-group-item.selected  {
+            background-color: #0088cc;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
 
-<div class="page-container">
+<div class="page-container" ng-controller="adminCtrl">
     <header class="navbar navbar-inverse">
         <ul class="navbar-nav-custom pull-right hidden-md hidden-lg">
             <li class="divider-vertical"></li>
@@ -249,19 +255,19 @@
                     </li>
                     <li>
                         <a href="./clusterManagement.html">
-                            <i class="fa fa-sitemap"></i>
+                            <i class="fa fa-cloud"></i>
                             Cluster
                         </a>
                     </li>
                     <li>
                         <a href="../node.html">
-                            <i class="fa fa-circle-o"></i>
+                            <i class="fa fa-sitemap"></i>
                             Node
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-cloud"></i>
+                            <i class="fa fa-rocket"></i>
                             Service
                         </a>
                     </li>
@@ -308,71 +314,383 @@
                 <small>Management of users, roles and permissions</small>
             </h3>
 
-            <ul class="nav nav-pills">
-                <li class="active">
-                    <a href="#">
-                        <i class="fa fa-user"></i>
-                        User
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="fa fa-tags"></i>
-                        Role
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="fa fa-sign-in"></i>
-                        Permission
-                    </a>
-                </li>
+            <ul class="nav nav-tabs" id="adminTab">
+                <li class="active"><a href="#user" data-toggle="tab"><i class="fa fa-user"></i> User</a></li>
+                <li><a href="#role" data-toggle="tab"><i class="fa fa-tags"></i> Role</a></li>
+                <li><a href="#permission" data-toggle="tab"><i class="fa fa-sign-in"></i> Permission</a></li>
             </ul>
 
-            <table class="table table-bordered table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th><input type="checkbox"></th>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
+            <div class="tab-content">
+                <div class="tab-pane fade in active user-pane" id="user">
+                    <form class="row form-inline" role="form">
+                        <div class="form-group col-xs-8">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createUserModal" id="createUserBtn">
+                                <i class="fa fa-plus"></i> Create User...
+                            </button>
+                        </div>
+                        <div class="form-group pull-right col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                        </div>
+                    </form>
 
-                <tbody>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>1</td>
-                        <td>Username1</td>
-                        <td>Username1@example.com</td>
-                        <td><span class="label label-success">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>2</td>
-                        <td>Username2</td>
-                        <td>Username2@example.com</td>
-                        <td><span class="label label-danger">Locked</span></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox"></td>
-                        <td>3</td>
-                        <td>Username3</td>
-                        <td>Username3@example.com</td>
-                        <td><span class="label label-success">Active</span></td>
-                    </tr>
-                </tbody>
-            </table>
+                    <table class="table table-bordered table-hover table-striped">
+                        <colgroup>
+                            <col style="width:48px;"/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col style="width:88px;"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="text-right">#</th>
+                                <th><i class="fa fa-user"></i> Name</th>
+                                <th><i class="fa fa-envelope-o"></i> Email</th>
+                                <th><i class="fa fa-tags"></i> Role</th>
+                                <th><i class="fa fa-bolt"></i> Status</th>
+                                <th><i class="fa fa-clock-o"></i> Last Access</th>
+                                <th><i class="fa fa-wrench"></i> Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr ng-repeat="ud in user.data">
+                                <td class="text-right">{{$index + 1}}</td>
+                                <td>{{ud.name}}</td>
+                                <td>{{ud.mail}}</td>
+                                <td>
+                                    <span class="label label-default" ng-class="{'label-primary': ud.role === 'Administrator'}">{{ud.role}}</span>
+                                </td>
+                                <td>
+                                    <span class="label" ng-class="{'label-success': ud.status === 'Active', 'label-danger': ud.status === 'Locked'}">
+                                        {{ud.status}}
+                                    </span>
+                                </td>
+                                <td>{{ud.time}}</td>
+                                <td class="text-center">
+                                    <div class="btn-group">
+                                        <a class="btn btn-xs btn-info" data-op="detail">
+                                            <i class="fa fa-file-text"></i>
+                                        </a>
+                                        <a class="btn btn-xs btn-success" data-op="update">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+                                        <a class="btn btn-xs btn-danger" data-op="delete">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row">
+                        <div class="col-xs-4"><strong>10</strong> of <strong>25</strong></div>
+                        <div class="col-xs-8 text-right">
+                            <ul class="pagination" style="margin-top:0">
+                                <li class="disabled"><a href="#">&laquo;</a></li>
+                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade role-pane" id="role">
+                    <form class="row form-inline" role="form">
+                        <div class="form-group col-xs-8">
+                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createRoleModal" id="createRoleBtn">
+                                <i class="fa fa-plus"></i> Create Role...
+                            </button>
+                        </div>
+                        <div class="form-group pull-right col-xs-4">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                        </div>
+                    </form>
+
+                    <table class="table table-bordered table-hover table-striped">
+                        <colgroup>
+                            <col style="width:40px;"/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col/>
+                            <col style="width:88px;"/>
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th class="text-right">#</th>
+                            <th><i class="fa fa-tag"></i> Name</th>
+                            <th><i class="fa fa-file-text-o"></i> Description</th>
+                            <th><i class="fa fa-group"></i> Users</th>
+                            <th><i class="fa fa-bolt"></i> Status</th>
+                            <th><i class="fa fa-clock-o"></i> Last Modified</th>
+                            <th><i class="fa fa-wrench"></i> Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr ng-repeat="rd in role.data">
+                            <td class="text-right">{{$index + 1}}</td>
+                            <td>{{rd.name}}</td>
+                            <td>{{rd.name}}</td>
+                            <td>
+                                <span class="badge">{{rd.users}}</span></td>
+                            <td>
+                                <span class="label"
+                                      ng-class="{'label-success': rd.status === 'Available', 'label-danger': rd.status === 'Unavailable'}">
+                                    {{rd.status}}
+                                </span>
+                            </td>
+                            <td>{{rd.time}}</td>
+                            <td class="text-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-xs btn-info" data-op="detail">
+                                        <i class="fa fa-file-text"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-success" data-op="update">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a class="btn btn-xs btn-danger" data-op="delete">
+                                        <i class="fa fa-times"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="row">
+                        <div class="col-xs-4"><strong>10</strong> of <strong>25</strong></div>
+                        <div class="col-xs-8 text-right">
+                            <ul class="pagination" style="margin-top:0">
+                                <li class="disabled"><a href="#">&laquo;</a></li>
+                                <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="permission">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="userModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Create a New User</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="username" class="col-sm-2 text-primary text-center">
+                                    <i class="fa fa-user fa-lg"></i>
+                                </label>
+
+                                <div class="col-sm-10">
+                                    <input id="username" type="text" class="form-control" placeholder="User name"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password" class="col-sm-2 text-primary text-center">
+                                    <i class="fa fa-unlock fa-lg"></i>
+                                </label>
+
+                                <div class="col-sm-10">
+                                    <input id="password" type="password" class="form-control" placeholder="Password"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirm-password" class="col-sm-2 text-primary text-center"></label>
+
+                                <div class="col-sm-10">
+                                    <input id="confirm-password" type="password" class="form-control" placeholder="Confirm password"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="col-sm-2 text-primary text-center">
+                                    <i class="fa fa-envelope fa-lg"></i>
+                                </label>
+
+                                <div class="col-sm-10">
+                                    <input id="email" type="email" class="form-control" placeholder="Email"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 text-primary text-center">
+                                    <i class="fa fa-tags fa-lg"></i>
+                                </label>
+                                <div class="col-sm-10">
+                                    <button id="role-selection" type="button" class="btn btn-default text-left form-control">
+                                        Click to choose role
+                                        <i class="fa fa-chevron-right"></i>
+                                    </button>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input type="checkbox" name="role"/>
+                                            <strong>Administrator</strong>
+                                        </li>
+
+                                        <li class="list-group-item">
+                                            <input type="checkbox" name="role"/> Guest
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 text-primary text-center">
+                                    <i class="fa fa-bolt fa-lg"></i>
+                                </label>
+
+                                <div class="col-sm-10">
+                                    <div>
+                                        <input type="radio" name="status"/>
+                                        <label class="text-success">Active</label>
+                                    </div>
+
+                                    <div>
+                                        <input type="radio" name="status"/>
+                                        <label class="text-danger">Locked</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            <i class="fa fa-save"></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="roleModal" tabindex="-1" role="dialog" aria-labelledby="roleModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Create a New Role</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label for="rolename" class="col-sm-2 text-primary text-center">
+                                    <i class="fa fa-tag fa-lg"></i>
+                                </label>
+
+                                <div class="col-sm-10">
+                                    <input id="rolename" type="text" class="form-control" placeholder="Role name"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="roledesc" class="col-sm-2 text-primary text-center">
+                                    <i class="fa fa-file-text fa-lg"></i>
+                                </label>
+
+                                <div class="col-sm-10">
+                                    <input id="roledesc" type="text" class="form-control" placeholder="Role description"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 text-primary text-center">
+                                    <i class="fa fa-list fa-lg"></i>
+                                </label>
+
+                                <div class="col-sm-10">
+                                    <button id="authority-selection" type="button" class="btn btn-default text-left form-control">
+                                        Click to choose authority
+                                        <i class="fa fa-chevron-right"></i>
+                                    </button>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input type="checkbox" name="auth"/>
+                                            <strong>Select All</strong>
+                                        </li>
+
+                                        <li class="list-group-item" ng-repeat="a in role.auth">
+                                            <input type="checkbox" name="auth"/>
+                                            {{a}}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            <i class="fa fa-save"></i>
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header clearfix">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            <i class="fa fa-times"></i>
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-danger">
+                            <i class="fa fa-trash-o"></i>
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <footer>
-            <span id="year-copy">2013</span> © <strong>Cisco Systems</strong>
+            <span id="year-copy">2013</span> &copy; <strong>Cisco Systems</strong>
         </footer>
     </div>
 </div>
 
+<script src="../javascripts/vendors/jquery-2.0.3.min.js"></script>
+<script src="../javascripts/vendors/bootstrap.min.js"></script>
+<script src="../javascripts/vendors/angular.min.js"></script>
+<script src="../javascripts/administration.js"></script>
 </body>
 </html>
