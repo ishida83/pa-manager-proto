@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-US">
+<html lang="en-US" ng-app>
 <head>
     <title>DEMO - PA Manager</title>
     <meta charset="utf-8"/>
@@ -7,9 +7,16 @@
     <link rel="stylesheet" href="../stylesheets/vendors/font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="../stylesheets/main.css"/>
 
-    <script src="../javascripts/vendors/jquery-2.0.3.min.js"></script>
-    <script src="../javascripts/vendors/bootstrap.min.js"></script>
-    <script src="../javascripts/clusterManagement.js"></script>
+    <style>
+        *:not(i) {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .list-group-item.selected  {
+            background-color: #0088cc;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
 
@@ -248,19 +255,19 @@
                         </li>
                         <li>
                             <a class="active" href="./clusterManagement.html">
-                                <i class="fa fa-sitemap"></i>
+                                <i class="fa fa-cloud"></i>
                                 Cluster
                             </a>
                         </li>
                         <li>
                             <a href="../node.html">
-                                <i class="fa fa-circle-o"></i>
+                                <i class="fa fa-sitemap"></i>
                                 Node
                             </a>
                         </li>
                         <li>
                             <a href="#">
-                                <i class="fa fa-cloud"></i>
+                                <i class="fa fa-rocket"></i>
                                 Service
                             </a>
                         </li>
@@ -292,7 +299,7 @@
                 </nav>
             </aside>
 
-            <div id="page-content" style="min-height: 877px;">
+            <div id="page-content" style="min-height: 877px;" ng-controller="ClusterCtrl">
                 <ul id="nav-info" class="clearfix">
                     <li>
                         <a href="../index.html">
@@ -301,6 +308,87 @@
                     </li>
                     <li class="active"><a href="">Cluster Management</a></li>
                 </ul>
+
+                <h3 class="page-header page-header-top">
+                    Cluster Management
+                    <small>Cluster has nodes</small>
+                </h3>
+
+                <form class="row form-inline" role="form">
+                    <div class="form-group col-xs-8">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createClusterModal" id="createClusterBtn">
+                            <i class="fa fa-plus"></i> Create Cluster...
+                        </button>
+                    </div>
+                    <div class="form-group pull-right col-xs-4">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                    </div>
+                </form>
+
+                <table class="table table-bordered table-hover table-striped">
+                    <colgroup>
+                        <col style="width:48px;"/>
+                        <col/>
+                        <col/>
+                        <col/>
+                        <col style="width:88px;"/>
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th class="text-right">#</th>
+                        <th><i class="fa fa-cloud"></i> Name</th>
+                        <th><i class="fa fa-sitemap"></i> Nodes</th>
+                        <th><i class="fa fa-rocket"></i> Services</th>
+                        <th><i class="fa fa-wrench"></i> Action</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr ng-repeat="c in clusters">
+                        <td class="text-right">{{$index + 1}}</td>
+                        <td>{{c.name}}</td>
+                        <td>
+                            <span class="badge">{{c.nodes[0]}}</span>
+                            <span class="badge badge-success">{{c.nodes[1]}}</span>
+                            <span class="badge badge-danger">{{c.nodes[2]}}</span>
+                        </td>
+                        <td>
+                            <span class="badge">{{c.services[0]}}</span>
+                            <span class="badge badge-success">{{c.services[1]}}</span>
+                            <span class="badge badge-danger">{{c.services[2]}}</span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a class="btn btn-xs btn-info" data-op="detail">
+                                    <i class="fa fa-file-text"></i>
+                                </a>
+                                <a class="btn btn-xs btn-success" data-op="update">
+                                    <i class="fa fa-pencil"></i>
+                                </a>
+                                <a class="btn btn-xs btn-danger" data-op="delete">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="row">
+                    <div class="col-xs-4"><strong>10</strong> of <strong>25</strong></div>
+                    <div class="col-xs-8 text-right">
+                        <ul class="pagination" style="margin-top:0">
+                            <li class="disabled"><a href="#">&laquo;</a></li>
+                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">&raquo;</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <footer>
@@ -308,5 +396,10 @@
             </footer>
         </div>
     </div>
+
+    <script src="../javascripts/vendors/jquery-2.0.3.min.js"></script>
+    <script src="../javascripts/vendors/bootstrap.min.js"></script>
+    <script src="../javascripts/vendors/angular.min.js"></script>
+    <script src="../javascripts/clusterManagement.js"></script>
 </body>
 </html>

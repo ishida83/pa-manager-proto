@@ -9,7 +9,7 @@
 
     <style>
         *:not(i) {
-            font-family: "Open Sans Light", "Open Sans", sans-serif !important;
+            font-family: "Open Sans", sans-serif !important;
         }
 
         .list-group-item.selected  {
@@ -445,7 +445,8 @@
                             <td class="text-right">{{$index + 1}}</td>
                             <td>{{rd.name}}</td>
                             <td>{{rd.name}}</td>
-                            <td>{{rd.users}}</td>
+                            <td>
+                                <span class="badge">{{rd.users}}</span></td>
                             <td>
                                 <span class="label"
                                       ng-class="{'label-success': rd.status === 'Available', 'label-danger': rd.status === 'Unavailable'}">
