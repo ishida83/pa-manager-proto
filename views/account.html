@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="../stylesheets/vendors/font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="../stylesheets/main.css"/>
 
-    <script src="../javascripts/vendors/jquery-2.0.3.min.js"></script>
-    <script src="../javascripts/vendors/bootstrap.min.js"></script>
-    <script src="../javascripts/account.js"></script>
+    <style>
+        *:not(i) {
+            font-family: "Open Sans", sans-serif !important;
+        }
+
+        .plan {
+            width: 450px;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,7 +25,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <a href="#" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="icon-reorder"></i>
+                    <i class="fa fa-reorder"></i>
                 </a>
             </li>
         </ul>
@@ -303,9 +309,100 @@
             </ul>
 
             <h3 class="page-header page-header-top">
-                Account
-                <small>License and Purchase</small>
+                FREE version is in use
+                <button type="button" class="btn btn-lg btn-primary pull-right" data-toggle="modal" data-target="#licenseModal" id="licenseButton">
+                    <i class="fa fa-unlock"></i>
+                    Enter License
+                </button>
             </h3>
+
+            <div class="price-tables">
+                <div class="plan plan-featured">
+                    <h2 class="plan-header">Free</h2>
+                    <ul>
+                        <li>
+                            <i class="text-danger fa fa-times"></i>
+                            <strong>30</strong> Days
+                        </li>
+                        <li>
+                            <i class="text-danger fa fa-times"></i>
+                            <strong>1</strong> Cluster
+                        </li>
+                        <li>
+                            <i class="text-danger fa fa-times"></i>
+                            <strong>3</strong> Nodes
+                        </li>
+                        <li>
+                            <i class="text-danger fa fa-times"></i>
+                            <strong>3</strong> Services
+                        </li>
+                        <li>
+                            <i class="text-danger fa fa-times"></i>
+                            <strong>No</strong> Support
+                        </li>
+                    </ul>
+                    <h1>FREE</h1>
+                    <a class="btn btn-danger btn-lg disabled">29 Days Left</a>
+                </div>
+
+                <div class="plan">
+                    <h2 class="plan-header">Basic</h2>
+                    <ul>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>2</strong> Years
+                        </li>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>10</strong> Clusters
+                        </li>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>100</strong> Nodes
+                        </li>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>100</strong> Services
+                        </li>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>Full</strong> Support
+                        </li>
+                    </ul>
+                    <h1><sup>$</sup>50,000<small>per month</small></h1>
+
+                    <a class="btn btn-success btn-lg">Upgrade now</a>
+                </div>
+
+                <div class="plan">
+                    <h2 class="plan-header">Ultimate</h2>
+
+                    <ul>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>No</strong> time Limit
+                        </li>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>No</strong> Cluster Limit
+                        </li>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>No</strong> Node Limit
+                        </li>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>No</strong> Service Limit
+                        </li>
+                        <li>
+                            <i class="text-success fa fa-check"></i>
+                            <strong>Full</strong> Support
+                        </li>
+                    </ul>
+                    <h1><sup>$</sup>100,000<small>per month</small></h1>
+                    <a class="btn btn-success btn-lg">Upgrade now</a>
+                </div>
+            </div>
         </div>
 
         <footer>
@@ -314,5 +411,44 @@
     </div>
 </div>
 
+<div class="modal fade" id="licenseModal" tabindex="-1" role="dialog" aria-labelledby="licenseModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header clearfix">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4>Enter License</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="radio" name="license"/>
+                        <label>Enter license data</label>
+                        <textarea class="form-control" rows="10"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="radio" name="license"/>
+                        <label>Import license file</label>
+                        <input type="file"/>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    <i class="fa fa-times"></i>
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary">
+                    <i class="fa fa-key"></i>
+                    Register
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../javascripts/vendors/jquery-2.0.3.min.js"></script>
+<script src="../javascripts/vendors/bootstrap.min.js"></script>
+<script src="../javascripts/account.js"></script>
 </body>
 </html>

@@ -101,6 +101,5 @@ jQuery(function ($) {
     });
 
     $("#createClusterBtn").on("click", function () {
-        $("#clusterModal").modal();
     });
 });
