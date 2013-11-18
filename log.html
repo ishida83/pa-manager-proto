@@ -581,7 +581,7 @@
                             <div class="clearfix list-search-bar">
                                 <div class="input-append pull-left">
                                     <div class="input-group">
-                                        <input type="text" id="example-input-append-btn2" name="example-input-append-btn2" class="form-control" placeholder="search..">
+										<input type="search" accesskey="s" autocomplete="off" x-webkit-speech="" x-webkit-grammar="builtin:translate" class="form-control" placeholder="search.." />
                                         <span class="input-group-btn">
                                             <button class="btn btn-default"><i class="icon-search"></i></button>
                                         </span>
@@ -600,13 +600,13 @@
                             </div>
                             <div class="list-wrap">
 
-                                <table class="table table-borderless">
+                                <table class="table table-condensed">
                                     <thead>
                                         <tr>
 
                                             <th>Name</th>
                                             <th class="hidden-xs hidden-sm"><i class="icon-envelope-alt"></i>Detail</th>
-                                            <th class="hidden-xs hidden-sm">Date</th>
+                                            <th class="hidden-xs hidden-sm" style="width:100px;">Date</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -614,25 +614,29 @@
 
 
                                             <td><a href="javascript:void(0)">username1</a></td>
-                                            <td class="hidden-xs hidden-sm">user1@example.com</td>
+                                            <td class="hidden-xs hidden-sm">Retrying connect to server: pa-dev-123/10.79.57.123:8021. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)</td>
                                             <th>2013-11-18</th>
                                         </tr>
                                         <tr>
 
                                             <td><a href="javascript:void(0)">username2</a></td>
-                                            <td class="hidden-xs hidden-sm">user2@example.com</td>
+                                            <td class="hidden-xs hidden-sm">Caught exception: java.net.ConnectException: Call From pa-dev-122/10.79.57.122 to pa-dev-123:8021 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.GeneratedConstructorAccessor6.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27</td>
                                             <th>2013-11-18</th>
                                         </tr>
                                         <tr>
 
                                             <td><a href="javascript:void(0)">username3</a></td>
-                                            <td class="hidden-xs hidden-sm">user3@example.com</td>
+                                            <td class="hidden-xs hidden-sm">Error fetching metrics at 'http://pa-dev-115:60030/metrics?format=json'
+Traceback (most recent call last):
+  File "/usr/lib64/cmf/agent/src/cmf/monitor/abstract_monitor.py", line 252, in collect_metrics_from_url</td>
                                             <th>2013-11-18</th>
                                         </tr>
                                         <tr>
 
                                             <td><a href="javascript:void(0)">username4</a></td>
-                                            <td class="hidden-xs hidden-sm">user4@example.com</td>
+                                            <td class="hidden-xs hidden-sm">Retrying connect to server: pa-dev-123/10.79.57.123:8021. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)</td>
                                             <th>2013-11-18</th>
                                         </tr>
                                     </tbody>
