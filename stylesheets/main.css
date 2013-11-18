@@ -1467,6 +1467,7 @@ h1,h2,h3 {
 
 .dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus {
     background: #db4a39;
+    color: #ffffff;
 }
 
 header.navbar {

@@ -95,16 +95,10 @@ jQuery(function ($) {
                 break;
 
             default:
-                // todo
                 // detail functionality
                 break;
         }
         e.stopPropagation();
-    });
-
-    $(".user-pane table.table tr").on("click", "td", function (e) {
-        // todo
-        // Detail functionality
     });
 
     $(".role-pane table.table tr").on("click", "a.btn", function (e) {
@@ -123,13 +117,8 @@ jQuery(function ($) {
                 break;
 
             default:
-                // TODO
                 break;
         }
         e.stopPropagation();
-    });
-
-    $(".rol-pane table table tr").on("click", "td", function (e) {
-        // TODO
     });
 });

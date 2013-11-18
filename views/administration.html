@@ -344,7 +344,7 @@
                             <col/>
                             <col/>
                             <col/>
-                            <col style="width:88px;"/>
+                            <col style="width:90px;"/>
                         </colgroup>
                         <thead>
                             <tr>
@@ -361,7 +361,7 @@
                         <tbody>
                             <tr ng-repeat="ud in user.data">
                                 <td class="text-right">{{$index + 1}}</td>
-                                <td>{{ud.name}}</td>
+                                <td><a href="#">{{ud.name}}</a></td>
                                 <td>{{ud.mail}}</td>
                                 <td>
                                     <span class="label label-default" ng-class="{'label-primary': ud.role === 'Administrator'}">{{ud.role}}</span>
@@ -374,9 +374,6 @@
                                 <td>{{ud.time}}</td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a class="btn btn-xs btn-info" data-op="detail">
-                                            <i class="fa fa-file-text"></i>
-                                        </a>
                                         <a class="btn btn-xs btn-success" data-op="update">
                                             <i class="fa fa-pencil"></i>
                                         </a>
@@ -426,7 +423,7 @@
                             <col/>
                             <col/>
                             <col/>
-                            <col style="width:88px;"/>
+                            <col style="width:90px;"/>
                         </colgroup>
                         <thead>
                         <tr>
@@ -443,7 +440,7 @@
                         <tbody>
                         <tr ng-repeat="rd in role.data">
                             <td class="text-right">{{$index + 1}}</td>
-                            <td>{{rd.name}}</td>
+                            <td><a href="#">{{rd.name}}</a></td>
                             <td>{{rd.name}}</td>
                             <td>
                                 <span class="badge">{{rd.users}}</span></td>
@@ -456,9 +453,6 @@
                             <td>{{rd.time}}</td>
                             <td class="text-center">
                                 <div class="btn-group">
-                                    <a class="btn btn-xs btn-info" data-op="detail">
-                                        <i class="fa fa-file-text"></i>
-                                    </a>
                                     <a class="btn btn-xs btn-success" data-op="update">
                                         <i class="fa fa-pencil"></i>
                                     </a>
