@@ -46,19 +46,24 @@
             ::-webkit-scrollbar-thumb:window-inactive {
                 background: rgba(255,0,0,0.4);
             }
-		.popover{max-width:auto; font-size:11px;}
-		.appIcon:before {
-			font-family: icon-font;
-			content: "\E001";
-			font-size: 4.2rem;
-			display: block;
-			line-height: 4rem;
-		}
-		@font-face
-		{
-			font-family: icon-font;
-			src: url('stylesheets/vendors/CiscoSansThin.woff');		
-		}
+
+        .popover {
+            max-width: auto;
+            font-size: 11px;
+        }
+
+        .appIcon:before {
+            font-family: icon-font;
+            content: "\E001";
+            font-size: 4.2rem;
+            display: block;
+            line-height: 4rem;
+        }
+
+        @font-face {
+            font-family: icon-font;
+            src: url('stylesheets/vendors/CiscoSansThin.woff');
+        }
     </style>
 
 </head>
@@ -76,7 +81,7 @@
             </ul>
 
             <a class="navbar-brand" href="#">
-				<!-- <div class="appIcon"></div> -->
+                <!-- <div class="appIcon"></div> -->
                 <img src="img/cisco-logo.png" class="img-responsive" style="height: 30px;" />
                 PA Manager</a>
 
@@ -692,7 +697,7 @@
                                         <div class="col-md-3 text-center active">1. Network Discover</div>
                                         <div class="col-md-3 text-center">2. Edit Information</div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install</div>
-										<div class="col-md-3 text-center">4. Login</div>
+                                        <div class="col-md-3 text-center">4. Login</div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-2" for="example-username">Network IP Address</label>
@@ -727,7 +732,7 @@
                                         <div class="col-md-3 text-center">1. Network Discover <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center active">2. Edit Information</div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install</div>
-										<div class="col-md-3 text-center">4. Login</div>
+                                        <div class="col-md-3 text-center">4. Login</div>
                                     </div>
                                     <div id="example-progress-bar" class="progress">
                                         <div class="progress-bar progress-bar-danger"></div>
@@ -739,8 +744,8 @@
                                                     <input type="checkbox" id="check3-all" name="check3-all"></th>
                                                 <th class="text-center">#</th>
                                                 <th>IP Address</th>
-												<th>Hostname</th>
-												<th>Currently Managed</th>
+                                                <th>Hostname</th>
+                                                <th>Currently Managed</th>
                                                 <th class="hidden-xs hidden-sm">Result</th>
                                             </tr>
                                         </thead>
@@ -750,8 +755,8 @@
                                                     <input type="checkbox" id="check3-td1" name="check3-td1"></td>
                                                 <td class="text-center">1</td>
                                                 <td><a href="javascript:void(0)">192.168.0.1</a></td>
-												<td><a href="javascript:void(0)">192.168.0.1</a></td>
-												<td>No</td>
+                                                <td><a href="javascript:void(0)">192.168.0.1</a></td>
+                                                <td>No</td>
                                                 <td class="hidden-xs hidden-sm">Could not connect to host</td>
 
                                             </tr>
@@ -760,7 +765,7 @@
                                                     <input type="checkbox" id="check3-td2" name="check3-td2"></td>
                                                 <td class="text-center">2</td>
                                                 <td><a href="javascript:void(0)">192.168.0.2</a></td>
-												<td><a href="javascript:void(0)">192.168.0.2</a></td>
+                                                <td><a href="javascript:void(0)">192.168.0.2</a></td>
                                                 <td>No</td>
                                                 <td class="hidden-xs hidden-sm">Could not connect to host</td>
 
@@ -770,7 +775,7 @@
                                                     <input type="checkbox" id="check3-td3" name="check3-td3"></td>
                                                 <td class="text-center">3</td>
                                                 <td><a href="javascript:void(0)">192.168.0.3</a></td>
-												<td><a href="javascript:void(0)">192.168.0.3</a></td>
+                                                <td><a href="javascript:void(0)">192.168.0.3</a></td>
                                                 <td>No</td>
                                                 <td class="hidden-xs hidden-sm">Could not connect to host</td>
                                             </tr>
@@ -782,161 +787,179 @@
                                         <div class="col-md-3 text-center">1. Network Discover <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">2. Edit Information <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center active">3. Choose Services to Install</div>
-										<div class="col-md-3 text-center">4. Login</div>
+                                        <div class="col-md-3 text-center">4. Login</div>
                                     </div>
 
-									<div class="form-group">
-										<label class="control-label col-md-4">Select the specific release of TruLink you want to install on your hosts.</label>
-										<div class="col-md-4">
-											<div class="radio">
-												<label for="example-radio1">
-													<input type="radio" id="example-radio1" name="trulink" value="option1"> Sprint1
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio2">
-													<input type="radio" id="example-radio2" name="trulink" value="option2"> Sprint2
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio3">
-													<input type="radio" id="example-radio3" name="trulink" value="option3"> Sprint3
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio4">
-													<input type="radio" id="example-radio4" name="trulink" value="none" selected="selected"> None
-												</label>
-											</div>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="control-label col-md-4">Select the specific release of TruCQ you want to install on your hosts.</label>
-										<div class="col-md-4">
-											<div class="radio">
-												<label for="example-radio5">
-													<input type="radio" id="example-radio5" name="trucq" value="option1"> 8.6
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio6">
-													<input type="radio" id="example-radio6" name="trucq" value="option2"> 9.0
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio7">
-													<input type="radio" id="example-radio7" name="trucq" value="option3"> 9.3
-												</label>
-											</div>
-										</div>
-									</div>
-									
-									<div class="form-group">
-										<label class="control-label col-md-4">Select the specific release of BI platform you want to install on your hosts.</label>
-										<div class="col-md-4">
-											<div class="radio">
-												<label for="example-radio8">
-													<input type="radio" id="example-radio8" name="bi" value="option1"> Pentaho 4.5
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio9">
-													<input type="radio" id="example-radio9" name="bi" value="option2"> Pentaho 4.8
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio10">
-													<input type="radio" id="example-radio10" name="bi" value="option3"> Pentaho 5.0
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio11">
-													<input type="radio" id="example-radio11" name="bi" value="option4"> Spago
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio12">
-													<input type="radio" id="example-radio12" name="bi" value="option5"> JasperReport
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio13">
-													<input type="radio" id="example-radio13" name="bi" value="option5"> OpenI
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio14">
-													<input type="radio" id="example-radio14" name="bi" value="option5"> BIRT
-												</label>
-											</div>
-										</div>
-									</div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Select the specific release of TruLink you want to install on your hosts.</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="example-radio1">
+                                                    <input type="radio" id="example-radio1" name="trulink" value="option1">
+                                                    Sprint1
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio2">
+                                                    <input type="radio" id="example-radio2" name="trulink" value="option2">
+                                                    Sprint2
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio3">
+                                                    <input type="radio" id="example-radio3" name="trulink" value="option3">
+                                                    Sprint3
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio4">
+                                                    <input type="radio" id="example-radio4" name="trulink" value="none" selected="selected">
+                                                    None
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Select the specific release of TruCQ you want to install on your hosts.</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="example-radio5">
+                                                    <input type="radio" id="example-radio5" name="trucq" value="option1">
+                                                    8.6
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio6">
+                                                    <input type="radio" id="example-radio6" name="trucq" value="option2">
+                                                    9.0
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio7">
+                                                    <input type="radio" id="example-radio7" name="trucq" value="option3">
+                                                    9.3
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-4">Select the specific release of BI platform you want to install on your hosts.</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="example-radio8">
+                                                    <input type="radio" id="example-radio8" name="bi" value="option1">
+                                                    Pentaho 4.5
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio9">
+                                                    <input type="radio" id="example-radio9" name="bi" value="option2">
+                                                    Pentaho 4.8
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio10">
+                                                    <input type="radio" id="example-radio10" name="bi" value="option3">
+                                                    Pentaho 5.0
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio11">
+                                                    <input type="radio" id="example-radio11" name="bi" value="option4">
+                                                    Spago
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio12">
+                                                    <input type="radio" id="example-radio12" name="bi" value="option5">
+                                                    JasperReport
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio13">
+                                                    <input type="radio" id="example-radio13" name="bi" value="option5">
+                                                    OpenI
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio14">
+                                                    <input type="radio" id="example-radio14" name="bi" value="option5">
+                                                    BIRT
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
-								<div id="fourth" class="step ui-formwizard-content" style="display: none;">
+                                <div id="fourth" class="step ui-formwizard-content" style="display: none;">
                                     <div class="wizard-steps row">
                                         <div class="col-md-3 text-center">1. Network Discover <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">2. Edit Information <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install <i class="icon-ok"></i></div>
-										<div class="col-md-3 text-center active">4. Login</div>
+                                        <div class="col-md-3 text-center active">4. Login</div>
                                     </div>
-									<label>Root access to your hosts is required to install the Cloudera packages. This installer will connect to your hosts via SSH and log in either directly as root or as another user with password-less sudo/pbrun privileges to become root.</label>
-									<div class="form-group">
-										<label class="control-label col-md-2">Login to all hosts as</label>
-										<div class="col-md-4">
-											<div class="radio">
-												<label for="example-radio1">
-													<input type="radio" id="example-radio1" name="example-radios" value="option1"> root
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio2">
-													<input type="radio" id="example-radio2" name="example-radios" value="option2"> other user:
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio3">
-													<input type="text" placeholder="" class="form-control input-sm" /> 
-												</label>
-											</div>
-										</div>									
-									</div>
-									<label>You may connect via password or public-key authentication for the user selected above.</label>
-									<div class="form-group">
-										<label class="control-label col-md-2">Authentication Method</label>
-										<div class="col-md-4">
-											<div class="radio">
-												<label for="example-radio1">
-													<input type="radio" id="example-radio1" name="example-radios" value="option1"> All hosts accept same password
-												</label>
-											</div>
-											<div class="radio">
-												<label for="example-radio2">
-													<input type="radio" id="example-radio2" name="example-radios" value="option2"> All hosts accept same private key
-												</label>
-											</div>											
-										</div>									
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-2">Private Key File</label>
-										<div class="col-md-4">
-											<input type="file" dropzone class="form-control" />
-										</div>									
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-2">Enter Passphrase</label>
-										<div class="col-md-4">
-											<input type="password" class="form-control input-sm" />
-										</div>									
-									</div>
-									<div class="form-group">
-										<label class="control-label col-md-2">Confirm Passphrase</label>
-										<div class="col-md-4">
-											<input type="password" class="form-control input-sm" />
-										</div>									
-									</div>
-								</div>
+                                    <label>Root access to your hosts is required to install the Cloudera packages. This installer will connect to your hosts via SSH and log in either directly as root or as another user with password-less sudo/pbrun privileges to become root.</label>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Login to all hosts as</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="example-radio1">
+                                                    <input type="radio" id="example-radio1" name="example-radios" value="option1">
+                                                    root
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio2">
+                                                    <input type="radio" id="example-radio2" name="example-radios" value="option2">
+                                                    other user:
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio3">
+                                                    <input type="text" placeholder="" class="form-control input-sm" />
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <label>You may connect via password or public-key authentication for the user selected above.</label>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Authentication Method</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="example-radio1">
+                                                    <input type="radio" id="example-radio1" name="example-radios" value="option1">
+                                                    All hosts accept same password
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio2">
+                                                    <input type="radio" id="example-radio2" name="example-radios" value="option2">
+                                                    All hosts accept same private key
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Private Key File</label>
+                                        <div class="col-md-4">
+                                            <input type="file" dropzone class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Enter Passphrase</label>
+                                        <div class="col-md-4">
+                                            <input type="password" class="form-control input-sm" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Confirm Passphrase</label>
+                                        <div class="col-md-4">
+                                            <input type="password" class="form-control input-sm" />
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group form-actions">
                                     <div class="col-md-10 col-md-offset-2">
                                         <input type="reset" class="btn btn-danger ui-wizard-content ui-formwizard-button" id="back" value="Back" disabled="disabled">
@@ -946,19 +969,19 @@
                             </div>
                         </form>
                     </div>
-					
-					<div id="installation" class="hidden">
-						
-						
-						<div class="well push">
-							<div class="progress progress-striped active">
-								<div class="progress-bar progress-info" style="width: 60%">Loading..</div>
-							</div>
-							<p>Hint</p>
-							
-							<div class="btn-group">
-								<a href="javascript:void(0)" class="btn btn-danger">Abort Installation</a>
-								<!-- <ul class="dropdown-menu">
+
+                    <div id="installation" class="hidden">
+
+
+                        <div class="well push">
+                            <div class="progress progress-striped active">
+                                <div class="progress-bar progress-info" style="width: 60%">Loading..</div>
+                            </div>
+                            <p>Hint</p>
+
+                            <div class="btn-group">
+                                <a href="javascript:void(0)" class="btn btn-danger">Abort Installation</a>
+                                <!-- <ul class="dropdown-menu">
 									<li><a href="javascript:void(0)">First link</a></li>
 									<li class="disabled"><a href="javascript:void(0)">This is a disabled link</a></li>
 									<li class="divider"></li>
@@ -972,53 +995,61 @@
 										</ul>
 									</li>
 								</ul> -->
-							</div>
-							<table class="table">
-								<thead>
-									<tr>										
-										<th class="text-center">#</th>
-										<th>Hostname</th>
-										<th class="hidden-xs hidden-sm">IP Address</th>
-										<th class="hidden-xs hidden-sm">Progress</th>
-										<th class="hidden-xs hidden-sm">Status</th>										
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td class="text-center">1</td>
-										
-										<td><a href="javascript:void(0)">10.74.125.191</a></td>
-										<td class="hidden-xs hidden-sm">10.74.125.191</td>
-										<td class="hidden-xs hidden-sm"><div class="progress-bar progress-bar-success" style="width: 75%;"></div></td>
-										<td class="hidden-xs hidden-sm"><span class="loader-04"></span></td>
-										
-									</tr>
-									<tr>
-										<td class="text-center">2</td>
-										
-										<td><a href="javascript:void(0)">10.74.125.192</a></td>
-										<td class="hidden-xs hidden-sm">10.74.125.192</td>
-										<td class="hidden-xs hidden-sm"><div class="progress-bar progress-bar-success" style="width: 75%;"></div></td>
-										<td class="hidden-xs hidden-sm"><span class="loader-04"></span></td>
-										
-									</tr>
-									<tr>
-										<td class="text-center">3</td>
-										
-										<td><a href="javascript:void(0)">10.74.125.193</a></td>
-										<td class="hidden-xs hidden-sm">10.74.125.193</td>
-										<td class="hidden-xs hidden-sm"><div class="progress-bar progress-bar-success" style="width: 75%;"></div></td>
-										<td class="hidden-xs hidden-sm"><span class="loader-04"></span></td>
-										
-									</tr>
-									<tr>
-										<td class="text-center">4</td>
-										
-										<td><a href="javascript:void(0)">10.74.125.194</a></td>
-										<td class="hidden-xs hidden-sm">10.74.125.194</td>
-										<td class="hidden-xs hidden-sm"><div class="progress-bar progress-bar-success" style="width: 75%;"></div></td>
-										<td class="hidden-xs hidden-sm"><span class="loader-04"></span></td>
-										<!-- <td class="text-center">
+                            </div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th>Hostname</th>
+                                        <th class="hidden-xs hidden-sm">IP Address</th>
+                                        <th class="hidden-xs hidden-sm">Progress</th>
+                                        <th class="hidden-xs hidden-sm">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">1</td>
+
+                                        <td><a href="javascript:void(0)">10.74.125.191</a></td>
+                                        <td class="hidden-xs hidden-sm">10.74.125.191</td>
+                                        <td class="hidden-xs hidden-sm">
+                                            <div class="progress-bar progress-bar-success" style="width: 75%;"></div>
+                                        </td>
+                                        <td class="hidden-xs hidden-sm"><span class="loader-04"></span></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">2</td>
+
+                                        <td><a href="javascript:void(0)">10.74.125.192</a></td>
+                                        <td class="hidden-xs hidden-sm">10.74.125.192</td>
+                                        <td class="hidden-xs hidden-sm">
+                                            <div class="progress-bar progress-bar-success" style="width: 75%;"></div>
+                                        </td>
+                                        <td class="hidden-xs hidden-sm"><span class="loader-04"></span></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">3</td>
+
+                                        <td><a href="javascript:void(0)">10.74.125.193</a></td>
+                                        <td class="hidden-xs hidden-sm">10.74.125.193</td>
+                                        <td class="hidden-xs hidden-sm">
+                                            <div class="progress-bar progress-bar-success" style="width: 75%;"></div>
+                                        </td>
+                                        <td class="hidden-xs hidden-sm"><span class="loader-04"></span></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">4</td>
+
+                                        <td><a href="javascript:void(0)">10.74.125.194</a></td>
+                                        <td class="hidden-xs hidden-sm">10.74.125.194</td>
+                                        <td class="hidden-xs hidden-sm">
+                                            <div class="progress-bar progress-bar-success" style="width: 75%;"></div>
+                                        </td>
+                                        <td class="hidden-xs hidden-sm"><span class="loader-04"></span></td>
+                                        <!-- <td class="text-center">
 											<div class="btn-group">
 												<a href="javascript:void(0)" class="btn btn-xs btn-inverse" data-toggle="popover" data-placement="top" data-content="Content" title="" data-original-title="Plans">
 													<i class="icon-double-angle-up"></i> Upgrade
@@ -1030,13 +1061,29 @@
 												<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
 											</div>
 										</td> -->
-									</tr>
-								</tbody>
-							</table>
-							
-						</div>
-						
-					</div>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="detail-node" class="hidden">
+                        <ul class="nav nav-tabs" data-toggle="tabs">
+                            <li class="active"><a href="#forum-forum">Status</a></li>
+                            <li class=""><a href="#forum-cat">Instances</a></li>
+                            <li class=""><a href="#forum-topic">Commands</a></li>
+                            <li><a href="#forum-topic">Configuaration</a></li>
+                            <li><a href="#forum-topic">Monitoring</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane" id="forum-cat">
+                                Instances
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <footer>
@@ -1245,12 +1292,12 @@
     </script>
     <script>
         $(function () {
-            $("#basic-wizard").bind("step_shown", function (event, data) {                
+            $("#basic-wizard").bind("step_shown", function (event, data) {
                 if (data.currentStep === 'second') {
                     var a = 1;
                     var e = $("#example-progress-bar .progress-bar");
                     interval = setInterval(function () {
-                        e.css("width", a + "%"), a > 15 && e.html(10 * a + "/1000"), 33 === a && e.removeClass("progress-bar-danger").addClass("progress-bar-warning"), 66 === a && e.removeClass("progress-bar-warning").addClass("progress-bar-success"), a++, a > 100 && (clearInterval(interval),e.html('<i class="icon-ok"></i>'))
+                        e.css("width", a + "%"), a > 15 && e.html(10 * a + "/1000"), 33 === a && e.removeClass("progress-bar-danger").addClass("progress-bar-warning"), 66 === a && e.removeClass("progress-bar-warning").addClass("progress-bar-success"), a++, a > 100 && (clearInterval(interval), e.html('<i class="icon-ok"></i>'))
                     }, 50)
                 }
             });
@@ -1267,9 +1314,9 @@
                         /*$('#node-discovery').addClass('hidden', function () {
                             $('.dash-tile-content-inner-fluid').show();
                         });*/
-						$('#node-discovery').addClass('hidden', function () {
-							$('#installation').removeClass('hidden');							
-						});
+                        $('#node-discovery').addClass('hidden', function () {
+                            $('#installation').removeClass('hidden');
+                        });
                     },
                     beforeSubmit: function (data) {
 
@@ -1283,12 +1330,27 @@
                 outDuration: 700,
                 easing: 'easeOutBounce'
             });
-			
-			
-			$('[data-toggle="popover"]').popover({container:"body",animation:1,html:true});
-			$('[data-toggle="popover"]').on('shown.bs.popover', function (e) {
-				window.setTimeout(function(){$('[data-toggle="popover"]').popover('hide');},3000);
-			});
+
+
+            $('[data-toggle="popover"]').popover({ container: "body", animation: 1, html: true });
+            $('[data-toggle="popover"]').on('shown.bs.popover', function (e) {
+                window.setTimeout(function () { $('[data-toggle="popover"]').popover('hide'); }, 3000);
+            });
+
+
+            $('#example-datatables').on('click', 'td a', function (e) {
+                $('.dash-tile-content-inner-fluid').hide(function () {
+                    $('#detail-node').removeClass('hidden');
+                });
+
+                $('#example-modal').data({
+                    id: $(e.currentTarget).parents('tr').index(),
+                    name: $(e.currentTarget).parents('tr').find('td:eq(1)').text(),
+                    service: $(e.currentTarget).parents('tr').find('td:eq(2)').text().split(', ')
+                });
+
+            });
+
         });
 
     </script>
