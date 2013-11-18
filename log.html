@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <title>DEMO - PA Manager</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./stylesheets/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="./stylesheets/vendors/font-awesome/css/font-awesome.css" />
+    <link href="stylesheets/plugins-1.5.1.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./stylesheets/main.css" />
+    <link href="stylesheets/vendors/chosen.min.css" rel="stylesheet" />
+    <style>
+        .navbar.navbar-inverse {
+            background: #626262; /* Old browsers */
+            background: -moz-linear-gradient(top, #626262 0%, #4e4e4e 51%, #383838 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#626262), color-stop(51%,#4e4e4e), color-stop(100%,#383838)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #626262 0%,#4e4e4e 51%,#383838 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #626262 0%,#4e4e4e 51%,#383838 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #626262 0%,#4e4e4e 51%,#383838 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #626262 0%,#4e4e4e 51%,#383838 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#626262', endColorstr='#383838',GradientType=0 ); /* IE6-9 */
+            border-bottom: 1px solid #333;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: white;
+        }
+
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgba(128,128,128,0.8);
+            -webkit-box-shadow: 0 0 6px rgba(0,0,0,0.5);
+        }
+
+            ::-webkit-scrollbar-thumb:window-inactive {
+                background: rgba(255,0,0,0.4);
+            }
+
+
+
+        /**SERACH PAGE**/
+        .top-toolbar {
+            margin: 10px 20px 0 0;
+        }
+
+            .top-toolbar i {
+                margin: 0px;
+                font-size: 14px;
+            }
+
+        .btn-icon {
+            padding: 0 5px;
+            height: 20px;
+        }
+        /** containers **/
+        .list-wrap {
+            margin: 0 auto;
+        }
+
+            .list-wrap p {
+                margin-bottom: 0px;
+            }
+
+        .list-search-bar {
+            margin: 0px 0px 20px 0px;
+        }
+
+            .list-search-bar .pagination, .list-search-bar .input-append {
+                margin: 0px;
+            }
+
+        .list-wrap header {
+            border-bottom: 1px solid #b6bdbe;
+            margin: 15px 22px;
+            margin-bottom: 35px;
+            padding-top: 20px;
+            position: relative;
+        }
+
+        .list-wrap footer {
+            border-top: 1px solid #b6bdbe;
+            padding-bottom: 40px;
+            margin: 15px 22px;
+        }
+
+        .list-wrap header .list-style-buttons {
+            position: absolute;
+            right: 0;
+        }
+
+        .list-wrap ul {
+            margin: 0px;
+        }
+
+        .list-wrap h3 {
+            margin: 0px;
+            line-height: normal;
+        }
+
+        .blue-white .widget-head {
+            background: #e3e7f1 !important;
+            color: #576074 !important;
+        }
+
+        .widget-head h3 {
+            color: #eee;
+            line-height: 40px;
+            margin: 0px;
+            font-weight: normal;
+            font-size: 18px;
+            padding-top: 0px;
+            padding-left: 20px;
+        }
+
+            .widget-head h3 i {
+                padding: 0 10px 0 0px;
+                color: #FFF;
+            }
+
+            .widget-head h3.block-icon {
+                padding-left: 60px;
+            }
+
+                .widget-head h3.block-icon i {
+                    height: 50px;
+                    width: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    padding: 0px;
+                    display: inline-block;
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    background: rgba(0, 0, 0, .3);
+                }
+
+        .widget-container {
+            padding: 20px 20px 1px 20px;
+        }
+
+        /*.pagination {
+            margin: 20px 0;
+        }
+
+            .pagination ul {
+                display: inline-block;
+                *display: inline;
+                margin-bottom: 0;
+                margin-left: 0;
+                *zoom: 1;
+            }
+
+                .pagination ul > li {
+                    display: inline;
+                }
+
+                    .pagination ul > li > a,
+                    .pagination ul > li > span {
+                        float: left;
+                        padding: 4px 12px;
+                        line-height: 20px;
+                        text-decoration: none;
+                        background-color: #d0cfd6;
+                        border-left-width: 0;
+                        color: #444444;
+                    }
+
+                        .pagination ul > li > a:hover,
+                        .pagination ul > .active > a,
+                        .pagination ul > .active > span {
+                            background-color: #01316c;
+                            color: #fff;
+                        }
+
+                .pagination ul > .active > a,
+                .pagination ul > .active > span {
+                    color: #fff;
+                    cursor: default;
+                }
+
+                .pagination ul > .disabled > span,
+                .pagination ul > .disabled > a,
+                .pagination ul > .disabled > a:hover {
+                    color: #999999;
+                    cursor: default;
+                    background-color: #eeeeee;
+                }
+
+                .pagination ul > li:first-child > a,
+                .pagination ul > li:first-child > span {
+                    border-left-width: 1px;
+                }
+
+        .pagination-centered {
+            text-align: center;
+        }
+
+        .pagination-right {
+            text-align: right;
+        }
+
+        .pagination-large ul > li > a,
+        .pagination-large ul > li > span {
+            padding: 11px 19px;
+            font-size: 12px;
+        }
+
+        .pagination-small ul > li > a,
+        .pagination-small ul > li > span {
+            padding: 2px 10px;
+            font-size: 11.9px;
+        }
+
+        .pagination-mini ul > li > a,
+        .pagination-mini ul > li > span {
+            padding: 0 6px;
+            font-size: 10.5px;
+        }
+
+        .pager {
+            margin: 20px 0;
+            text-align: center;
+            list-style: none;
+            *zoom: 1;
+        }
+
+            .pager:before,
+            .pager:after {
+                display: table;
+                line-height: 0;
+                content: "";
+            }
+
+            .pager:after {
+                clear: both;
+            }
+
+            .pager li {
+                display: inline;
+            }
+
+                .pager li > a,
+                .pager li > span {
+                    display: inline-block;
+                    padding: 5px 14px;
+                    background-color: #d0cfd6;
+                    color: #444444;
+                }
+
+                    .pager li > a:hover {
+                        text-decoration: none;
+                        background-color: #f5f5f5;
+                    }
+
+            .pager .next > a,
+            .pager .next > span {
+                float: right;
+            }
+
+            .pager .previous > a,
+            .pager .previous > span {
+                float: left;
+            }
+
+            .pager .disabled > a,
+            .pager .disabled > a:hover,
+            .pager .disabled > span {
+                color: #999999;
+                cursor: default;
+                background-color: #f8f8f8;
+            }*/
+    </style>
+
+</head>
+<body>
+
+    <div class="page-container">
+        <header class="navbar navbar-inverse">
+            <ul class="navbar-nav-custom pull-right hidden-md hidden-lg">
+                <li class="divider-vertical"></li>
+                <li>
+                    <a href="#" data-toggle="collapse" data-target=".navbar-main-collapse">
+                        <i class="icon-reorder"></i>
+                    </a>
+                </li>
+            </ul>
+
+            <a class="navbar-brand" href="#">
+                <img src="img/cisco-logo.png" class="img-responsive" style="height: 30px;" />
+                PA Manager</a>
+
+            <ul id="widgets" class="navbar-nav-custom pull-right">
+                <li class="divider-vertical"></li>
+
+                <li id="messages-widget" class="dropdown dropdown-left-responsive">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-envelope"></i>
+                        <span class="badge badge-success">1</span>
+                    </a>
+
+                    <ul class="dropdown-menu pull-right widget">
+                        <li class="widget-heading">
+                            <i class="fa fa-comment pull-right"></i>Latest Messages
+                        </li>
+
+                        <li class="new-on">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading">
+                                        <a href="#">George</a>
+                                        <span class="label label-success">2 min ago</span>
+                                    </h6>
+
+                                    <div class="media">Thanks for your help! The tutorial really helped me a lot!</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading">
+                                        <a href="#">Mike</a>
+                                        <span class="label label-default">6 hours ago</span>
+                                    </h6>
+
+                                    <div class="media">The logo is ready, have a look and let me know what you think!</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </a>
+
+                                <div class="media-body">
+                                    <h6 class="media-heading">
+                                        <a href="#">Julia</a>
+                                        <span class="label label-default">1 day ago</span>
+                                    </h6>
+
+                                    <div class="media">We should better consider our social media marketing strategy!</div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li class="text-center"><a href="page_inbox.php">View All Messages</a></li>
+                    </ul>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li id="notifications-widget" class="dropdown dropdown-center-responsive">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-flag"></i>
+                        <span class="badge badge-danger">1</span>
+                        <span class="badge badge-warning">2</span>
+                    </a>
+
+                    <ul class="dropdown-menu pull-right widget">
+                        <li class="widget-heading">
+                            <a href="#" class="pull-right widget-link">
+                                <i class="fa fa-cog"></i>
+                            </a>
+                            <a href="#" class="widget-link">System</a>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-danger">20 min ago</li>
+                                <li class="text-danger">Support system is down for maintenance!</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-warning">3 hours ago</li>
+                                <li class="text-warning">PHP upgrade started!</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-warning">5 hours ago</li>
+                                <li class="text-warning">
+                                    <a href="#" class="widget-link">1 support ticket</a>
+                                    just opened!
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="widget-heading">
+                            <a href="#" class="pull-right widget-link">
+                                <i class="fa fa-bookmark"></i>
+                            </a>
+                            <a href="#" class="widget-link">Project #3</a>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-success">3 weeks ago</li>
+                                <li class="text-success">Project #3
+                                <a href="#" class="widget-link">published</a>
+                                    successfully!
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-info">1 month ago</li>
+                                <li class="text-info">Milestone #3 achieved!</li>
+                                <li class="text-info">
+                                    <a href="#" class="widget-link">John Doe</a>
+                                    joined the project!
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <ul>
+                                <li class="label label-default">1 year ago</li>
+                                <li class="text-muted">This is an old notification</li>
+                            </ul>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li class="text-center"><a href="#">View All Notifications</a></li>
+                    </ul>
+                </li>
+
+                <li class="divider-vertical"></li>
+
+                <li class="dropdown pull-right dropdown-user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-cog"></i>
+                        <b class="caret"></b>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#" class="loading-on">
+                                <i class="fa fa-refresh"></i>
+                                Refresh
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="#modal-user-settings" role="button" data-toggle="modal">
+                                <i class="fa fa-user"></i>
+                                User Profile
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-wrench"></i>
+                                App Settings
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+
+                        <li>
+                            <a href="page_login.php">
+                                <i class="fa fa-sign-out"></i>
+                                Log out
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+
+
+        <div class="inner-container">
+            <aside id="page-sidebar" class="collapse navbar-collapse navbar-main-collapse">
+                <form id="sidebar-search" action="" method="post">
+                    <div class="input-group">
+                        <input type="text" id="sidebar-search-term" name="sidebar-search-term" placeholder="Search..">
+                        <button><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+
+                <nav id="primary-nav">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <i class="fa fa-home"></i>
+                                Homepage
+                            </a>
+                        </li>
+                        <li>
+                            <a href="views/clusterManagement.html">
+                                <i class="fa fa-sitemap"></i>
+                                Cluster
+                            </a>
+                        </li>
+                        <li>
+                            <a href="node.html">
+                                <i class="fa fa-circle-o"></i>
+                                Node
+                            </a>
+                        </li>
+                        <li>
+                            <a href="service.html">
+                                <i class="fa fa-gear"></i>
+                                Service
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="active">
+                                <i class="fa fa-terminal"></i>
+                                Log info
+                            </a>
+                        </li>
+                        <li>
+                            <a href="schemas.html">
+                                <i class="fa fa-list"></i>
+                                Schemas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="views/administration.html">
+                                <i class="fa fa-user"></i>
+                                Administration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="views/account.html">
+                                <i class="fa fa-lock"></i>
+                                Account
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <div id="page-content" style="min-height: 877px;">
+                <ul id="nav-info" class="clearfix">
+                    <li><a href="index.html"><i class="icon-home"></i></a></li>
+                    <li class="active"><a href="javascript:void(0)">Schemas Tool</a></li>
+                </ul>
+
+                <h3 class="page-header page-header-top">Meta Info <small>Log</small></h3>
+
+                <div class="content-widgets gray">
+
+                    <div class="widget-container">
+                        <div>
+                            <div class="clearfix list-search-bar">
+                                <div class="input-append pull-left">
+                                    <div class="input-group">
+										<input type="search" accesskey="s" autocomplete="off" x-webkit-speech="" x-webkit-grammar="builtin:translate" class="form-control" placeholder="search.." />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default"><i class="icon-search"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <!-- <div class="pagination pull-right">
+                                    <ul>
+                                        <li class="disabled"><a href="#">Prev</a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">Next</a></li>
+                                    </ul>
+                                </div>-->
+                            </div>
+                            <div class="list-wrap">
+
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr>
+
+                                            <th>Name</th>
+                                            <th class="hidden-xs hidden-sm"><i class="icon-envelope-alt"></i>Detail</th>
+                                            <th class="hidden-xs hidden-sm" style="width:100px;">Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+
+                                            <td><a href="javascript:void(0)">username1</a></td>
+                                            <td class="hidden-xs hidden-sm">Retrying connect to server: pa-dev-123/10.79.57.123:8021. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)</td>
+                                            <th>2013-11-18</th>
+                                        </tr>
+                                        <tr>
+
+                                            <td><a href="javascript:void(0)">username2</a></td>
+                                            <td class="hidden-xs hidden-sm">Caught exception: java.net.ConnectException: Call From pa-dev-122/10.79.57.122 to pa-dev-123:8021 failed on connection exception: java.net.ConnectException: Connection refused; For more details see:  http://wiki.apache.org/hadoop/ConnectionRefused
+	at sun.reflect.GeneratedConstructorAccessor6.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27</td>
+                                            <th>2013-11-18</th>
+                                        </tr>
+                                        <tr>
+
+                                            <td><a href="javascript:void(0)">username3</a></td>
+                                            <td class="hidden-xs hidden-sm">Error fetching metrics at 'http://pa-dev-115:60030/metrics?format=json'
+Traceback (most recent call last):
+  File "/usr/lib64/cmf/agent/src/cmf/monitor/abstract_monitor.py", line 252, in collect_metrics_from_url</td>
+                                            <th>2013-11-18</th>
+                                        </tr>
+                                        <tr>
+
+                                            <td><a href="javascript:void(0)">username4</a></td>
+                                            <td class="hidden-xs hidden-sm">Retrying connect to server: pa-dev-123/10.79.57.123:8021. Already tried 3 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=10, sleepTime=1 SECONDS)</td>
+                                            <th>2013-11-18</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="text-center">
+                                <ul class="pagination remove-margin">
+                                    <li><a href="javascript:void(0)">Prev</a></li>
+                                    <li><a href="javascript:void(0)">1</a></li>
+                                    <li class="active"><a href="javascript:void(0)">2</a></li>
+                                    <li><a href="javascript:void(0)">3</a></li>
+                                    <li class="disabled"><a href="javascript:void(0)">..</a></li>
+                                    <li><a href="javascript:void(0)">15</a></li>
+                                    <li><a href="javascript:void(0)">Next</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <span id="year-copy">2013</span> © <strong>PA Manager</strong>
+            </footer>
+        </div>
+    </div>
+
+    <a href="javascript:void(0)" id="to-top" style="display: inline;"><i class="icon-chevron-up"></i></a>
+
+    <div id="example-modal" class="modal" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4>Dialog</h4>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal">Close</button>
+                    <button class="btn btn-success">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="./javascripts/vendors/jquery-2.0.3.min.js"></script>
+    <script src="./javascripts/vendors/bootstrap.min.js"></script>
+
+    <script src="javascripts/vendors/chosen.jquery.min.js"></script>
+    <script src="javascripts/vendors/jquery.elastic.source.js"></script>
+    <script src="javascripts/vendors/jquery.dataTables.min.js"></script>
+    <script>
+        $(function () {
+
+            $("#to-top").hide();
+
+            // fade in #back-top
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#to-top').fadeIn();
+                } else {
+                    $('#to-top').fadeOut();
+                }
+            });
+
+            // scroll body to 0px on click
+            $('#to-top').click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+
+
+            //$('.btn-group').tooltip({
+            //    selector: "[data-toggle=tooltip]",
+            //    container: "body"
+            //});
+
+            $('.chosen').chosen();
+            $("textarea.textarea-elastic").elastic();
+
+            $('#create-table .icon-plus').parent().on('click', function () {
+                $('#create-table tbody').append($('#create-table tbody tr:last').clone());
+
+            });
+
+            $(document).on('click', '#create-table tr td:last a', function (e) {
+                if ($('#create-table tbody tr').size() > 1) $(e.currentTarget).parents('tr').remove();
+            });
+
+
+            $("#example-datatables").dataTable({
+                aoColumnDefs: [{ bSortable: !1, aTargets: [0] }],
+                //"bPaginate": false,
+                //"bLengthChange": false,
+                //"bFilter": false,                
+                //"bInfo": false,
+                "sDom": '<"row"<"col-sm-5 col-xs-5"l><"col-md-offset-8"f>>rt<"row"<"col-sm-5 hidden-xs"i><"col-sm-7 col-xs-12 clearfix"p>>',
+                "bAutoWidth": false
+            });
+
+            $("#check5-all").click(function () {
+                var checked_status = this.checked;
+                $("input[id^=check5-td]").each(function () {
+                    this.checked = checked_status;
+                });
+            });
+
+            $(document).on('click', 'a.list-group-item', function (e) {
+                $('.tab').addClass('hidden');
+                switch ($(e.target)[0].innerHTML) {
+                    case '<i class="icon-coffee"></i>SQL Command': $('.tab').eq(0).removeClass('hidden'); break;
+                    case '<i class="icon-coffee"></i>Create New Table': $('.tab').eq(1).removeClass('hidden'); break;
+                    case '<i class="icon-coffee"></i>Select Sample': $('.tab').eq(2).removeClass('hidden'); break;
+                    default: $('.tab').eq(0).show();
+                }
+            });
+
+            $('.tab').eq(0).removeClass('hidden');
+        });
+    </script>
+
+</body>
+</html>
