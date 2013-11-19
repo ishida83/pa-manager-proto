@@ -326,7 +326,7 @@
                         <li>
                             <a href="log.html">
                                 <i class="fa fa-terminal"></i>
-                                Log info
+                                Diagnose
                             </a>
                         </li>
                         <li>
@@ -351,13 +351,17 @@
                 </nav>
             </aside>
             <div id="page-content" style="min-height: 877px;">
+				<!-- breadcrumb nav-->
                 <ul id="nav-info" class="clearfix">
                     <li><a href="index.html"><i class="icon-home"></i></a></li>
                     <li class="active"><a href="node.html">Node Management</a></li>
                 </ul>
-
+				<!-- /breadcrumb nav-->
+				
+				<!-- meta info -->
                 <h3 class="page-header page-header-top">Meta Info <small>Node Management</small></h3>
-
+				<!-- /meta info -->
+				
                 <div class="row">
                     <div class="dash-tile-content-inner-fluid">
                         <ul id="dash-example-tabs" class="nav nav-tabs" data-toggle="tabs">
@@ -411,8 +415,8 @@
                                                         <a href="#">Remove</a>
                                                     </li>
                                                 </ul>
-                                                <button class="btn btn-sm node-discovery btn-default" role="button">Node Discovery</button>
-                                                <button class="btn btn-sm node-inspector btn-default" data-target="#example-modal" role="button" data-toggle="modal">Node Inspector</button>
+                                                <button class="btn btn-sm node-discovery btn-default" role="button">Add Node to Cluster</button>
+                                                <button class="btn btn-sm node-inspector btn-default" role="button">Node Inspector</button>
                                             </div>
                                         </div>
                                     </div>
@@ -433,7 +437,7 @@
                                     <tbody role="alert" aria-live="polite" aria-relevant="all">
                                         <tr class="odd">
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username1</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.101</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.101</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-default">Inactive</span></td>
@@ -449,7 +453,7 @@
                                         <tr class="even">
 
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username2</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.102</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.102</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-danger">Bad Health</span></td>
@@ -465,7 +469,7 @@
                                         <tr class="odd">
 
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username3</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.103</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.103</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
@@ -481,7 +485,7 @@
                                         <tr class="even">
 
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username4</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.104</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.104</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
@@ -497,7 +501,7 @@
                                         <tr class="odd">
 
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username5</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.105</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.105</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
@@ -513,7 +517,7 @@
                                         <tr class="even">
 
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username6</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.106</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.106</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
                                             <td class=" "><span class="label label-danger">Bad Health</span></td>
@@ -529,7 +533,7 @@
                                         <tr class="odd">
 
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username7</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.107</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.107</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-success">Good Health</span></td>
@@ -545,7 +549,7 @@
                                         <tr class="even">
 
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username8</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.108</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.108</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-default">Inactive</span></td>
@@ -561,7 +565,7 @@
                                         <tr class="odd">
 
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username9</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.109</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.109</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
                                             <td class=" "><span class="label label-danger">Bad Health</span></td>
@@ -577,7 +581,7 @@
                                         <tr class="even">
 
                                             <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
-                                            <td class=" "><a href="javascript:void(0)">username10</a></td>
+                                            <td class=" "><a href="javascript:void(0)">10.74.125.1010</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.110</td>
 											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
@@ -619,7 +623,7 @@
                                         <div class="col-sm-12">
                                             <h3>Template for Cluster1</h3>
                                             <div class="btn-group">
-                                                <button class="btn btn-sm btn-primary create-template"><i class="icon-white icon-plus"></i>Create...</button>
+                                                <button class="btn btn-sm btn-primary create-template"><i class="icon-white icon-plus"></i> Create...</button>
                                             </div>
                                         </div>
                                     </div>
@@ -627,19 +631,17 @@
                                 <table class="table table-bordered" id="template-table">
                                     <thead>
                                         <tr>
-                                            <th class="cell-small text-center" data-toggle="tooltip" title="" data-original-title="Toggle all!">
-                                                <input type="checkbox" id="check5-all" name="check5-all"></th>
+                                            <th class="cell-small text-center" title="">#</th>
                                             <th>Template Name</th>
                                             <th class="hidden-xs hidden-sm">Services</th>
-                                            <th class="cell-small text-center"><i class="icon-bolt"></i>Actions</th>
+                                            <th class="cell-small text-center">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td class="cell-small text-center">
-                                                <input type="checkbox" id="check5-td1" name="check5-td1"></td>
-                                            <td><a href="javascript:void(0)">username1</a></td>
-                                            <td class="hidden-xs hidden-sm">TruCQ, TruLink, BI platform</td>
+                                            <td class="cell-small text-center">1</td>
+                                            <td><a href="javascript:void(0)">Standalone Template</a></td>
+                                            <td class="hidden-xs hidden-sm"><a href='service.html?configuration=trucq'>TruCQ</a>, <a href='service.html?configuration=trulink'>TruLink</a>, <a href='service.html?configuration=bi platform'>BI platform</a></td>
                                             <td class="text-center">
                                                 <div class="btn-group">
 
@@ -649,10 +651,9 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="cell-small text-center">
-                                                <input type="checkbox" id="check5-td2" name="check5-td2"></td>
-                                            <td><a href="javascript:void(0)">username2</a></td>
-                                            <td class="hidden-xs hidden-sm">BI platform</td>
+                                            <td class="cell-small text-center">2</td>
+                                            <td><a href="javascript:void(0)">Distributed Template</a></td>
+                                            <td class="hidden-xs hidden-sm"><a href='service.html?configuration=trucq'>TruCQ</a>, <a href='service.html?configuration=trulink'>TruLink</a></td>
 
                                             <td class="text-center">
                                                 <div class="btn-group">
@@ -661,35 +662,7 @@
                                                     <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
                                                 </div>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="cell-small text-center">
-                                                <input type="checkbox" id="check5-td3" name="check5-td3"></td>
-                                            <td><a href="javascript:void(0)">username3</a></td>
-                                            <td class="hidden-xs hidden-sm">TruCQ, TruLink</td>
-
-                                            <td class="text-center">
-                                                <div class="btn-group">
-
-                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-edit"></i></a>
-                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="cell-small text-center">
-                                                <input type="checkbox" id="check5-td4" name="check5-td4"></td>
-                                            <td><a href="javascript:void(0)">username4</a></td>
-                                            <td class="hidden-xs hidden-sm">TruCQ, BI platform</td>
-
-                                            <td class="text-center">
-                                                <div class="btn-group">
-
-                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-success" data-original-title="Edit"><i class="icon-edit"></i></a>
-                                                    <a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-xs btn-danger" data-original-title="Delete"><i class="icon-remove"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        </tr>                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -701,12 +674,31 @@
                         <form id="basic-wizard" action="node.html" method="post" class="form-horizontal form-box ui-formwizard">
                             <h4 class="form-box-header"><i class="icon-magic"></i>Add Node Wizard</h4>
                             <div class="form-box-content">
-                                <div id="first" class="step ui-formwizard-content" style="display: block;">
+								<div id="zero" class="step ui-formwizard-content" style="display: block;">
                                     <div class="wizard-steps row">
-                                        <div class="col-md-3 text-center active">1. Network Discover</div>
-                                        <div class="col-md-3 text-center">2. Edit Information</div>
+										<div class="col-md-2 text-center active">0. Choose Cluster</div>
+                                        <div class="col-md-3 text-center">1. Network Discovery</div>
+                                        <div class="col-md-2 text-center">2. Edit Information</div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install</div>
-                                        <div class="col-md-3 text-center">4. Login</div>
+                                        <div class="col-md-2 text-center">4. Login</div>
+                                    </div>
+                                    <div class="form-group">
+										<div class="col-md-3">
+											Choose cluster to add
+											<select name="eample-datatables_length" class="form-control">
+												<option value="10" selected="selected">Cluster1</option>
+												<option value="25">Cluster2</option>										
+											</select>
+										</div>
+									</div>
+								</div>
+                                <div id="first" class="step ui-formwizard-content" style="display: none;">
+                                    <div class="wizard-steps row">
+										<div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
+                                        <div class="col-md-3 text-center active">1. Network Discovery</div>
+                                        <div class="col-md-2 text-center">2. Edit Information</div>
+                                        <div class="col-md-3 text-center">3. Choose Services to Install</div>
+                                        <div class="col-md-2 text-center">4. Login</div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-2" for="example-username">Network IP Address</label>
@@ -738,10 +730,11 @@
                                 </div>
                                 <div id="second" class="step ui-formwizard-content" style="display: none;">
                                     <div class="wizard-steps row">
+										<div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">1. Network Discover <i class="icon-ok"></i></div>
-                                        <div class="col-md-3 text-center active">2. Edit Information</div>
+                                        <div class="col-md-2 text-center active">2. Edit Information</div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install</div>
-                                        <div class="col-md-3 text-center">4. Login</div>
+                                        <div class="col-md-2 text-center">4. Login</div>
                                     </div>
                                     <div id="example-progress-bar" class="progress">
                                         <div class="progress-bar progress-bar-danger"></div>
@@ -750,7 +743,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="cell-small text-center" data-toggle="tooltip" title="Toggle all!">
-                                                    <input type="checkbox" id="check3-all" name="check3-all"></th>
+                                                    <input type="checkbox" class="check-all" name="check3-all"></th>
                                                 <th class="text-center">#</th>
                                                 <th>IP Address</th>
                                                 <th>Hostname</th>
@@ -761,7 +754,7 @@
                                         <tbody>
                                             <tr>
                                                 <td class="text-center">
-                                                    <input type="checkbox" id="check3-td1" name="check3-td1"></td>
+                                                    <input type="checkbox" id="check3-td1" name="check3-td1" class="check"></td>
                                                 <td class="text-center">1</td>
                                                 <td><a href="javascript:void(0)">192.168.0.1</a></td>
                                                 <td><a href="javascript:void(0)">192.168.0.1</a></td>
@@ -771,7 +764,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-center">
-                                                    <input type="checkbox" id="check3-td2" name="check3-td2"></td>
+                                                    <input type="checkbox" id="check3-td2" name="check3-td2" class="check"></td>
                                                 <td class="text-center">2</td>
                                                 <td><a href="javascript:void(0)">192.168.0.2</a></td>
                                                 <td><a href="javascript:void(0)">192.168.0.2</a></td>
@@ -781,7 +774,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="text-center">
-                                                    <input type="checkbox" id="check3-td3" name="check3-td3"></td>
+                                                    <input type="checkbox" id="check3-td3" name="check3-td3" class="check"></td>
                                                 <td class="text-center">3</td>
                                                 <td><a href="javascript:void(0)">192.168.0.3</a></td>
                                                 <td><a href="javascript:void(0)">192.168.0.3</a></td>
@@ -793,14 +786,15 @@
                                 </div>
                                 <div id="third" class="step ui-formwizard-content" style="display: none;">
                                     <div class="wizard-steps row">
+										<div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">1. Network Discover <i class="icon-ok"></i></div>
-                                        <div class="col-md-3 text-center">2. Edit Information <i class="icon-ok"></i></div>
+                                        <div class="col-md-2 text-center">2. Edit Information <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center active">3. Choose Services to Install</div>
-                                        <div class="col-md-3 text-center">4. Login</div>
+                                        <div class="col-md-2 text-center">4. Login</div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-4">Select the specific release of TruLink you want to install on your hosts.</label>
+                                        <label class="control-label col-md-3">Select the specific release of TruLink you want to install on your hosts.</label>
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label for="example-radio1">
@@ -830,7 +824,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-4">Select the specific release of TruCQ you want to install on your hosts.</label>
+                                        <label class="control-label col-md-3">Select the specific release of TruCQ you want to install on your hosts.</label>
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label for="example-radio5">
@@ -854,7 +848,79 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-4">Select the specific release of BI platform you want to install on your hosts.</label>
+                                        <label class="control-label col-md-3">Select TruCEP you want to install on your hosts.</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="example-radio8">
+                                                    <input type="radio" id="example-radio8" name="trucep" value="option1">
+                                                    Default
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio9">
+                                                    <input type="radio" id="example-radio9" name="trucep" value="option2">
+                                                    None
+                                                </label>
+                                            </div>                                            
+                                        </div>
+									</div>
+									
+									<div class="form-group">
+                                        <label class="control-label col-md-3">Select the specific release of the Cluster Client you want to install on your hosts.</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="example-radio8">
+                                                    <input type="radio" id="example-radio8" name="clusterclient" value="option1">
+                                                    Default
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio9">
+                                                    <input type="radio" id="example-radio9" name="clusterclient" value="option2">
+                                                    None
+                                                </label>
+                                            </div>                                            
+                                        </div>
+									</div>
+									
+									<div class="form-group">
+                                        <label class="control-label col-md-3">Select the specific release of the Storm you want to install on your hosts.</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="example-radio8">
+                                                    <input type="radio" id="example-radio8" name="storm" value="option1">
+                                                    0.8.2
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio9">
+                                                    <input type="radio" id="example-radio9" name="storm" value="option2">
+                                                    0.7.4
+                                                </label>
+                                            </div>                                            
+                                        </div>
+									</div>
+										
+									<div class="form-group">
+                                        <label class="control-label col-md-3">Select the specific release of the ZooKeeper you want to install on your hosts.</label>
+                                        <div class="col-md-4">
+                                            <div class="radio">
+                                                <label for="example-radio8">
+                                                    <input type="radio" id="example-radio8" name="zookeeper" value="option1">
+                                                    3.4.5
+                                                </label>
+                                            </div>
+                                            <div class="radio">
+                                                <label for="example-radio9">
+                                                    <input type="radio" id="example-radio9" name="zookeeper" value="option2">
+                                                    3.3.6
+                                                </label>
+                                            </div>                                            
+                                        </div>
+									</div>
+									
+									<div class="form-group">
+                                        <label class="control-label col-md-3">Select the specific release of BI platform you want to install on your hosts.</label>
                                         <div class="col-md-4">
                                             <div class="radio">
                                                 <label for="example-radio8">
@@ -904,24 +970,25 @@
                                 </div>
                                 <div id="fourth" class="step ui-formwizard-content" style="display: none;">
                                     <div class="wizard-steps row">
+										<div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">1. Network Discover <i class="icon-ok"></i></div>
-                                        <div class="col-md-3 text-center">2. Edit Information <i class="icon-ok"></i></div>
+                                        <div class="col-md-2 text-center">2. Edit Information <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install <i class="icon-ok"></i></div>
-                                        <div class="col-md-3 text-center active">4. Login</div>
+                                        <div class="col-md-2 text-center active">4. Login</div>
                                     </div>
                                     <label>Root access to your hosts is required to install the Cloudera packages. This installer will connect to your hosts via SSH and log in either directly as root or as another user with password-less sudo/pbrun privileges to become root.</label>
                                     <div class="form-group">
                                         <label class="control-label col-md-2">Login to all hosts as</label>
-                                        <div class="col-md-4">
+                                        <div class="col-md-4" id="login-user">
                                             <div class="radio">
                                                 <label for="example-radio1">
-                                                    <input type="radio" id="example-radio1" name="example-radios" value="option1">
+                                                    <input type="radio" id="example-radio1" name="host-user" value="option1">
                                                     root
                                                 </label>
                                             </div>
                                             <div class="radio">
                                                 <label for="example-radio2">
-                                                    <input type="radio" id="example-radio2" name="example-radios" value="option2">
+                                                    <input type="radio" name="host-user" value="option2">
                                                     other user:
                                                 </label>
                                             </div>
@@ -950,20 +1017,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">Private Key File</label>
+                                    <div class="form-group hidden authentication">
+                                        <label class="control-label col-md-2 ">Private Key File</label>
                                         <div class="col-md-4">
                                             <input type="file" dropzone class="form-control" />
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">Enter Passphrase</label>
+                                    <div class="form-group  authentication">
+                                        <label class="control-label col-md-2 ">Enter Passphrase</label>
                                         <div class="col-md-4">
                                             <input type="password" class="form-control input-sm" />
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">Confirm Passphrase</label>
+                                    <div class="form-group  authentication">
+                                        <label class="control-label col-md-2 ">Confirm Passphrase</label>
                                         <div class="col-md-4">
                                             <input type="password" class="form-control input-sm" />
                                         </div>
@@ -1082,7 +1149,7 @@
                     <div id="detail-node" class="hidden">
                         <ul class="nav nav-tabs" data-toggle="tabs">
                             <li class="active"><a href="#forum-forum">Status</a></li>
-                            <li class=""><a href="#forum-cat">Instances</a></li>
+                            <li class=""><a href="#forum-cat">Resources</a></li>
                             <li class=""><a href="#forum-topic">Commands</a></li>
                             <li><a href="#forum-topic">Configuaration</a></li>
                             <li><a href="#forum-topic">Monitoring</a></li>
@@ -1101,8 +1168,10 @@
         </div>
     </div>
 
+	<!-- scroll top btn -->
     <a href="javascript:void(0)" id="to-top" style="display: inline;"><i class="icon-chevron-up"></i></a>
-
+	<!-- /scroll top btn -->
+	
     <div id="example-modal" class="modal" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1128,46 +1197,94 @@
             <div class="form-box-content">
                 <div class="form-group">
                     <label class="control-label col-md-3" for="example-input-small">Name</label>
-                    <div class="col-md-3">
+                    <div class="col-md-5">
                         <input type="text" id="example-input-small" name="example-input-small" class="form-control input-sm" />
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <span class="help-block"><code></code></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-3" for="example-select-chosen">TruCQ</label>
-                    <div class="col-md-3">
+                    <div class="col-md-5">
                         <select class="form-control select-chosen trucq">
                             <option>none</option>
                             <option>Default</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <span class="help-block"><code></code></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-3" for="example-select-chosen">TruLink</label>
-                    <div class="col-md-3">
+                    <div class="col-md-5">
                         <select class="form-control select-chosen trulink">
                             <option>none</option>
                             <option>Default</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <span class="help-block"><code></code></span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-label col-md-3" for="example-select-chosen">BI platform</label>
-                    <div class="col-md-3">
+                    <div class="col-md-5">
                         <select class="form-control select-chosen biplatform">
                             <option>none</option>
                             <option>Default</option>
                         </select>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <span class="help-block"><code></code></span>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="control-label col-md-3" for="example-select-chosen">TruCEP</label>
+                    <div class="col-md-5">
+                        <select class="form-control select-chosen trucep">
+                            <option>none</option>
+                            <option>Default</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="help-block"><code></code></span>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="control-label col-md-3" for="example-select-chosen">Storm</label>
+                    <div class="col-md-5">
+                        <select class="form-control select-chosen storm">
+                            <option>none</option>
+                            <option>Default</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="help-block"><code></code></span>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="control-label col-md-3" for="example-select-chosen">Cluster Client</label>
+                    <div class="col-md-5">
+                        <select class="form-control select-chosen clusterclient">
+                            <option>none</option>
+                            <option>Default</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="help-block"><code></code></span>
+                    </div>
+                </div>
+				<div class="form-group">
+                    <label class="control-label col-md-3" for="example-select-chosen">ZooKeeper</label>
+                    <div class="col-md-5">
+                        <select class="form-control select-chosen zookeeper">
+                            <option>none</option>
+                            <option>Default</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
                         <span class="help-block"><code></code></span>
                     </div>
                 </div>
@@ -1175,6 +1292,32 @@
         </form>
     </div>
 
+	
+	<div id="service-command" class="hidden">
+		<table class="table">
+			<thead>
+				<tr>					
+					<th class="text-center">#</th>
+					<th>Command</th>
+					<th class="hidden-xs hidden-sm">Service</th>
+					<th class="hidden-xs hidden-sm">Started at</th>
+					<th class="hidden-xs hidden-sm">Progress</th>
+					<th class="hidden-xs hidden-sm">Completed at</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>			
+					<td class="text-center">1</td>
+					<td><a href="javascript:void(0)" class="action">start</a></td>
+					<td class="hidden-xs hidden-sm service-name"></td>
+					<td class="hidden-xs hidden-sm">2013-11-18</td>
+					<td class="hidden-xs hidden-sm"><span class="finished hidden"><i class="icon-ok"></i> Finished</span><span class="inprogress"><span class="loader-04"></span> <button class="btn btn-danger btn-sm">Abort</button></span></td>
+					<td class="hidden-xs hidden-sm">2013-11-18</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
     <script src="./javascripts/vendors/jquery-2.0.3.min.js"></script>
     <script src="./javascripts/vendors/bootstrap.min.js"></script>
     <script src="javascripts/vendors/jquery.dataTables.min.js"></script>
@@ -1189,9 +1332,6 @@
             $('[data-toggle="tabs"] a').click(function (e) { e.preventDefault(), $(this).tab("show") });
 
             $("#to-top").hide();
-
-            // fade in #back-top
-
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 100) {
                     $('#to-top').fadeIn();
@@ -1199,14 +1339,13 @@
                     $('#to-top').fadeOut();
                 }
             });
-
-            // scroll body to 0px on click
             $('#to-top').click(function () {
                 $('body,html').animate({
                     scrollTop: 0
                 }, 800);
                 return false;
             });
+			
         });
     </script>
     <script>
@@ -1222,29 +1361,36 @@
             }),
             $(".dataTables_filter input").addClass("form-control").attr("placeholder", "Search");
 
+			// node discovery
             $('.node-discovery').on('click', function () {
                 $('.dash-tile-content-inner-fluid').hide(function () {
                     $('#node-discovery').removeClass('hidden');
                 });
             });
 
+			// remove btn
             $('.icon-remove').parent().on("click", function (e) {
                 $('#example-modal').on('show.bs.modal', function () {
                     $('.modal-body').html('<p>Are you sure?</p>');
                     $('.modal-footer').html('<button class="btn" data-dismiss="modal">Close</button><button class="btn btn-success" aria-hidden="true">Confirm</button>');
                 }).modal();
 
-                $('#example-modal').data({ 'id': $(e.currentTarget).parents('tr').index(), 'target': $(e.currentTarget).parents('table').attr('id') });
+                $('#example-modal').data({ 'id': $(e.currentTarget).parents('tr').index(), 'target': $(e.currentTarget).parents('table').attr('id') ,'action':'remove'});
 
             });
 			
+			// modal ok btn
             $('#example-modal').on("click", ".btn-success", function (e) {
                 e.preventDefault();
                 var rowId = $('#example-modal').data('id'), target = $('#example-modal').data('target');
-                $('#' + target + ' tbody').find('tr').eq(Number(rowId)).remove();
-                $('#example-modal').modal('hide');
+                if($('#example-modal').data('action')==='remove') {
+					$('#' + target + ' tbody').find('tr').eq(Number(rowId)).remove();
+					$('#example-modal').modal('hide');
+				}
+                
             });
 			
+			// create template btn
             $(document).on("click", ".create-template", function (e) {
                 $('#example-modal').on('show.bs.modal', function () {
                     $('.modal-body').html($('#create-template').html());
@@ -1252,7 +1398,7 @@
                 }).modal();
             });
 			
-            $('#template-table').on('click', '.btn-success', function (e) {
+            $('#template-table').on('click', '.btn-success, td a[href^="javascript"]', function (e) {
                 $('#example-modal').data({
                     id: $(e.currentTarget).parents('tr').index(),
                     name: $(e.currentTarget).parents('tr').find('td:eq(1)').text(),
@@ -1268,37 +1414,30 @@
                 }).modal();
             });
 			
+			// node inspector btn
             $(document).on("click", ".node-inspector", function (e) {
-
-                $('#example-modal')
-					.on('show.bs.modal', function () {
-					    $('.modal-body').html('Node Inspector');
-					    $('.modal-footer').html('<input type="submit" class="btn btn-primary" value="Close" data-dismiss="modal">');
-					})
-					.modal();
+				$('#example-modal').on('show.bs.modal', function () {
+					$('.modal-body').html($('#service-command').html());
+					$('.modal-body .action').text('node inspector');
+					$('.modal-footer').html('<button class="btn btn-default" data-dismiss="modal">Close</button>');
+				}).modal();
+				
+				setTimeout(function(){
+					$('.modal-body .inprogress').addClass('hidden',function(){
+						$('.modal-body .finished').removeClass('hidden');
+					});
+				},5000);
+                
                 e.preventDefault();
             });
 
+			// tooltip
             $('.btn-group').tooltip({
                 selector: "[data-toggle=tooltip]",
                 container: "body"
             });
 
-
-            $("#check5-all").click(function () {
-                var checked_status = this.checked;
-                $("input[id^=check5-td]").each(function () {
-                    this.checked = checked_status;
-                });
-            });
-
-            $("#check3-all").click(function () {
-                var checked_status = this.checked;
-                $("input[id^=check3-td]").each(function () {
-                    this.checked = checked_status;
-                });
-            });
-			
+			// check all
 			$(".check-all").click(function () {
                 var checked_status = this.checked;
                 $(this).parents('table').find('tbody .check').each(function () {
@@ -1306,6 +1445,7 @@
                 });
             });
 			
+			// actions for selected btn
 			$('#example-datatables_wrapper input[type=checkbox]').on('click', function(e){
 				if($('#example-datatables_wrapper tbody :checked').size()>0) {
 					$('#example-datatables_wrapper .btn-group>button:eq(0)').removeClass('btn-default').addClass('btn-primary');
@@ -1314,6 +1454,26 @@
 				else{
 					$('#example-datatables_wrapper .btn-group>button:eq(0)').removeClass('btn-primary').addClass('btn-default');
 					$('#example-datatables_wrapper .dropdown-menu li').addClass('disabled');
+				}
+			});
+			
+			// login info 
+			$('[name="host-user"]').change(function(){
+				if($(this).val()=='option2') $(this).parents('#login-user').find('.radio:last').removeClass('hidden');
+				else {
+					$(this).parents('#login-user').find('.radio:last').addClass('hidden');
+				}
+			});
+			
+			// authentication mode
+			$('[name="example-radios"]').change(function(){
+				if($(this).val()=='option2') {
+					$('.authentication:eq(0)').removeClass('hidden');
+					$('.authentication:gt(0)').addClass('hidden');
+				}
+				else {
+					$('.authentication:eq(0)').addClass('hidden');
+					$('.authentication:gt(0)').removeClass('hidden');
 				}
 			});
 
