@@ -16,6 +16,25 @@
         svg {
             background-color: #FFF;
         }
+
+        .dash-tiles > div {
+            cursor: pointer;
+        }
+
+        .dash-tile {
+            position: relative;
+        }
+
+        .dash-tiles table {
+            color: #ffffff;
+            position: absolute;
+            bottom: 0;
+            left: 20px;
+        }
+
+        .dash-tiles table tbody tr td {
+            border: 0;
+        }
     </style>
 
     <script src="./javascripts/vendors/jquery-2.0.3.min.js"></script>
@@ -272,19 +291,19 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./service.html">
                                 <i class="fa fa-rocket"></i>
                                 Service
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./log.html">
                                 <i class="fa fa-terminal"></i>
                                 Log info
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="./schemas.html">
                                 <i class="fa fa-list"></i>
                                 Schema
                             </a>
@@ -316,8 +335,8 @@
                 </ul>
 
                 <div class="dash-tiles row">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="dash-tile dash-tile-ocean clearfix">
+                    <div class="col-xs-6 col-lg-3">
+                        <div class="dash-tile dash-tile-ocean clearfix" data-href="./views/clusterManagement.html">
                             <div class="dash-tile-header">
                                 Total Clusters
                             </div>
@@ -330,60 +349,8 @@
                                 2
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="dash-tile dash-tile-ocean clearfix">
-                            <div class="dash-tile-header">
-                                Total Nodes
-                            </div>
-
-                            <div class="dash-tile-icon">
-                                <i class="fa fa-sitemap"></i>
-                            </div>
-
-                            <div class="dash-tile-text">
-                                18
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3">
-                        <div class="dash-tile dash-tile-balloon clearfix">
-                            <div class="dash-tile-header">
-                                TruCQs Running
-                            </div>
-
-                            <div class="dash-tile-icon">
-                                <i class="fa fa-hdd"></i>
-                            </div>
-
-                            <div class="dash-tile-text">
-                                5
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3">
-                        <div class="dash-tile dash-tile-balloon clearfix">
-                            <div class="dash-tile-header">
-                                TruLinks Running
-                            </div>
-
-                            <div class="dash-tile-icon">
-                                <i class="fa fa-rocket"></i>
-                            </div>
-
-                            <div class="dash-tile-text">
-                                10
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dash-tiles row">
-                    <div class="col-md-6 col-lg-3">
-                        <div class="dash-tile dash-tile-fruit clearfix">
+                        <div class="dash-tile dash-tile-dark clearfix" data-href="./views/administration.html">
                             <div class="dash-tile-header">
                                 Users Online
                             </div>
@@ -398,23 +365,20 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="dash-tile dash-tile-fruit clearfix">
+                    <div class="col-xs-6 col-lg-3">
+                        <div class="dash-tile dash-tile-ocean clearfix" data-href="./node.html">
                             <div class="dash-tile-header">
-                                Duration
+                                Total Nodes
                             </div>
 
                             <div class="dash-tile-icon">
-                                <i class="fa fa-clock-o"></i>
+                                <i class="fa fa-sitemap"></i>
                             </div>
 
                             <div class="dash-tile-text">
-                                5d13h
+                                18
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3">
                         <div class="dash-tile dash-tile-dark clearfix">
                             <div class="dash-tile-header">
                                 Network Flow
@@ -430,19 +394,53 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
-                        <div class="dash-tile dash-tile-dark clearfix">
-                            <div class="dash-tile-header">
-                                Free system resources
-                            </div>
-
+                    <div class="col-xs-6 col-lg-3">
+                        <div class="dash-tile dash-tile-2x dash-tile-balloon clearfix" data-href="./service.html">
+                            <div class="dash-tile-header">Services Running</div>
                             <div class="dash-tile-icon">
-                                <i class="fa fa-dashboard"></i>
+                                <i class="fa fa-rocket"></i>
                             </div>
+                            <div class="dash-tile-text">20</div>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>TruLink</td>
+                                        <td class="text-right">10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TruCQ</td>
+                                        <td class="text-right">5</td>
+                                    </tr>
+                                    <tr>
+                                        <td>BI Platform</td>
+                                        <td class="text-right">5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
-                            <div class="dash-tile-text">
-                                42%
-                            </div>
+                    <div class="col-xs-6 col-lg-3">
+                        <div class="dash-tile dash-tile-2x dash-tile-balloon clearfix">
+                            <div class="dash-tile-header">System Resource</div>
+                            <div class="dash-tile-icon"><i class="fa fa-dashboard"></i></div>
+                            <div class="dash-tile-text">50%</div>
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <td>CPU</td>
+                                    <td class="text-right">48%</td>
+                                </tr>
+                                <tr>
+                                    <td>RAM</td>
+                                    <td class="text-right">68%</td>
+                                </tr>
+                                <tr>
+                                    <td>HDD</td>
+                                    <td class="text-right">58%</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
