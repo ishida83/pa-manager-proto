@@ -46,6 +46,9 @@
             ::-webkit-scrollbar-thumb:window-inactive {
                 background: rgba(255,0,0,0.4);
             }
+			
+		[contenteditable="true"] { padding: 10px; /*outline: 2px dashed #CCC;*/ }
+		[contenteditable="true"]:hover { background: rgba(255, 255, 153, 1);outline: 3px dashed #0090D2; }
     </style>
 
 </head>
@@ -307,7 +310,7 @@
                         <li>
                             <a href="log.html">
                                 <i class="fa fa-terminal"></i>
-                                Log info
+                                Diagnose
                             </a>
                         </li>
                         <li>
@@ -334,7 +337,7 @@
             <div id="page-content" style="min-height: 877px;">
                 <ul id="nav-info" class="clearfix">
                     <li><a href="index.html"><i class="icon-home"></i></a></li>
-                    <li class="active"><a href="javascript:void(0)">All Services</a></li>
+                    <li class="active"><a href="service.html">All Services</a></li>
                 </ul>
 
                 <h3 class="page-header page-header-top">Meta Info <small>All Services</small></h3>
@@ -367,11 +370,11 @@
                                             </div>
                                         </div>
                                     </div> -->
-                            <div id="example-datatables_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                            <div id="example-datatables_wrapper" class="dataTables_wrapper form-inline hidden" role="grid">
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="btn-group">
-                                            <button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">Actions for Selected <span class="caret"></span></button>
+                                            <!-- <button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">Actions for Selected <span class="caret"></span></button>
                                             <ul class="dropdown-menu">
                                                 <li>
                                                     <a href="#">Start...</a>
@@ -393,10 +396,10 @@
                                                 <li>
                                                     <a href="#">Remove</a>
                                                 </li>
-                                            </ul>
-                                            <button class="btn btn-sm btn-success add-service" role="button">Add Service</button>
-                                            <button class="btn btn-sm btn-warning" role="button">Add Cluster</button>
-                                            <button class="btn btn-sm btn-default" data-target="#example-modal" role="button" data-toggle="modal">Add Instance</button>
+                                            </ul> -->
+                                            <!-- <button class="btn btn-sm btn-success add-service" role="button">Add Service</button> -->
+                                            <!-- <button class="btn btn-sm btn-warning" role="button">Add Cluster</button> -->
+                                            <!-- <button class="btn btn-sm btn-default" data-target="#example-modal" role="button" data-toggle="modal">Add Instance</button> -->
                                         </div>
                                     </div>
                                 </div>
@@ -405,9 +408,9 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="cell-small text-center hidden-xs hidden-sm sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label="#: activate to sort column ascending" style="width: 67px;">#</th>
-                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Name: activate to sort column ascending"><i class="icon-user"></i>Name</th>
-                                        <th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" IP: activate to sort column ascending"><i class="icon-envelope-alt"></i>Role Counts</th>
-                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending"><i class="icon-bolt"></i>Status</th>
+                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Name: activate to sort column ascending">Name</th>
+                                        <th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" IP: activate to sort column ascending">Role Counts</th>
+                                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending">Status</th>
                                         <th class="cell-small sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 107px;">Action</th>
                                     </tr>
                                 </thead>
@@ -485,162 +488,231 @@
                             <li class="active"><a href="#forum-forum">Status</a></li>
                             <li class=""><a href="#forum-cat">Instances</a></li>
                             <li class=""><a href="#forum-topic">Commands</a></li>
-                            <li><a href="#forum-topic">Configuaration</a></li>
-                            <li><a href="#forum-topic">Monitoring</a></li>
+                            <li><a href="#forum-config">Configuaration</a></li>
+                            <li><a href="#forum-monitor">Monitoring</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane" id="forum-cat">
-                                Instances
+                            <div class="tab-pane" id="forum-forum">
+                                Status
+                            </div>
+							<div class="tab-pane" id="forum-cat">
+
+								<div class="row">
+									<div class="col-sm-12">
+										<div class="btn-group">
+											<button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">Actions for Selected <span class="caret"></span></button>
+											<ul class="dropdown-menu">
+												<li class="disabled">
+													<a href="#">Start</a>
+												</li>
+												<li class="disabled">
+													<a href="#">Stop</a>
+												</li>
+												<li class="disabled">
+													<a href="#">Restart</a>
+												</li>                         
+												<li class="divider"></li>
+												<li class="disabled">
+													<a href="#">Remove</a>
+												</li>
+											</ul>
+											<button class="btn btn-sm add-instance btn-default" role="button">Add Instance</button>											
+										</div>
+									</div>
+								</div>
+                                <table class="table table-hover">
+								<thead>
+								<tr>
+								<th class="cell-small text-center" data-toggle="tooltip" title="" data-original-title="Toggle all!"><input type="checkbox" class="check-all" id="check3-all" name="check3-all"></th>																
+								<th>Host</th>
+								<th class="hidden-xs hidden-sm">Status</th>								
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+								<td class="text-center"><input type="checkbox" id="check3-td1" class="check" name="check3-td1"></td>								
+								<td class="hidden-xs hidden-sm">pa-dev-110</td>
+								<td class="hidden-xs hidden-sm">None</td>								
+								</tr>
+								<tr>
+								<td class="text-center"><input type="checkbox" id="check3-td2" name="check3-td2" class="check"></td>
+								
+								<td class="hidden-xs hidden-sm">pa-dev-111</td>
+								<td class="hidden-xs hidden-sm">Good Health</td>
+								
+								</tr>
+								<tr>
+								<td class="text-center"><input type="checkbox" id="check3-td3" name="check3-td3" class="check"></td>
+								
+								<td class="hidden-xs hidden-sm">pa-dev-112</td>
+								<td class="hidden-xs hidden-sm">Good Health</td>
+								
+								</tr>
+								<tr>
+								<td class="text-center"><input type="checkbox" id="check3-td4" name="check3-td4" class="check"></td>
+								
+								<td class="hidden-xs hidden-sm">pa-dev-115</td>
+								<td class="hidden-xs hidden-sm">Down</td>
+								
+								</tr>
+								</tbody>
+								</table>
+                            </div>
+							<div class="tab-pane" id="forum-topic">
+                                Commands
+                            </div>
+							<div class="tab-pane" id="forum-config">
+                                <div class="row">
+									<div class="col-md-3">
+										<div class="bs-sidebar hidden-print" role="complementary">
+											<ul class="nav bs-sidenav">
+										  
+												<li><a href="#glyphicons">Master (Default)</a>
+												  <ul class="nav">
+													<li><a href="#glyphicons-glyphs">Service-Wide</a></li>
+													<li><a href="#glyphicons-how-to-use">Advanced</a></li>
+													<li><a href="#glyphicons-examples">Ports and Addresses</a></li>
+												  </ul>
+												</li>										  
+											</ul>
+										</div>
+									</div>
+									<div class="col-md-9" role="main">
+										<div class="well">
+											<table class="table table-striped table-hover">
+											<thead>
+											<tr>
+											
+											<th class="hidden-xs hidden-sm">Property</th>
+											<th class="hidden-xs hidden-sm">Value</th>
+											<th>Description</th>
+											
+											</tr>
+											</thead>
+											<tbody>
+											<tr>
+											
+											<td><a href="javascript:void(0)">TruCQ Port</a></td>
+											<td class="hidden-xs hidden-sm" contenteditable="true">5432</td>
+											<td class="hidden-xs hidden-sm">The port that the TruCQ Master binds to.</td>
+											
+											</tr>
+											<tr>
+											
+											<td><a href="javascript:void(0)">TruLink Java Configuration Options</a></td>
+											<td class="hidden-xs hidden-sm" contenteditable="true">-XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:-CMSConcurrentMTEnabled -XX:CMSInitiatingOccupancyFraction=70 -XX:+CMSParallelRemarkEnabled</td>
+											<td></td>
+											
+											</tr>
+											<tr>
+											
+											<td class="hidden-xs hidden-sm"><a href="javascript:void(0)">Java Heap Size</a></td>
+											<td class="hidden-xs hidden-sm" contenteditable="true">1GB</td>
+											<td></td>
+											
+											</tr>
+											
+											</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+                            </div>
+							<div class="tab-pane" id="forum-monitor">
+                                Monitoring
                             </div>
                         </div>
                     </div>
 
-                    <div id="add-service" class="hidden">
-                        <form id="basic-wizard" action="service.html" method="post" class="form-horizontal form-box ui-formwizard">
-                            <h4 class="form-box-header"><i class="icon-magic"></i>Add Service Wizard</h4>
+                    <div id="add-instance" class="hidden">
+                        <form id="basic-wizard" action="node.html" method="post" class="form-horizontal form-box ui-formwizard">
+                            <h4 class="form-box-header"><i class="icon-magic"></i>Add Instance to Service</h4>
                             <div class="form-box-content">
-                                <div id="first" class="step ui-formwizard-content" style="display: block;">
-                                    <div class="wizard-steps row">
-                                        <div class="col-md-4 text-center active">1. Select Service</div>
-                                        <div class="col-md-4 text-center">2. Edit Information</div>
-                                        <div class="col-md-4 text-center">3. Extras</div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="example-username">Network IP Address</label>
-                                        <div class="col-md-3">
-                                            <div class="input-group">
-                                                <input type="text" placeholder="192.168.0.1" id="example-username" name="example-username" class="form-control ui-wizard-content" pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$">
-                                                <!--<span class="input-group-addon"><i class="icon-user"></i></span>-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="example-email">SubNet Mask</label>
-                                        <div class="col-md-3">
-                                            <div class="input-group">
-                                                <input type="text" placeholder="255.255.255.0" title="eg:255.255.255.0" pattern="^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$" id="example-email" name="example-email" class="form-control ui-wizard-content">
-                                                <!--<span class="input-group-addon"><i class="icon-envelope"></i></span>-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2" for="example-email">Port</label>
-                                        <div class="col-md-3">
-                                            <div class="input-group">
-                                                <input type="text" placeholder="22" title="eg:22" pattern="^(\d)$" id="ip" name="example-ip" class="form-control ui-wizard-content">
-                                                <!--<span class="input-group-addon"><i class="icon-envelope"></i></span>-->
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="second" class="step ui-formwizard-content" style="display: none;">
-                                    <div class="wizard-steps row">
-                                        <div class="col-md-4 text-center">1. Select Service <i class="icon-ok"></i></div>
-                                        <div class="col-md-4 text-center active">2. Edit Information</div>
-                                        <div class="col-md-4 text-center">3. Extras</div>
-                                    </div>
-                                    <div id="example-progress-bar" class="progress">
-                                        <div class="progress-bar progress-bar-danger"></div>
-                                    </div>
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th class="cell-small text-center" data-toggle="tooltip" title="Toggle all!">
-                                                    <input type="checkbox" id="check3-all" name="check3-all"></th>
-                                                <th class="text-center">#</th>
-                                                <th>IP</th>
-                                                <th class="hidden-xs hidden-sm">Service</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <input type="checkbox" id="check3-td1" name="check3-td1"></td>
-                                                <td class="text-center">1</td>
-                                                <td><a href="javascript:void(0)">192.168.0.1</a></td>
-                                                <td class="hidden-xs hidden-sm">Apache Server</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <input type="checkbox" id="check3-td2" name="check3-td2"></td>
-                                                <td class="text-center">2</td>
-                                                <td><a href="javascript:void(0)">192.168.0.2</a></td>
-
-                                                <td class="hidden-xs hidden-sm">IIS Server</td>
-
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <input type="checkbox" id="check3-td3" name="check3-td3"></td>
-                                                <td class="text-center">3</td>
-                                                <td><a href="javascript:void(0)">192.168.0.3</a></td>
-                                                <td class="hidden-xs hidden-sm">Tomcat Server</td>
-
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div id="third" class="step ui-formwizard-content" style="display: none;">
-                                    <div class="wizard-steps row">
-                                        <div class="col-md-4 text-center">1. Select Service <i class="icon-ok"></i></div>
-                                        <div class="col-md-4 text-center">2. Personal <i class="icon-ok"></i></div>
-                                        <div class="col-md-4 text-center active">3. Extras</div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Following Node will be added to the Cluster</label>
-                                        <div class="col-md-12">
-                                            <table class="table table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">#</th>
-                                                        <th>IP</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-
-                                                        <td class="cell-small text-center">1</td>
-                                                        <td><a href="javascript:void(0)">192.168.0.100</a></td>
-
-
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td class="cell-small text-center">2</td>
-                                                        <td><a href="javascript:void(0)">192.168.0.101</a></td>
-
-
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td class="cell-small text-center">3</td>
-                                                        <td><a href="javascript:void(0)">192.168.0.102</a></td>
-
-
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td class="cell-small text-center">4</td>
-                                                        <td><a href="javascript:void(0)">192.168.0.103</a></td>
-
-
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
+								<div id="zero" class="step ui-formwizard-content" style="display: block;">
+                                    <table id="instance-table" class="table table-hover">
+									<thead>
+									<tr>								
+									<th>Hostname</th>
+									<th class="hidden-xs hidden-sm">Status</th>
+									<th class="hidden-xs hidden-sm">Roles Currently Assigned to Host</th>									
+									<th class="text-center">TruCQ <input type="checkbox" /></th>
+									<th class="text-center">TruLink <input type="checkbox" /></th>
+									<th class="text-center">TruCEP <input type="checkbox" /></th>
+									<th class="text-center">Cluster Client <input type="checkbox" /></th>
+									<th class="text-center">Storm <input type="checkbox" /></th>
+									<th class="text-center">BI Platform <input type="checkbox" /></th>
+									<th class="text-center">ZooKeeper <input type="checkbox" /></th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+									
+									<td class="hidden-xs hidden-sm">pa-dev-110</td>
+									<td class="hidden-xs hidden-sm">None</td>
+									<td></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									</tr>
+									<tr>
+									
+									<td class="hidden-xs hidden-sm">pa-dev-111</td>
+									<td class="hidden-xs hidden-sm">Good Health</td>
+									<td></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									</tr>
+									<tr>
+									<td class="hidden-xs hidden-sm">pa-dev-112</td>
+									<td class="hidden-xs hidden-sm">Good Health</td>
+									<td></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									</tr>
+									<tr>
+									
+									<td class="hidden-xs hidden-sm">pa-dev-115</td>
+									<td class="hidden-xs hidden-sm">Down</td>
+									<td></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									<td class="text-center"><input type="checkbox" /></td>
+									</tr>
+									</tbody>
+									</table>
+								</div>
+                                
+                                
+                                
+                                
                                 <div class="form-group form-actions">
                                     <div class="col-md-10 col-md-offset-2">
-                                        <input type="reset" class="btn btn-danger ui-wizard-content ui-formwizard-button" id="back" value="Back" disabled="disabled">
-                                        <input type="submit" class="btn btn-success ui-wizard-content ui-formwizard-button" id="next" value="Next">
+                                        <input type="reset" class="btn btn-default ui-wizard-content ui-formwizard-button" id="back" value="Back" disabled="disabled">
+                                        <input type="submit" class="btn btn-primary ui-wizard-content ui-formwizard-button" id="next" value="Next">
                                     </div>
                                 </div>
                             </div>
                         </form>
                     </div>
-
+					
                 </div>
             </div>
             <footer>
@@ -669,7 +741,30 @@
     </div>
 
 
-
+	<div id="service-command" class="hidden">
+		<table class="table">
+			<thead>
+				<tr>					
+					<th class="text-center">#</th>
+					<th>Command</th>
+					<th class="hidden-xs hidden-sm">Service</th>
+					<th class="hidden-xs hidden-sm">Started at</th>
+					<th class="hidden-xs hidden-sm">Progress</th>
+					<th class="hidden-xs hidden-sm">Completed at</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>			
+					<td class="text-center">1</td>
+					<td><a href="javascript:void(0)" class="action">start</a></td>
+					<td class="hidden-xs hidden-sm service-name">trulink</td>
+					<td class="hidden-xs hidden-sm">2013-11-18</td>
+					<td class="hidden-xs hidden-sm"><span class="finished hidden"><i class="icon-ok"></i> Finished</span><span class="inprogress"><span class="loader-04"></span> <button class="btn btn-danger btn-sm">Abort</button></span></td>
+					<td class="hidden-xs hidden-sm">2013-11-18</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 
 
     <script src="./javascripts/vendors/jquery-2.0.3.min.js"></script>
@@ -726,14 +821,55 @@
                     $('.modal-footer').html('<button class="btn" data-dismiss="modal">Close</button><button class="btn btn-success" aria-hidden="true">Confirm</button>');
                 }).modal();
 
-                $('#example-modal').data({ 'id': $(e.currentTarget).parents('tr').index(), 'target': $(e.currentTarget).parents('table').attr('id') });
+                $('#example-modal').data({ 'id': $(e.currentTarget).parents('tr').index(), 'target': $(e.currentTarget).parents('table').attr('id') ,'action':'remove'});
 
             });
+			
+			$('.icon-play').parent().on("click", function (e) {
+                $('#example-modal').on('show.bs.modal', function () {
+                    $('.modal-body').html('<p>Are you sure you want to run the Start command on the service <strong>'+$(e.currentTarget).parents('tr').find('td:eq(1)').text()+'</strong>?</p>');
+                    $('.modal-footer').html('<button class="btn" data-dismiss="modal">Cancel</button><button class="btn btn-success" aria-hidden="true">Start</button>');
+                }).modal();
+
+                $('#example-modal').data({ 'id': $(e.currentTarget).parents('tr').index(), 'target': $(e.currentTarget).parents('table').attr('id'),'action':'start','service-name':$(e.currentTarget).parents('tr').find('td:eq(1)').text() });
+
+            });
+			
+			$('.icon-stop').parent().on("click", function (e) {
+                $('#example-modal').on('show.bs.modal', function () {
+                    $('.modal-body').html('<p>Are you sure you want to run the Stop command on the service <strong>'+$(e.currentTarget).parents('tr').find('td:eq(1)').text()+'</strong>?</p>');
+                    $('.modal-footer').html('<button class="btn" data-dismiss="modal">Cancel</button><button class="btn btn-success" aria-hidden="true">Stop</button>');
+                }).modal();
+				
+				
+				
+                $('#example-modal').data({ 'id': $(e.currentTarget).parents('tr').index(), 'target': $(e.currentTarget).parents('table').attr('id'),'action':'stop', 'service-name':$(e.currentTarget).parents('tr').find('td:eq(1)').text() });
+
+            });
+			
+			
             $('#example-modal').on("click", ".btn-success", function (e) {
                 e.preventDefault();
                 var rowId = $('#example-modal').data('id'), target = $('#example-modal').data('target');
-                $('#' + target + ' tbody').find('tr').eq(Number(rowId)).remove();
-                $('#example-modal').modal('hide');
+                if($('#example-modal').data('action')==='remove'){
+					$('#' + target + ' tbody').find('tr').eq(Number(rowId)).remove();
+					$('#example-modal').modal('hide');
+				}
+				else if($('#example-modal').data('action')==='stop' || $('#example-modal').data('action')==='start') {
+					$('#example-modal').on('show.bs.modal', function () {
+						$('.modal-body').html($('#service-command').html());
+						$('.modal-body .action').text($('#example-modal').data('action'));
+						$('.modal-body .service-name').text($('#example-modal').data('service-name'));
+						$('.modal-footer').html('<button class="btn btn-default" data-dismiss="modal">Close</button>');
+					}).modal();
+					
+					setTimeout(function(){
+						$('.modal-body .inprogress').addClass('hidden',function(){
+							$('.modal-body .finished').removeClass('hidden');
+						});
+					},5000);
+				}
+                
             });
 
 
@@ -743,26 +879,75 @@
             })
 
 
-            $("#check5-all").click(function () {
+            // check all
+			$(".check-all").click(function () {
                 var checked_status = this.checked;
-                $("input[id^=check5-td]").each(function () {
+                $(this).parents('table').find('tbody .check').each(function () {
                     this.checked = checked_status;
                 });
             });
-
-
-            $('.add-service').on('click', function () {
-                $('.dash-tile-content-inner-fluid').hide(function () {
-                    $('#add-service').removeClass('hidden');
+			
+			$('#instance-table th input[type=checkbox]').on('click',function(){			
+				var checked_status = this.checked;
+				var idx=$(this).parent().index();
+				
+				$(this).parents('table').find('tbody tr').each(function () {					
+                    ($(this).find('td').eq(idx).find('input'))[0].checked=checked_status;
                 });
-            });
+			});
+
+
+			// actions for selected btn
+			$('#forum-cat input[type=checkbox]').on('click', function(e){
+				if($('#forum-cat tbody :checked').size()>0) {
+					$('#forum-cat .btn-group>button:eq(0)').removeClass('btn-default').addClass('btn-primary');
+					$('#forum-cat .dropdown-menu li').removeClass('disabled');
+				}
+				else{
+					$('#forum-cat .btn-group>button:eq(0)').removeClass('btn-primary').addClass('btn-default');
+					$('#forum-cat .dropdown-menu li').addClass('disabled');
+				}
+			});
+            
 
         });
     </script>
 
     <script>
         $(function () {
-            $("#basic-wizard").bind("step_shown", function (event, data) {
+            
+            $('#example-datatables').on('click', 'td a', function (e) {
+                $('.dash-tile-content-inner-fluid').hide(function () {
+                    $('#detail-service').removeClass('hidden');
+                });
+
+                $('#example-modal').data({
+                    id: $(e.currentTarget).parents('tr').index(),
+                    name: $(e.currentTarget).parents('tr').find('td:eq(1)').text(),
+                    service: $(e.currentTarget).parents('tr').find('td:eq(2)').text().split(', ')
+                });
+
+            });
+			
+			var param=window.location.search.slice(1), nav, searvice_name;
+			if(param.indexOf('configuration')!=-1){
+				nav='configuration';
+				service_name=param.split('=')[1];
+				
+				$('.dash-tile-content-inner-fluid').hide(function () {
+                    $('#detail-service').removeClass('hidden');
+					$('.nav-tabs li a[href="#forum-config"]').tab('show');
+                });
+			}
+
+            $('[data-toggle="tabs"] a').click(function (e) { e.preventDefault(), $(this).tab("show") });
+        });
+
+    </script>
+	
+	<script>
+		$(function(){
+			$("#basic-wizard").bind("step_shown", function (event, data) {
                 if (data.currentStep === 'second') {
                     var a = 1;
                     var e = $("#example-progress-bar .progress-bar");
@@ -781,9 +966,11 @@
                         console.log(1);
                     },
                     error: function (e) {
-                        $('#add-service').addClass('hidden',function(){
-
+                        /*$('#node-discovery').addClass('hidden', function () {
                             $('.dash-tile-content-inner-fluid').show();
+                        });*/
+                        $('#add-instance').addClass('hidden', function () {
+                            $('#detail-service').removeClass('hidden').show();
                         });
                     },
                     beforeSubmit: function (data) {
@@ -798,25 +985,15 @@
                 outDuration: 700,
                 easing: 'easeOutBounce'
             });
-
-
-            $('#example-datatables').on('click', 'td a', function (e) {
-                $('.dash-tile-content-inner-fluid').hide(function () {
-                    $('#detail-service').removeClass('hidden');
+			
+			// add instance
+            $('.add-instance').on('click', function () {
+                $('#detail-service').hide(function () {
+                    $('#add-instance').removeClass('hidden');
                 });
-
-                $('#example-modal').data({
-                    id: $(e.currentTarget).parents('tr').index(),
-                    name: $(e.currentTarget).parents('tr').find('td:eq(1)').text(),
-                    service: $(e.currentTarget).parents('tr').find('td:eq(2)').text().split(', ')
-                });
-
             });
-
-            $('[data-toggle="tabs"] a').click(function (e) { e.preventDefault(), $(this).tab("show") });
-        });
-
-    </script>
+		});
+	</script>
 
 </body>
 </html>
