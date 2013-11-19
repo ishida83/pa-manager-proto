@@ -353,7 +353,7 @@
             <div id="page-content" style="min-height: 877px;">
                 <ul id="nav-info" class="clearfix">
                     <li><a href="index.html"><i class="icon-home"></i></a></li>
-                    <li class="active"><a href="javascript:void(0)">Node Management</a></li>
+                    <li class="active"><a href="node.html">Node Management</a></li>
                 </ul>
 
                 <h3 class="page-header page-header-top">Meta Info <small>Node Management</small></h3>
@@ -395,26 +395,23 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="btn-group">
-                                                <button data-toggle="dropdown" class="btn btn-sm btn-primary dropdown-toggle">Actions for Selected <span class="caret"></span></button>
+                                                <button data-toggle="dropdown" class="btn btn-sm btn-default dropdown-toggle">Actions for Selected <span class="caret"></span></button>
                                                 <ul class="dropdown-menu">
-                                                    <li>
-                                                        <a href="#">Assign to Cluster</a>
+                                                    <li class="disabled">
+                                                        <a href="#">Add to Cluster</a>
                                                     </li>
-                                                    <li>
-                                                        <a href="#">UnAssgin from Cluster</a>
+                                                    <li class="disabled">
+                                                        <a href="#">Remove from Cluster</a>
                                                     </li>
-                                                    <li>
+                                                    <li class="disabled">
                                                         <a href="#">Apply Template</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Edit</a>
-                                                    </li>
+                                                    </li>                         
                                                     <li class="divider"></li>
-                                                    <li>
+                                                    <li class="disabled">
                                                         <a href="#">Remove</a>
                                                     </li>
                                                 </ul>
-                                                <button class="btn btn-sm node-discovery btn-success" role="button">Discovery Node</button>
+                                                <button class="btn btn-sm node-discovery btn-default" role="button">Node Discovery</button>
                                                 <button class="btn btn-sm node-inspector btn-default" data-target="#example-modal" role="button" data-toggle="modal">Node Inspector</button>
                                             </div>
                                         </div>
@@ -423,19 +420,22 @@
                                 <table id="example-datatables" class="table table-striped table-bordered table-hover dataTable" aria-describedby="example-datatables_info">
                                     <thead>
                                         <tr role="row">
-                                            <th class="cell-small text-center hidden-xs hidden-sm sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label="#: activate to sort column ascending" style="width: 67px;">#</th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Name: activate to sort column ascending"><i class="icon-user"></i>Name</th>
-                                            <th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" IP: activate to sort column ascending"><i class="icon-envelope-alt"></i>IP</th>
-                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending"><i class="icon-bolt"></i>Status</th>
+                                            <th class="cell-small text-center" data-toggle="tooltip" title="" data-original-title="Toggle all!">
+                                                <input type="checkbox" class="check-all" name="check5-all"></th>
+                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Name: activate to sort column ascending">Name</th>
+                                            <th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" IP: activate to sort column ascending">IP</th>
+											<th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Cluster: activate to sort column ascending">Cluster</th>
+                                            <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending">Status</th>
                                             <th class="cell-small sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 107px;">Action</th>
                                         </tr>
                                     </thead>
 
                                     <tbody role="alert" aria-live="polite" aria-relevant="all">
                                         <tr class="odd">
-                                            <td class="text-center hidden-xs hidden-sm ">1</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username1</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.101</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-default">Inactive</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -448,9 +448,10 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm ">2</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username2</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.102</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-danger">Bad Health</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -463,9 +464,10 @@
                                         </tr>
                                         <tr class="odd">
 
-                                            <td class="text-center hidden-xs hidden-sm ">3</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username3</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.103</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -478,9 +480,10 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm ">4</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username4</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.104</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -493,9 +496,10 @@
                                         </tr>
                                         <tr class="odd">
 
-                                            <td class="text-center hidden-xs hidden-sm ">5</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username5</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.105</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -508,9 +512,10 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm ">6</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username6</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.106</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
                                             <td class=" "><span class="label label-danger">Bad Health</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -523,9 +528,10 @@
                                         </tr>
                                         <tr class="odd">
 
-                                            <td class="text-center hidden-xs hidden-sm ">7</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username7</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.107</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-success">Good Health</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -538,9 +544,10 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm ">8</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username8</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.108</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-default">Inactive</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -553,9 +560,10 @@
                                         </tr>
                                         <tr class="odd">
 
-                                            <td class="text-center hidden-xs hidden-sm ">9</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username9</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.109</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
                                             <td class=" "><span class="label label-danger">Bad Health</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -568,9 +576,10 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm ">10</td>
+                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">username10</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.110</td>
+											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -605,7 +614,7 @@
                                 Configuaration
                             </div>
                             <div class="tab-pane" id="dash-example-tabs-newusers">
-                                <div id="example-datatables_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                                <div class="dataTables_wrapper form-inline" role="grid">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <h3>Template for Cluster1</h3>
@@ -796,7 +805,7 @@
                                             <div class="radio">
                                                 <label for="example-radio1">
                                                     <input type="radio" id="example-radio1" name="trulink" value="option1">
-                                                    Sprint1
+                                                    Sprint3
                                                 </label>
                                             </div>
                                             <div class="radio">
@@ -808,7 +817,7 @@
                                             <div class="radio">
                                                 <label for="example-radio3">
                                                     <input type="radio" id="example-radio3" name="trulink" value="option3">
-                                                    Sprint3
+                                                    Sprint1
                                                 </label>
                                             </div>
                                             <div class="radio">
@@ -826,7 +835,7 @@
                                             <div class="radio">
                                                 <label for="example-radio5">
                                                     <input type="radio" id="example-radio5" name="trucq" value="option1">
-                                                    8.6
+                                                    9.3
                                                 </label>
                                             </div>
                                             <div class="radio">
@@ -838,7 +847,7 @@
                                             <div class="radio">
                                                 <label for="example-radio7">
                                                     <input type="radio" id="example-radio7" name="trucq" value="option3">
-                                                    9.3
+                                                    8.6
                                                 </label>
                                             </div>
                                         </div>
@@ -850,7 +859,7 @@
                                             <div class="radio">
                                                 <label for="example-radio8">
                                                     <input type="radio" id="example-radio8" name="bi" value="option1">
-                                                    Pentaho 4.5
+                                                    Pentaho 5.0
                                                 </label>
                                             </div>
                                             <div class="radio">
@@ -862,7 +871,7 @@
                                             <div class="radio">
                                                 <label for="example-radio10">
                                                     <input type="radio" id="example-radio10" name="bi" value="option3">
-                                                    Pentaho 5.0
+                                                    Pentaho 4.5
                                                 </label>
                                             </div>
                                             <div class="radio">
@@ -916,7 +925,7 @@
                                                     other user:
                                                 </label>
                                             </div>
-                                            <div class="radio">
+                                            <div class="radio hidden">
                                                 <label for="example-radio3">
                                                     <input type="text" placeholder="" class="form-control input-sm" />
                                                 </label>
@@ -962,8 +971,8 @@
                                 </div>
                                 <div class="form-group form-actions">
                                     <div class="col-md-10 col-md-offset-2">
-                                        <input type="reset" class="btn btn-danger ui-wizard-content ui-formwizard-button" id="back" value="Back" disabled="disabled">
-                                        <input type="submit" class="btn btn-success ui-wizard-content ui-formwizard-button" id="next" value="Next">
+                                        <input type="reset" class="btn btn-default ui-wizard-content ui-formwizard-button" id="back" value="Back" disabled="disabled">
+                                        <input type="submit" class="btn btn-primary ui-wizard-content ui-formwizard-button" id="next" value="Next">
                                     </div>
                                 </div>
                             </div>
@@ -1203,7 +1212,7 @@
     <script>
         $(function () {
             $("#example-datatables").dataTable({
-                aoColumnDefs: [{ bSortable: !1, aTargets: [4] }],
+                aoColumnDefs: [{ bSortable: !1, aTargets: [0,5] }],
                 //"bPaginate": false,
                 //"bLengthChange": false,
                 //"bFilter": false,                
@@ -1211,8 +1220,6 @@
                 "sDom": '<"row"<"col-sm-6 col-xs-5"l><"col-sm-6 col-xs-7"f>>rt<"row"<"col-sm-5 hidden-xs"i><"col-sm-7 col-xs-12 clearfix"p>>',
                 "bAutoWidth": false
             }),
-            $("#example-datatables2").dataTable(),
-            $("#example-datatables3").dataTable(),
             $(".dataTables_filter input").addClass("form-control").attr("placeholder", "Search");
 
             $('.node-discovery').on('click', function () {
@@ -1230,18 +1237,21 @@
                 $('#example-modal').data({ 'id': $(e.currentTarget).parents('tr').index(), 'target': $(e.currentTarget).parents('table').attr('id') });
 
             });
+			
             $('#example-modal').on("click", ".btn-success", function (e) {
                 e.preventDefault();
                 var rowId = $('#example-modal').data('id'), target = $('#example-modal').data('target');
                 $('#' + target + ' tbody').find('tr').eq(Number(rowId)).remove();
                 $('#example-modal').modal('hide');
             });
+			
             $(document).on("click", ".create-template", function (e) {
                 $('#example-modal').on('show.bs.modal', function () {
                     $('.modal-body').html($('#create-template').html());
-                    $('.modal-footer').html('<input type="submit" class="btn" value="Cancel" data-dismiss="modal"><input type="submit" class="btn btn-success" value="Save changes">');
+                    $('.modal-footer').html('<input type="submit" class="btn" value="Cancel" data-dismiss="modal"><input type="submit" class="btn btn-primary" value="Save changes">');
                 }).modal();
             });
+			
             $('#template-table').on('click', '.btn-success', function (e) {
                 $('#example-modal').data({
                     id: $(e.currentTarget).parents('tr').index(),
@@ -1254,9 +1264,10 @@
                     if ($.inArray('TruCQ', $('#example-modal').data('service')) != -1) $('.modal-body .trucq option:eq(1)').attr('selected', true);
                     if ($.inArray('TruLink', $('#example-modal').data('service')) != -1) $('.modal-body .trulink option:eq(1)').attr('selected', true);
                     if ($.inArray('BI platform', $('#example-modal').data('service')) != -1) $('.modal-body .biplatform option:eq(1)').attr('selected', true);
-                    $('.modal-footer').html('<input type="submit" class="btn" value="Cancel" data-dismiss="modal"><input type="submit" class="btn btn-success" value="Save changes">');
+                    $('.modal-footer').html('<input type="submit" class="btn" value="Cancel" data-dismiss="modal"><input type="submit" class="btn btn-primary" value="Save changes">');
                 }).modal();
             });
+			
             $(document).on("click", ".node-inspector", function (e) {
 
                 $('#example-modal')
@@ -1271,7 +1282,7 @@
             $('.btn-group').tooltip({
                 selector: "[data-toggle=tooltip]",
                 container: "body"
-            })
+            });
 
 
             $("#check5-all").click(function () {
@@ -1287,6 +1298,24 @@
                     this.checked = checked_status;
                 });
             });
+			
+			$(".check-all").click(function () {
+                var checked_status = this.checked;
+                $(this).parents('table').find('tbody .check').each(function () {
+                    this.checked = checked_status;
+                });
+            });
+			
+			$('#example-datatables_wrapper input[type=checkbox]').on('click', function(e){
+				if($('#example-datatables_wrapper tbody :checked').size()>0) {
+					$('#example-datatables_wrapper .btn-group>button:eq(0)').removeClass('btn-default').addClass('btn-primary');
+					$('#example-datatables_wrapper .dropdown-menu li').removeClass('disabled');
+				}
+				else{
+					$('#example-datatables_wrapper .btn-group>button:eq(0)').removeClass('btn-primary').addClass('btn-default');
+					$('#example-datatables_wrapper .dropdown-menu li').addClass('disabled');
+				}
+			});
 
         });
     </script>
@@ -1350,6 +1379,10 @@
                 });
 
             });
+			
+			
+			
+			
 
         });
 
