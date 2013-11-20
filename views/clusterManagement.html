@@ -344,22 +344,22 @@
                                 <div class="divider"></div>
                                 <li><a href="#"><i class="fa fa-ellipsis-horizontal"></i> Other operation</a></li>
                             </ul>
-                            <button type="button" class="btn btn-default">
-                                <i class="fa fa-angle-down"></i>
+                            <button type="button" class="btn btn-inverse btn-toggle">
+                                <i class="fa fa-angle-double-down"></i>
                             </button>
                         </div>
                     </div>
 
-                    <ul class="nav nav-tabs cluster-tab">
+                    <ul class="nav nav-tabs">
                         <li class="active">
-                            <a class="service-tab" href="#service{{$index}}" data-toggle="tab">
+                            <a ng-href="#service{{$index}}" data-toggle="tab">
                                 <i class="fa fa-rocket"></i>
                                 Services
                                 <span class="badge">{{c.service[0]}}</span>
                             </a>
                         </li>
                         <li>
-                            <a class="node-tab" href="#node{{$index}}" data-toggle="tab">
+                            <a ng-href="#node{{$index}}" data-toggle="tab">
                                 <i class="fa fa-sitemap"></i>
                                 Nodes
                                 <span class="badge badge-danger">{{c.node[0]}}</span>
@@ -368,7 +368,7 @@
                     </ul>
 
                     <div class="tab-content">
-                        <div class="tab-pane fade in active service-pane" id="service{{$index}}">
+                        <div class="tab-pane fade in active" id="service{{$index}}">
 
                             <table class="table table-bordered table-hover table-striped">
                                 <colgroup>
@@ -415,7 +415,9 @@
                                                 <button type="button" class="btn btn-danger btn-xs" title="Remove">
                                                     <i class="fa fa-times"></i>
                                                 </button>
-                                                <button type="button" class="btn btn-info btn-xs" title="More">...</button>
+                                                <button type="button" class="btn btn-default btn-xs" title="More">
+                                                    <i class="fa fa-reorder"></i>
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>
@@ -423,7 +425,7 @@
                             </table>
                         </div>
 
-                        <div class="tab-pane fade in active node-pane" id="node{{$index}}">
+                        <div class="tab-pane fade in clearfix" id="node{{$index}}">
                             <table class="table table-bordered table-hover table-striped">
                                 <colgroup>
                                     <col style="width:40px;"/>
@@ -439,10 +441,14 @@
                                     <tr ng-repeat="n in c.nodes">
                                         <td class="text-right">{{$index + 1}}</td>
                                         <td><a href="#">{{n.ip}}</a></td>
-                                        <td>1</td>
+                                        <td><span class="label label-default"
+                                                  ng-class="{'label-success': n.status === 'Available', 'label-danger': n.status === 'Unavailable'}">
+                                            {{n.status}}</span></td>
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <a class="pull-right" href="#">Show all nodes</a>
                         </div>
                     </div>
                 </div>

@@ -31,12 +31,12 @@ function ClusterCtrl($scope) {
         }],
         "node": [10,9,1,0],
         "nodes": [
-            {"ip": "123.211.122.122", "available": true},
-            {"ip": "123.211.122.123", "available": true},
-            {"ip": "123.211.122.124", "available": false},
-            {"ip": "123.211.122.125", "available": true},
-            {"ip": "123.211.122.126", "available": true},
-            {"ip": "123.211.122.127", "available": true}
+            {"ip": "123.211.122.122", "status": "Available"},
+            {"ip": "123.211.122.123", "status": "Available"},
+            {"ip": "123.211.122.124", "status": "Unavailable"},
+            {"ip": "123.211.122.125", "status": "Available"},
+            {"ip": "123.211.122.126", "status": "Available"},
+            {"ip": "123.211.122.127", "status": "Available"}
         ]
     });
 
@@ -58,8 +58,8 @@ function ClusterCtrl($scope) {
         }],
         "node": [2,2,0,0],
         "nodes": [
-            {"ip": "123.211.122.123", "available": true},
-            {"ip": "123.211.122.124", "available": true}
+            {"ip": "123.211.122.123", "status": "Available"},
+            {"ip": "123.211.122.124", "status": "Unavailable"}
         ]
     });
 }
@@ -69,8 +69,23 @@ jQuery(function ($) {
         $(this).next().dropdown();
     });
 
-    $("#createClusterBtn").on("click", function () {
+    $("button.btn-toggle").on("click", function () {
+        $(this).children("i")
+            .toggleClass("fa-angle-double-down")
+            .toggleClass("fa-angle-double-right");
+
+        $(this).parent().parent().nextAll().slideToggle();
     });
 
-    $("a.service-tab").tab('show');
+    $("ul.nav-tabs li").on("click", function () {
+        if (!$(this).hasClass("active")) {
+            $(this).children("a").children("span").removeClass("badge-danger");
+            $(this).siblings("li").children("a").children("span").addClass("badge-danger");
+        } else {
+            $(this).children("a").children("span").addClass("badge-danger");
+            $(this).siblings("li").children("a").children("span").removeClass("badge-danger");
+        }
+    });
+
+    // todo: tab action
 });
