@@ -3,94 +3,63 @@ function ClusterCtrl($scope) {
 
     $scope.clusters.push({
         "name": "Cluster1",
-        "service": [10,5,2,1,2],
+        "service": [6,4,1,1,0],
         "services": [{
-            "name": "Service1",
-            "status": "Good",
-            "nodes": 2
-        }, {
-            "name": "Service2",
-            "status": "Good",
-            "nodes": 3
-        }, {
             "name": "TruLink",
             "status": "Good",
-            "nodes": 5
+            "nodes": 2
         }, {
             "name": "TruCQ",
             "status": "Good",
-            "nodes": 1
-        }, {
-            "name": "TruView",
-            "status": "Stopped",
-            "nodes": 1
-        }, {
-            "name": "Service3",
-            "status": "Bad",
             "nodes": 3
         }, {
-            "name": "Service4",
-            "status": "Bad",
-            "nodes": 2
-        }, {
-            "name": "Service5",
-            "status": "Unknown",
-            "nodes": 3
-        }, {
-            "name": "Service6",
+            "name": "TruCEP",
             "status": "Good",
             "nodes": 5
         }, {
-            "name": "Service7",
-            "status": "Unknown",
+            "name": "zookeeper",
+            "status": "Good",
             "nodes": 1
+        }, {
+            "name": "PA Agent",
+            "status": "Stopped",
+            "nodes": 1
+        }, {
+            "name": "Storm",
+            "status": "Bad",
+            "nodes": 3
         }],
         "node": [10,9,1,0],
         "nodes": [
-            {"ip": "123.211.122.122", "available": true},
-            {"ip": "123.211.122.123", "available": true},
-            {"ip": "123.211.122.124", "available": false},
-            {"ip": "123.211.122.125", "available": true},
-            {"ip": "123.211.122.126", "available": true},
-            {"ip": "123.211.122.127", "available": true},
-            {"ip": "123.211.122.128", "available": true},
-            {"ip": "123.211.122.129", "available": true},
-            {"ip": "123.211.122.130", "available": true},
-            {"ip": "123.211.122.131", "available": true},
-            {"ip": "123.211.122.132", "available": true},
-            {"ip": "123.211.122.133", "available": true},
-            {"ip": "123.211.122.134", "available": true},
-            {"ip": "123.211.122.135", "available": true},
-            {"ip": "123.211.122.136", "available": true},
-            {"ip": "123.211.122.137", "available": true},
-            {"ip": "123.211.122.138", "available": true}
+            {"ip": "123.211.122.122", "status": "Available"},
+            {"ip": "123.211.122.123", "status": "Available"},
+            {"ip": "123.211.122.124", "status": "Unavailable"},
+            {"ip": "123.211.122.125", "status": "Available"},
+            {"ip": "123.211.122.126", "status": "Available"},
+            {"ip": "123.211.122.127", "status": "Available"}
         ]
     });
 
     $scope.clusters.push({
         "name": "Cluster2",
-        "service": [4,4,0,0,0],
+        "service": [3,3,0,0,0],
         "services": [{
-            "name": "Service1",
+            "name": "TruCQ",
             "status": "Good",
             "nodes": 2
         }, {
-            "name": "Service2",
+            "name": "zookeeper",
             "status": "Good",
             "nodes": 3
         }, {
-            "name": "TruLink",
+            "name": "PA Agent",
             "status": "Good",
             "nodes": 5
-        }, {
-            "name": "TruCQ",
-            "status": "Good",
-            "nodes": 1
         }],
-        "node": [2,1,1,0],
+        "node": [2,2,0,0],
         "nodes": [
-            {"ip": "123.211.122.123", "available": true},
-            {"ip": "123.211.122.124", "available": true}
+            {"ip": "123.211.122.123", "status": "Available"},
+            {"ip": "123.211.122.124", "status": "Unavailable"}
         ]
     });
 }
@@ -100,6 +69,23 @@ jQuery(function ($) {
         $(this).next().dropdown();
     });
 
-    $("#createClusterBtn").on("click", function () {
+    $("button.btn-toggle").on("click", function () {
+        $(this).children("i")
+            .toggleClass("fa-angle-double-down")
+            .toggleClass("fa-angle-double-right");
+
+        $(this).parent().parent().nextAll().slideToggle();
     });
+
+    $("ul.nav-tabs li").on("click", function () {
+        if (!$(this).hasClass("active")) {
+            $(this).children("a").children("span").removeClass("badge-danger");
+            $(this).siblings("li").children("a").children("span").addClass("badge-danger");
+        } else {
+            $(this).children("a").children("span").addClass("badge-danger");
+            $(this).siblings("li").children("a").children("span").removeClass("badge-danger");
+        }
+    });
+
+    // todo: tab action
 });

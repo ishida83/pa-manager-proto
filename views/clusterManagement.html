@@ -19,7 +19,6 @@
 
         .node-card {
             line-height: 3em;
-            border-bottom: 1px solid #cccccc;
         }
     </style>
 </head>
@@ -271,19 +270,19 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="../service.html">
                                 <i class="fa fa-rocket"></i>
                                 Service
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="../log.html">
                                 <i class="fa fa-terminal"></i>
                                 Log info
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="../schemas.html">
                                 <i class="fa fa-list"></i>
                                 Schema
                             </a>
@@ -317,108 +316,139 @@
                 <h3 class="page-header page-header-top">
                     Cluster Management
                     <small>Cluster has nodes</small>
+                    <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#createClusterModal" id="createClusterBtn">
+                        <i class="fa fa-plus"></i> Create Cluster...
+                    </button>
                 </h3>
-
-                <!-- Todo: timeline -->
-                <div></div>
-
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#createClusterModal" id="createClusterBtn">
-                    <i class="fa fa-plus"></i> Create Cluster...
-                </button>
 
                 <div ng-repeat="c in clusters">
                     <div class="row page-header">
                         <h4 class="col-xs-6 col-lg-9">{{c.name}}</h4>
                         <div class="btn-group pull-right text-right">
-                            <button type="button" class="btn btn-success btn-sm"><i class="fa fa-play"></i></button>
-                            <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-refresh"></i></button>
-                            <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-stop"></i></button>
-                            <button type="button" class="btn btn-info btn-sm more" data-toggle="dropdown">...</button>
+                            <button type="button" class="btn btn-primary">
+                                <i class="fa fa-sitemap"></i> Add Node
+                            </button>
+                            <button type="button" class="btn btn-info">
+                                <i class="fa fa-rocket"></i> Add Service
+                            </button>
+                            <button type="button" class="btn btn-default more" title="More" data-toggle="dropdown">
+                                <i class="fa fa-reorder"></i>
+                            </button>
                             <ul class="dropdown-menu text-left">
+                                <li><a href="#"><i class="fa fa-play"></i> Start</a></li>
+                                <li><a href="#"><i class="fa fa-refresh"></i> Restart</a></li>
+                                <li><a href="#"><i class="fa fa-stop"></i> Stop</a></li>
+                                <div class="divider"></div>
                                 <li><a href="#"><i class="fa fa-times"></i> Delete</a></li>
                                 <li><a href="#"><i class="fa fa-edit"></i> Rename</a></li>
                                 <div class="divider"></div>
                                 <li><a href="#"><i class="fa fa-ellipsis-horizontal"></i> Other operation</a></li>
                             </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <strong class="text-info">Services</strong>
-                            <span class="badge badge-info">{{c.service[0]}}</span>
-                            <strong class="text-success">Good</strong>
-                            <span class="badge badge-success">{{c.service[1]}}</span>
-                            <strong class="text-danger">Bad</strong>
-                            <span class="badge badge-danger">{{c.service[2]}}</span>
-                            <strong class="text-warning">Stopped</strong>
-                            <span class="badge badge-warning">{{c.service[3]}}</span>
-                            <strong class="text-muted">Unknown</strong>
-                            <span class="badge">{{c.service[4]}}</span>
+                            <button type="button" class="btn btn-inverse btn-toggle">
+                                <i class="fa fa-angle-double-down"></i>
+                            </button>
                         </div>
                     </div>
 
-                    <table class="table table-bordered table-hover table-striped">
-                        <colgroup>
-                            <col style="width:40px;"/>
-                            <col/>
-                            <col/>
-                            <col/>
-                            <col style="width:150px;"/>
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th class="text-right">#</th>
-                                <th><i class="fa fa-rocket"></i> Name</th>
-                                <th><i class="fa fa-bolt"></i> Status</th>
-                                <th><i class="fa fa-sitemap"></i> Nodes</th>
-                                <th class="text-center"><i class="fa fa-wrench"></i> Actions</th>
-                            </tr>
-                        </thead>
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a ng-href="#service{{$index}}" data-toggle="tab">
+                                <i class="fa fa-rocket"></i>
+                                Services
+                                <span class="badge">{{c.service[0]}}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a ng-href="#node{{$index}}" data-toggle="tab">
+                                <i class="fa fa-sitemap"></i>
+                                Nodes
+                                <span class="badge badge-danger">{{c.node[0]}}</span>
+                            </a>
+                        </li>
+                    </ul>
 
-                        <tbody>
-                            <tr ng-repeat="s in c.services">
-                                <td class="text-right">{{$index+1}}</td>
-                                <td><a href="#">{{s.name}}</a></td>
-                                <td>
-                                    <span class="label label-default"
-                                          ng-class="{'label-success': s.status === 'Good',
-                                          'label-warning': s.status === 'Stopped',
-                                          'label-danger': s.status === 'Bad'}">
-                                        {{s.status}}
-                                    </span>
-                                </td>
-                                <td><span class="badge">{{s.nodes}}</span></td>
-                                <td class="text-center">
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-success btn-xs"><i class="fa fa-play"></i></button>
-                                        <button type="button" class="btn btn-primary btn-xs"><i class="fa fa-refresh"></i></button>
-                                        <button type="button" class="btn btn-warning btn-xs"><i class="fa fa-stop"></i></button>
-                                        <button type="button" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button>
-                                        <button type="button" class="btn btn-info btn-xs">...</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="service{{$index}}">
 
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <strong class="text-info">Nodes</strong>
-                            <span class="badge badge-info">{{c.node[0]}}</span>
-                            <strong class="text-success">Available</strong>
-                            <span class="badge badge-success">{{c.node[1]}}</span>
-                            <strong class="text-danger">Unavailable</strong>
-                            <span class="badge badge-danger">{{c.node[2]}}</span>
-                            <strong class="text-muted">Unknown</strong>
-                            <span class="badge">{{c.node[3]}}</span>
+                            <table class="table table-bordered table-hover table-striped">
+                                <colgroup>
+                                    <col style="width:40px;"/>
+                                    <col/>
+                                    <col/>
+                                    <col/>
+                                    <col style="width:150px;"/>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="text-right">#</th>
+                                        <th><i class="fa fa-rocket"></i> Name</th>
+                                        <th><i class="fa fa-bolt"></i> Status</th>
+                                        <th><i class="fa fa-sitemap"></i> Nodes</th>
+                                        <th class="text-center"><i class="fa fa-wrench"></i> Actions</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr ng-repeat="s in c.services">
+                                        <td class="text-right">{{$index+1}}</td>
+                                        <td><a href="#">{{s.name}}</a></td>
+                                        <td>
+                                            <span class="label label-default"
+                                                  ng-class="{'label-success': s.status === 'Good',
+                                                  'label-warning': s.status === 'Stopped',
+                                                  'label-danger': s.status === 'Bad'}">
+                                                {{s.status}}
+                                            </span>
+                                        </td>
+                                        <td><span class="badge">{{s.nodes}}</span></td>
+                                        <td class="text-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-success btn-xs" title="Start">
+                                                    <i class="fa fa-play"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-primary btn-xs" title="Restart">
+                                                    <i class="fa fa-refresh"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-warning btn-xs" title="Stop">
+                                                    <i class="fa fa-stop"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-xs" title="Remove">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-default btn-xs" title="More">
+                                                    <i class="fa fa-reorder"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="node-card col-xs-4 col-lg-2" ng-repeat="n in c.nodes">
-                            <i ng-if="n.available" class="text-success fa fa-check-circle"></i>
-                            <i ng-if="!n.available" class="text-danger fa fa-times-circle"></i>
-                            <a href="#">{{n.ip}}</a>
+                        <div class="tab-pane fade in clearfix" id="node{{$index}}">
+                            <table class="table table-bordered table-hover table-striped">
+                                <colgroup>
+                                    <col style="width:40px;"/>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th class="text-right">#</th>
+                                        <th><i class="fa fa-ellipsis-horizontal"></i> IP Address</th>
+                                        <th><i class="fa fa-bolt"></i> Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="n in c.nodes">
+                                        <td class="text-right">{{$index + 1}}</td>
+                                        <td><a href="#">{{n.ip}}</a></td>
+                                        <td><span class="label label-default"
+                                                  ng-class="{'label-success': n.status === 'Available', 'label-danger': n.status === 'Unavailable'}">
+                                            {{n.status}}</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <a class="pull-right" href="#">Show all nodes</a>
                         </div>
                     </div>
                 </div>

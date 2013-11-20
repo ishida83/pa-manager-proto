@@ -45,4 +45,9 @@ jQuery(function ($) {
 
         nv.utils.windowResize(chart.update);
     });
+
+
+    $("div.dash-tile").on("click", function () {
+        window.location = $(this).data("href") || "#";
+    });
 });
