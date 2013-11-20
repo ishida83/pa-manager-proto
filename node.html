@@ -64,8 +64,88 @@
             font-family: icon-font;
             src: url('stylesheets/vendors/CiscoSansThin.woff');
         }
-    </style>
 
+
+        .card {
+            display: inline-block;
+            border: 1px solid #e8e8e8;
+            float: left;
+            cursor: pointer;
+            text-align: center;
+            min-width: 110px;
+            padding: 5px;
+            margin: 0 10px 10px 0;
+            width: 150px;
+            min-height: 180px;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            -o-user-select:none;
+            user-select:none;
+        }
+
+        .card-link, .card-description {
+            display: none;
+        }
+
+        .bg-img, .card-img, .details-img {
+            display: inline-block;
+            background-repeat: no-repeat;
+        }
+
+        .sample-card-img {
+            width: 49px;
+            height: 49px;
+        }
+
+        .sample-details-img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .tutorial-card-img {
+            width: 89px;
+            height: 68px;
+        }
+
+        #template-wrapper {
+            cursor: context-menu;
+        }
+
+            #template-wrapper .selected {
+                background-color: #FFF;
+                border: 1px solid #db4a39;
+                /*border-bottom: 2px solid #f2ce17;*/
+                /*border: 1px solid #c1d7e1;*/
+                /*border-top: 1px solid #fff;
+		border-right: 1px solid #c1d7e1;*/
+                box-shadow: 0 0 7px #ccc;
+            }
+
+        .card.sample-card:hover {
+            /*border: 1px solid #f2ce17;*/
+            border: 1px solid #666;
+        }
+
+        #fileBrowserButtons .body a {
+            display: block;
+            cursor: pointer;
+        }
+		[contenteditable="true"]:hover { background: rgba(255, 255, 153, 1); outline: 3px dashed #0090D2; }
+    </style>
+    <style>
+        .block-tabs.block-themed {
+            
+            margin:0;
+            padding:0;
+            border: 2px solid #eee;
+        }
+
+            .block-tabs.block-themed > .nav-tabs {
+                background: #eee;
+                border-bottom: 0;
+            }
+    </style>
 </head>
 <body>
 
@@ -351,17 +431,17 @@
                 </nav>
             </aside>
             <div id="page-content" style="min-height: 877px;">
-				<!-- breadcrumb nav-->
+                <!-- breadcrumb nav-->
                 <ul id="nav-info" class="clearfix">
                     <li><a href="index.html"><i class="icon-home"></i></a></li>
                     <li class="active"><a href="node.html">Node Management</a></li>
                 </ul>
-				<!-- /breadcrumb nav-->
-				
-				<!-- meta info -->
+                <!-- /breadcrumb nav-->
+
+                <!-- meta info -->
                 <h3 class="page-header page-header-top">Meta Info <small>Node Management</small></h3>
-				<!-- /meta info -->
-				
+                <!-- /meta info -->
+
                 <div class="row">
                     <div class="dash-tile-content-inner-fluid">
                         <ul id="dash-example-tabs" class="nav nav-tabs" data-toggle="tabs">
@@ -409,7 +489,7 @@
                                                     </li>
                                                     <li class="disabled">
                                                         <a href="#">Apply Template</a>
-                                                    </li>                         
+                                                    </li>
                                                     <li class="divider"></li>
                                                     <li class="disabled">
                                                         <a href="#">Remove</a>
@@ -428,7 +508,7 @@
                                                 <input type="checkbox" class="check-all" name="check5-all"></th>
                                             <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Name: activate to sort column ascending">Name</th>
                                             <th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" IP: activate to sort column ascending">IP</th>
-											<th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Cluster: activate to sort column ascending">Cluster</th>
+                                            <th class="hidden-xs hidden-sm hidden-md sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Cluster: activate to sort column ascending">Cluster</th>
                                             <th class="sorting" role="columnheader" tabindex="0" aria-controls="example-datatables" rowspan="1" colspan="1" aria-label=" Status: activate to sort column ascending">Status</th>
                                             <th class="cell-small sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 107px;">Action</th>
                                         </tr>
@@ -436,10 +516,11 @@
 
                                     <tbody role="alert" aria-live="polite" aria-relevant="all">
                                         <tr class="odd">
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.101</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.101</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-default">Inactive</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -452,10 +533,11 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.102</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.102</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-danger">Bad Health</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -468,10 +550,11 @@
                                         </tr>
                                         <tr class="odd">
 
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.103</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.103</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -484,10 +567,11 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.104</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.104</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -500,10 +584,11 @@
                                         </tr>
                                         <tr class="odd">
 
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.105</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.105</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -516,10 +601,11 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.106</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.106</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
                                             <td class=" "><span class="label label-danger">Bad Health</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -532,10 +618,11 @@
                                         </tr>
                                         <tr class="odd">
 
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.107</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.107</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-success">Good Health</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -548,10 +635,11 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.108</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.108</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-default">Inactive</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -564,10 +652,11 @@
                                         </tr>
                                         <tr class="odd">
 
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.109</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.109</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster2</td>
                                             <td class=" "><span class="label label-danger">Bad Health</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -580,10 +669,11 @@
                                         </tr>
                                         <tr class="even">
 
-                                            <td class="text-center hidden-xs hidden-sm "><input type="checkbox" class="check" /></td>
+                                            <td class="text-center hidden-xs hidden-sm ">
+                                                <input type="checkbox" class="check" /></td>
                                             <td class=" "><a href="javascript:void(0)">10.74.125.1010</a></td>
                                             <td class="hidden-xs hidden-sm hidden-md ">10.74.125.110</td>
-											<td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
+                                            <td class="hidden-xs hidden-sm hidden-md ">Cluster1</td>
                                             <td class=" "><span class="label label-warning">Pending..</span></td>
                                             <td class="text-center  sorting_1">
                                                 <div class="btn-group">
@@ -620,20 +710,327 @@
                             <div class="tab-pane" id="dash-example-tabs-newusers">
                                 <div class="dataTables_wrapper form-inline" role="grid">
                                     <div class="row">
-                                        <div class="col-sm-12">
-                                            <h3>Template for Cluster1</h3>
-                                            <div class="btn-group">
-                                                <button class="btn btn-sm btn-primary create-template"><i class="icon-white icon-plus"></i> Create...</button>
+
+                                        <div class="col-md-3">
+                                            <ul id="faq-tabs" class="nav nav-pills nav-stacked" data-toggle="tabs">
+                                                <li class="active"><a href="#faq1-section"><i class="icon-folder-open"></i> Standalone Templates</a></li>
+                                                <li><a href="#faq2-section"><i class="icon-folder-close"></i> Distributed Templates</a></li>
+                                                <li><a href="#faq3-section"><i class="icon-folder-close"></i> Features Templates</a></li>
+                                                <li><a href="#faq4-section"><i class="icon-folder-close"></i> General</a></li>
+                                                <li><a href="#"><i class="icon-download-alt"></i> Download More...</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div id="template-wrapper" class="tab-content tab-content-default" contextmenu="mymenu">
+                                                <div id="faq1-section" class="tab-pane active">
+
+
+                                                    <div class="card sample-card" id="sample-card8">
+                                                        <div class="card-img sample-card-img"></div>
+                                                        <div class="card-title">
+                                                            <h4>Netflow</h4>
+                                                            TruLink, TruCQ, BI platform
+                                                        </div>
+                                                        <div class="card-description">
+                                                            Network Summary
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card sample-card" id="sample-card9">
+                                                        <div class="card-img sample-card-img"></div>
+                                                        <div class="card-title">
+                                                            <h4>Netflow Syslog Live</h4>
+                                                            TruLink, TruCQ, BI platform
+                                                        </div>
+                                                        <div class="card-description">
+                                                            Network Summary
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                                <div id="faq2-section" class="tab-pane">
+                                                </div>
+                                                <div id="faq3-section" class="tab-pane">
+                                                    <div class="card sample-card" id="sample-card1">
+                                                        <div class="card-img sample-card-img"></div>
+                                                        <div class="card-title">
+                                                            Leading Product Lines
+                                                            <br>
+                                                            (Pivot Table)
+                                                        </div>
+                                                        <div class="card-description">
+                                                            Compare sales of the top 5 product lines by territory.
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card sample-card" id="sample-card2">
+                                                        <div class="card-img sample-card-img"></div>
+                                                        <div class="card-title">
+                                                            European Sales
+                                                            <br>
+                                                            (Geo Map)
+                                                        </div>
+                                                        <div class="card-description">
+                                                            Explore sales in Europe by interacting with a geographic map.
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card sample-card" id="sample-card3">
+                                                        <div class="card-img sample-card-img"></div>
+                                                        <div class="card-title">
+                                                            Country Performance
+                                                            <br>
+                                                            (Heat Grid)
+                                                        </div>
+                                                        <div class="card-description">
+                                                            Quickly spot top and bottom performing countries using a heat grid.
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card sample-card" id="sample-card4">
+                                                        <div class="card-img sample-card-img"></div>
+                                                        <div class="card-title">
+                                                            Vendor Sales
+                                                            <br>
+                                                            (Interactive Report)
+                                                        </div>
+                                                        <div class="card-description">
+                                                            View current orders by product vendor, quickly filter by territory and order status.
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card sample-card" id="sample-card5">
+                                                        <div class="card-img sample-card-img"></div>
+                                                        <div class="card-title">
+                                                            Inventory List
+                                                            <br>
+                                                            (Report)
+                                                        </div>
+                                                        <div class="card-description">
+                                                            Scan-able inventory report showing inventory on hand with detailed product descriptions.
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card sample-card" id="sample-card6">
+                                                        <div class="card-img sample-card-img"></div>
+                                                        <div class="card-title">
+                                                            Top Customers
+                                                            <br>
+                                                            (Report)
+                                                        </div>
+                                                        <div class="card-description">
+                                                            View the top customers for sales and volume of units sold, quickly filter by region and product line.
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="card sample-card" id="sample-card7">
+                                                        <div class="card-img sample-card-img"></div>
+                                                        <div class="card-title">
+                                                            Product Performance
+                                                            <br>
+                                                            (Dashboard)
+                                                        </div>
+                                                        <div class="card-description">
+                                                            Analyze current sales mix, overall product performance and recent sales activity.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="faq4-section" class="tab-pane">
+                                                    <div id="faq4" class="panel-group">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq4" href="#faq4_q1">20. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq4_q1" class="panel-collapse collapse in">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq4" href="#faq4_q2">21. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq4_q2" class="panel-collapse collapse">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="faq5-section" class="tab-pane">
+                                                    <div id="faq5" class="panel-group">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq5" href="#faq5_q1">22. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq5_q1" class="panel-collapse collapse in">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq5" href="#faq5_q2">23. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq5_q2" class="panel-collapse collapse">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq5" href="#faq5_q3">24. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq5_q3" class="panel-collapse collapse">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq5" href="#faq5_q4">25. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq5_q4" class="panel-collapse collapse">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq5" href="#faq5_q5">26. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq5_q5" class="panel-collapse collapse">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="faq6-section" class="tab-pane">
+                                                    <div id="faq6" class="panel-group">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq6" href="#faq6_q1">27. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq6_q1" class="panel-collapse collapse in">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq6" href="#faq6_q2">28. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq6_q2" class="panel-collapse collapse">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq6" href="#faq6_q3">29. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq6_q3" class="panel-collapse collapse">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h4 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#faq6" href="#faq6_q4">30. Question?</a></h4>
+                                                            </div>
+                                                            <div id="faq6_q4" class="panel-collapse collapse">
+                                                                <div class="panel-body">Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div id="fileBrowserButtons" class="well">
+                                                <h4>Actions</h4>
+                                                <div class="body">
+                                                    <a class="   create-template"><i class="icon-white icon-plus"></i> Create...</a>
+                                                    <a class=""><i class="icon-upload"></i> Import...</a>
+                                                    <h5 class="page-header-sub"></h5>
+                                                </div>
+                                                <div class="body body-single hidden">
+                                                     <a id="A1" class=" " onclick=""><i class="icon-play-sign"></i> Launch</a>
+                                                    <a id="downloada" class=" " onclick="" href="data:application/octet-stream;base64," download="netflow.tmpl"><i class="icon-download-alt"></i> Download...</a>
+                                                    <a id="sharea" class=" " onclick="window.open('//twitter.com/intent/tweet?text=' + document.title + ':  ' + window.location.href);"><i class="icon-share"></i> Share...</a>
+                                                    <a id="edita" class=" " onclick="" style="display: none;"> Edit</a>
+                                                    <h5 class="page-header-sub"></h5>
+                                                    <a id="copya" class=" " onclick=""><i class="icon-copy"></i> Copy</a>
+                                                    <a id="deletea" class=" " onclick=""><i class="icon-remove"></i> Remove</a>
+                                                    <a id="renamea" class=" " onclick=""><i class="icon-edit-sign"></i> Rename...</a>
+
+                                                    <a id="edit" class=" " onclick=""><i class="icon-edit"></i> Edit...</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <table class="table table-bordered" id="template-table">
+
+                                <div id="template-download-center" class="hidden">
+                                    <div class="clearfix">                                        
+                                        <div class="btn-group pull-right">
+                                            <a class="btn btn-danger" href="javascript:void(0)"><i class="icon-reply"></i> Return</a>                                            
+                                        </div>
+                                        <h4 class="pull-left">Template Download Centre</h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="media media-hover push">
+                                                <a href="javascript:void(0)" class="pull-left">
+                                                    <img src="img/placeholders/image_dark_120x120.png" class="media-object" alt="Image">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">NBAR</h4>                                                    
+                                                    <p>TruCQ<br />TruLink<br />TruCEP<br />ZooKeeper</p>
+                                                    <a href="javascript:void(0)" class="btn btn-default">Download</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="media media-hover push">
+                                                <a href="javascript:void(0)" class="pull-left">
+                                                    <img src="img/placeholders/image_dark_120x120.png" class="media-object" alt="Image">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">NBAR2</h4>                                                    
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus.</p>
+                                                    <a href="javascript:void(0)" class="btn btn-default">Download</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="media media-hover push">
+                                                <a href="javascript:void(0)" class="pull-left">
+                                                    <img src="img/placeholders/image_dark_120x120.png" class="media-object" alt="Image">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">NBAR</h4>                                                    
+                                                    <p>TruCQ<br />TruLink<br />TruCEP<br />ZooKeeper</p>
+                                                    <a href="javascript:void(0)" class="btn btn-warning disabled">Installed</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="media media-hover push">
+                                                <a href="javascript:void(0)" class="pull-left">
+                                                    <img src="img/placeholders/image_dark_120x120.png" class="media-object" alt="Image">
+                                                </a>
+                                                <div class="media-body">
+                                                    <h4 class="media-heading">NBAR2</h4>                                                    
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus.</p>
+                                                    <a href="javascript:void(0)" class="btn btn-default">Download</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <table class="table table-bordered" id="template-table">
                                     <thead>
                                         <tr>
                                             <th class="cell-small text-center" title="">#</th>
                                             <th>Template Name</th>
-                                            <th class="hidden-xs hidden-sm">Services</th>
+                                            <th class="hidden-xs hidden-sm">Instances</th>
+											<th class="hidden-xs hidden-sm">Description</th>
                                             <th class="cell-small text-center">Actions</th>
                                         </tr>
                                     </thead>
@@ -642,6 +1039,7 @@
                                             <td class="cell-small text-center">1</td>
                                             <td><a href="javascript:void(0)">Standalone Template</a></td>
                                             <td class="hidden-xs hidden-sm"><a href='service.html?configuration=trucq'>TruCQ</a>, <a href='service.html?configuration=trulink'>TruLink</a>, <a href='service.html?configuration=bi platform'>BI platform</a></td>
+											<td class="col-md-4">aaa</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
 
@@ -654,7 +1052,7 @@
                                             <td class="cell-small text-center">2</td>
                                             <td><a href="javascript:void(0)">Distributed Template</a></td>
                                             <td class="hidden-xs hidden-sm"><a href='service.html?configuration=trucq'>TruCQ</a>, <a href='service.html?configuration=trulink'>TruLink</a></td>
-
+											<td class="col-md-4">bbb</td>
                                             <td class="text-center">
                                                 <div class="btn-group">
 
@@ -664,37 +1062,43 @@
                                             </td>
                                         </tr>                                       
                                     </tbody>
-                                </table>
+                                </table> -->
+
+
+
+
                             </div>
                         </div>
                     </div>
 
 
+                    
+
                     <div id="node-discovery" class="hidden">
                         <form id="basic-wizard" action="node.html" method="post" class="form-horizontal form-box ui-formwizard">
                             <h4 class="form-box-header"><i class="icon-magic"></i>Add Node Wizard</h4>
                             <div class="form-box-content">
-								<div id="zero" class="step ui-formwizard-content" style="display: block;">
+                                <div id="zero" class="step ui-formwizard-content" style="display: block;">
                                     <div class="wizard-steps row">
-										<div class="col-md-2 text-center active">0. Choose Cluster</div>
+                                        <div class="col-md-2 text-center active">0. Choose Cluster</div>
                                         <div class="col-md-3 text-center">1. Network Discovery</div>
                                         <div class="col-md-2 text-center">2. Edit Information</div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install</div>
                                         <div class="col-md-2 text-center">4. Login</div>
                                     </div>
                                     <div class="form-group">
-										<div class="col-md-3">
-											Choose cluster to add
+                                        <div class="col-md-3">
+                                            Choose cluster to add
 											<select name="eample-datatables_length" class="form-control">
-												<option value="10" selected="selected">Cluster1</option>
-												<option value="25">Cluster2</option>										
-											</select>
-										</div>
-									</div>
-								</div>
+                                                <option value="10" selected="selected">Cluster1</option>
+                                                <option value="25">Cluster2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div id="first" class="step ui-formwizard-content" style="display: none;">
                                     <div class="wizard-steps row">
-										<div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
+                                        <div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center active">1. Network Discovery</div>
                                         <div class="col-md-2 text-center">2. Edit Information</div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install</div>
@@ -730,7 +1134,7 @@
                                 </div>
                                 <div id="second" class="step ui-formwizard-content" style="display: none;">
                                     <div class="wizard-steps row">
-										<div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
+                                        <div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">1. Network Discover <i class="icon-ok"></i></div>
                                         <div class="col-md-2 text-center active">2. Edit Information</div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install</div>
@@ -786,7 +1190,7 @@
                                 </div>
                                 <div id="third" class="step ui-formwizard-content" style="display: none;">
                                     <div class="wizard-steps row">
-										<div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
+                                        <div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">1. Network Discover <i class="icon-ok"></i></div>
                                         <div class="col-md-2 text-center">2. Edit Information <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center active">3. Choose Services to Install</div>
@@ -861,11 +1265,11 @@
                                                     <input type="radio" id="example-radio9" name="trucep" value="option2">
                                                     None
                                                 </label>
-                                            </div>                                            
+                                            </div>
                                         </div>
-									</div>
-									
-									<div class="form-group">
+                                    </div>
+
+                                    <div class="form-group">
                                         <label class="control-label col-md-3">Select the specific release of the Cluster Client you want to install on your hosts.</label>
                                         <div class="col-md-4">
                                             <div class="radio">
@@ -879,11 +1283,11 @@
                                                     <input type="radio" id="example-radio9" name="clusterclient" value="option2">
                                                     None
                                                 </label>
-                                            </div>                                            
+                                            </div>
                                         </div>
-									</div>
-									
-									<div class="form-group">
+                                    </div>
+
+                                    <div class="form-group">
                                         <label class="control-label col-md-3">Select the specific release of the Storm you want to install on your hosts.</label>
                                         <div class="col-md-4">
                                             <div class="radio">
@@ -897,11 +1301,11 @@
                                                     <input type="radio" id="example-radio9" name="storm" value="option2">
                                                     0.7.4
                                                 </label>
-                                            </div>                                            
+                                            </div>
                                         </div>
-									</div>
-										
-									<div class="form-group">
+                                    </div>
+
+                                    <div class="form-group">
                                         <label class="control-label col-md-3">Select the specific release of the ZooKeeper you want to install on your hosts.</label>
                                         <div class="col-md-4">
                                             <div class="radio">
@@ -915,11 +1319,11 @@
                                                     <input type="radio" id="example-radio9" name="zookeeper" value="option2">
                                                     3.3.6
                                                 </label>
-                                            </div>                                            
+                                            </div>
                                         </div>
-									</div>
-									
-									<div class="form-group">
+                                    </div>
+
+                                    <div class="form-group">
                                         <label class="control-label col-md-3">Select the specific release of BI platform you want to install on your hosts.</label>
                                         <div class="col-md-4">
                                             <div class="radio">
@@ -970,7 +1374,7 @@
                                 </div>
                                 <div id="fourth" class="step ui-formwizard-content" style="display: none;">
                                     <div class="wizard-steps row">
-										<div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
+                                        <div class="col-md-2 text-center">0. Choose Cluster <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">1. Network Discover <i class="icon-ok"></i></div>
                                         <div class="col-md-2 text-center">2. Edit Information <i class="icon-ok"></i></div>
                                         <div class="col-md-3 text-center">3. Choose Services to Install <i class="icon-ok"></i></div>
@@ -1145,6 +1549,107 @@
 
                     </div>
 
+                    <div class="hidden" id="config-template">
+                        <div class="dash-tile dash-tile-2x remove-margin">
+                            <div class="dash-tile-header">
+                                <div class="dash-tile-options">
+                                    <a href="javascript:void(0)" class="btn btn-default" data-toggle="tooltip" title="" data-original-title="Save"><i class="icon-save"></i> Save</a>
+                                    <a href="javascript:void(0)" class="btn btn-default" data-toggle="tooltip" title="" data-original-title="Apply to..."><i class="icon-adjust"></i> Apply to...</a>
+                                    <a href="javascript:void(0)" class="btn btn-primary" data-toggle="tooltip" title="" data-original-title="Launch"><i class="icon-play-sign"></i> Launch</a>
+                                </div>
+                                <i class="icon-vk"></i>Template Configuration
+                            </div>
+                            
+                            <div class="dash-tile-content">
+                                <div class="">
+                                    <h4 class="sub-header">Netflow Template</h4>
+
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <h5 class="sub-header">TruLink</h5>
+                                            <table class="table table-hover table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>include-handlers.xml</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>data.xml</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>local-runtime.properties</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>                                                   
+                                                </tbody>
+                                            </table>
+                                            <h5 class="sub-header">TruCQ</h5>
+                                            <table class="table table-hover table-striped">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>ddl.sql</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>    
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>pg_hba.conf</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>    
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>quartz.properties</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>                                             
+                                                </tbody>
+                                            </table>
+                                            <h5 class="sub-header">Pentaho</h5>
+                                            <table class="table table-hover table-striped remove-margin">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>data.xml</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>    
+                                                     <tr>
+                                                        <td class="col-md-5"><strong>pentaho.xml</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>    
+                                                     <tr>
+                                                        <td class="col-md-5"><strong>context.xml</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>  
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>applicationContext-spring-security-hibernate.properties</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr> 
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>hibernate-settings.xml</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="col-md-5"><strong>postgresql.hibernate.cfg.xml</strong></td>
+                                                        <td><em><a href="javascript:;">click to edit</a></em></td>
+                                                    </tr>                                            
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-7 block-tabs block-themed">
+
+                                            <ul class="nav nav-tabs" data-toggle="tabs">
+                                                <li class="active"><a href="#product-tabs-features"><i class="icon-magic"></i> Editor</a></li>
+                                                <li class=""><a href="#product-tabs-reviews"><i class="icon-pencil"></i> Designer</a></li>
+                                            </ul>
+                                            <div class="tab-content" style="height:550px; overflow-y:auto;">
+                                                <div class="tab-pane active" id="product-tabs-features">
+                                                    <textarea style="width:100%; heigt:100%;height:500px; outline:0; border:1px solid #ededed;"></textarea>
+                                                </div>
+                                                <div class="tab-pane" id="product-tabs-reviews">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div id="detail-node" class="hidden">
                         <ul class="nav nav-tabs" data-toggle="tabs">
@@ -1168,10 +1673,10 @@
         </div>
     </div>
 
-	<!-- scroll top btn -->
+    <!-- scroll top btn -->
     <a href="javascript:void(0)" id="to-top" style="display: inline;"><i class="icon-chevron-up"></i></a>
-	<!-- /scroll top btn -->
-	
+    <!-- /scroll top btn -->
+
     <div id="example-modal" class="modal" aria-hidden="true" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1240,7 +1745,7 @@
                         <span class="help-block"><code></code></span>
                     </div>
                 </div>
-				<div class="form-group">
+                <div class="form-group">
                     <label class="control-label col-md-3" for="example-select-chosen">TruCEP</label>
                     <div class="col-md-5">
                         <select class="form-control select-chosen trucep">
@@ -1252,7 +1757,7 @@
                         <span class="help-block"><code></code></span>
                     </div>
                 </div>
-				<div class="form-group">
+                <div class="form-group">
                     <label class="control-label col-md-3" for="example-select-chosen">Storm</label>
                     <div class="col-md-5">
                         <select class="form-control select-chosen storm">
@@ -1264,7 +1769,7 @@
                         <span class="help-block"><code></code></span>
                     </div>
                 </div>
-				<div class="form-group">
+                <div class="form-group">
                     <label class="control-label col-md-3" for="example-select-chosen">Cluster Client</label>
                     <div class="col-md-5">
                         <select class="form-control select-chosen clusterclient">
@@ -1276,7 +1781,7 @@
                         <span class="help-block"><code></code></span>
                     </div>
                 </div>
-				<div class="form-group">
+                <div class="form-group">
                     <label class="control-label col-md-3" for="example-select-chosen">ZooKeeper</label>
                     <div class="col-md-5">
                         <select class="form-control select-chosen zookeeper">
@@ -1292,32 +1797,43 @@
         </form>
     </div>
 
-	
-	<div id="service-command" class="hidden">
-		<table class="table">
-			<thead>
-				<tr>					
-					<th class="text-center">#</th>
-					<th>Command</th>
-					<th class="hidden-xs hidden-sm">Service</th>
-					<th class="hidden-xs hidden-sm">Started at</th>
-					<th class="hidden-xs hidden-sm">Progress</th>
-					<th class="hidden-xs hidden-sm">Completed at</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>			
-					<td class="text-center">1</td>
-					<td><a href="javascript:void(0)" class="action">start</a></td>
-					<td class="hidden-xs hidden-sm service-name"></td>
-					<td class="hidden-xs hidden-sm">2013-11-18</td>
-					<td class="hidden-xs hidden-sm"><span class="finished hidden"><i class="icon-ok"></i> Finished</span><span class="inprogress"><span class="loader-04"></span> <button class="btn btn-danger btn-sm">Abort</button></span></td>
-					<td class="hidden-xs hidden-sm">2013-11-18</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	
+
+    <div id="service-command" class="hidden">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th>Command</th>
+                    <th class="hidden-xs hidden-sm">Service</th>
+                    <th class="hidden-xs hidden-sm">Started at</th>
+                    <th class="hidden-xs hidden-sm">Progress</th>
+                    <th class="hidden-xs hidden-sm">Completed at</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td><a href="javascript:void(0)" class="action">start</a></td>
+                    <td class="hidden-xs hidden-sm service-name"></td>
+                    <td class="hidden-xs hidden-sm">2013-11-18</td>
+                    <td class="hidden-xs hidden-sm"><span class="finished hidden"><i class="icon-ok"></i>Finished</span><span class="inprogress"><span class="loader-04"></span>
+                        <button class="btn btn-danger btn-sm">Abort</button></span></td>
+                    <td class="hidden-xs hidden-sm">2013-11-18</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <menu type="context" id="mymenu">
+        <menuitem label="Reload Template" onclick="window.location.reload();" icon="http://davidwalsh.name/dw-content/refresh-icon.png"></menuitem>
+        <menuitem label="Copy Template" onclick="alert('Template copied!')" icon="http://davidwalsh.name/dw-content/comment_icon.gif"></menuitem>
+        <menu label="Share on..." icon="http://davidwalsh.name/dw-content/share_icon.gif">
+            <menuitem label="Twitter" icon="http://davidwalsh.name/dw-content/twitter_icon.gif" onclick="goTo('//twitter.com/intent/tweet?text=' + document.title + ':  ' + window.location.href);"></menuitem>
+            <menuitem label="Facebook" icon="http://davidwalsh.name/dw-content/facebook_icon16x16.gif" onclick="goTo('//facebook.com/sharer/sharer.php?u=' + window.location.href);"></menuitem>
+        </menu>
+    </menu>
+
     <script src="./javascripts/vendors/jquery-2.0.3.min.js"></script>
     <script src="./javascripts/vendors/bootstrap.min.js"></script>
     <script src="javascripts/vendors/jquery.dataTables.min.js"></script>
@@ -1345,13 +1861,13 @@
                 }, 800);
                 return false;
             });
-			
+
         });
     </script>
     <script>
         $(function () {
             $("#example-datatables").dataTable({
-                aoColumnDefs: [{ bSortable: !1, aTargets: [0,5] }],
+                aoColumnDefs: [{ bSortable: !1, aTargets: [0, 5] }],
                 //"bPaginate": false,
                 //"bLengthChange": false,
                 //"bFilter": false,                
@@ -1361,43 +1877,49 @@
             }),
             $(".dataTables_filter input").addClass("form-control").attr("placeholder", "Search");
 
-			// node discovery
+            // node discovery
             $('.node-discovery').on('click', function () {
                 $('.dash-tile-content-inner-fluid').hide(function () {
                     $('#node-discovery').removeClass('hidden');
                 });
             });
 
-			// remove btn
+            // remove btn
             $('.icon-remove').parent().on("click", function (e) {
                 $('#example-modal').on('show.bs.modal', function () {
                     $('.modal-body').html('<p>Are you sure?</p>');
                     $('.modal-footer').html('<button class="btn" data-dismiss="modal">Close</button><button class="btn btn-success" aria-hidden="true">Confirm</button>');
                 }).modal();
 
-                $('#example-modal').data({ 'id': $(e.currentTarget).parents('tr').index(), 'target': $(e.currentTarget).parents('table').attr('id') ,'action':'remove'});
+                $('#example-modal').data({ 'id': $(e.currentTarget).parents('tr').index(), 'target': $(e.currentTarget).parents('table').attr('id'), 'action': 'remove' });
 
             });
-			
-			// modal ok btn
+
+            // modal ok btn
             $('#example-modal').on("click", ".btn-success", function (e) {
                 e.preventDefault();
                 var rowId = $('#example-modal').data('id'), target = $('#example-modal').data('target');
-                if($('#example-modal').data('action')==='remove') {
-					$('#' + target + ' tbody').find('tr').eq(Number(rowId)).remove();
-					$('#example-modal').modal('hide');
-				}
-                
+                if ($('#example-modal').data('action') === 'remove' && rowId != -1) {
+                    $('#' + target + ' tbody').find('tr').eq(Number(rowId)).remove();
+                    $('#example-modal').modal('hide');
+                }
+                else {
+                    // remove the template file
+                    $('.sample-card.selected').remove();
+                    $('#example-modal').modal('hide');
+                    $('.body-single').addClass('hidden');
+                }
+
             });
-			
-			// create template btn
+
+            // create template btn
             $(document).on("click", ".create-template", function (e) {
                 $('#example-modal').on('show.bs.modal', function () {
                     $('.modal-body').html($('#create-template').html());
                     $('.modal-footer').html('<input type="submit" class="btn" value="Cancel" data-dismiss="modal"><input type="submit" class="btn btn-primary" value="Save changes">');
                 }).modal();
             });
-			
+
             $('#template-table').on('click', '.btn-success, td a[href^="javascript"]', function (e) {
                 $('#example-modal').data({
                     id: $(e.currentTarget).parents('tr').index(),
@@ -1413,69 +1935,69 @@
                     $('.modal-footer').html('<input type="submit" class="btn" value="Cancel" data-dismiss="modal"><input type="submit" class="btn btn-primary" value="Save changes">');
                 }).modal();
             });
-			
-			// node inspector btn
+
+            // node inspector btn
             $(document).on("click", ".node-inspector", function (e) {
-				$('#example-modal').on('show.bs.modal', function () {
-					$('.modal-body').html($('#service-command').html());
-					$('.modal-body .action').text('node inspector');
-					$('.modal-footer').html('<button class="btn btn-default" data-dismiss="modal">Close</button>');
-				}).modal();
-				
-				setTimeout(function(){
-					$('.modal-body .inprogress').addClass('hidden',function(){
-						$('.modal-body .finished').removeClass('hidden');
-					});
-				},5000);
-                
+                $('#example-modal').on('show.bs.modal', function () {
+                    $('.modal-body').html($('#service-command').html());
+                    $('.modal-body .action').text('node inspector');
+                    $('.modal-footer').html('<button class="btn btn-default" data-dismiss="modal">Close</button>');
+                }).modal();
+
+                setTimeout(function () {
+                    $('.modal-body .inprogress').addClass('hidden', function () {
+                        $('.modal-body .finished').removeClass('hidden');
+                    });
+                }, 5000);
+
                 e.preventDefault();
             });
 
-			// tooltip
+            // tooltip
             $('.btn-group').tooltip({
                 selector: "[data-toggle=tooltip]",
                 container: "body"
             });
 
-			// check all
-			$(".check-all").click(function () {
+            // check all
+            $(".check-all").click(function () {
                 var checked_status = this.checked;
                 $(this).parents('table').find('tbody .check').each(function () {
                     this.checked = checked_status;
                 });
             });
-			
-			// actions for selected btn
-			$('#example-datatables_wrapper input[type=checkbox]').on('click', function(e){
-				if($('#example-datatables_wrapper tbody :checked').size()>0) {
-					$('#example-datatables_wrapper .btn-group>button:eq(0)').removeClass('btn-default').addClass('btn-primary');
-					$('#example-datatables_wrapper .dropdown-menu li').removeClass('disabled');
-				}
-				else{
-					$('#example-datatables_wrapper .btn-group>button:eq(0)').removeClass('btn-primary').addClass('btn-default');
-					$('#example-datatables_wrapper .dropdown-menu li').addClass('disabled');
-				}
-			});
-			
-			// login info 
-			$('[name="host-user"]').change(function(){
-				if($(this).val()=='option2') $(this).parents('#login-user').find('.radio:last').removeClass('hidden');
-				else {
-					$(this).parents('#login-user').find('.radio:last').addClass('hidden');
-				}
-			});
-			
-			// authentication mode
-			$('[name="example-radios"]').change(function(){
-				if($(this).val()=='option2') {
-					$('.authentication:eq(0)').removeClass('hidden');
-					$('.authentication:gt(0)').addClass('hidden');
-				}
-				else {
-					$('.authentication:eq(0)').addClass('hidden');
-					$('.authentication:gt(0)').removeClass('hidden');
-				}
-			});
+
+            // actions for selected btn
+            $('#example-datatables_wrapper input[type=checkbox]').on('click', function (e) {
+                if ($('#example-datatables_wrapper tbody :checked').size() > 0) {
+                    $('#example-datatables_wrapper .btn-group>button:eq(0)').removeClass('btn-default').addClass('btn-primary');
+                    $('#example-datatables_wrapper .dropdown-menu li').removeClass('disabled');
+                }
+                else {
+                    $('#example-datatables_wrapper .btn-group>button:eq(0)').removeClass('btn-primary').addClass('btn-default');
+                    $('#example-datatables_wrapper .dropdown-menu li').addClass('disabled');
+                }
+            });
+
+            // login info 
+            $('[name="host-user"]').change(function () {
+                if ($(this).val() == 'option2') $(this).parents('#login-user').find('.radio:last').removeClass('hidden');
+                else {
+                    $(this).parents('#login-user').find('.radio:last').addClass('hidden');
+                }
+            });
+
+            // authentication mode
+            $('[name="example-radios"]').change(function () {
+                if ($(this).val() == 'option2') {
+                    $('.authentication:eq(0)').removeClass('hidden');
+                    $('.authentication:gt(0)').addClass('hidden');
+                }
+                else {
+                    $('.authentication:eq(0)').addClass('hidden');
+                    $('.authentication:gt(0)').removeClass('hidden');
+                }
+            });
 
         });
     </script>
@@ -1539,11 +2061,79 @@
                 });
 
             });
-			
-			
-			
-			
 
+
+
+            $('#faq-tabs').on('click', 'li:not(:last)', function () {
+                $('#faq-tabs li:not(:last)').find('i').removeClass('icon-folder-open').addClass('icon-folder-close');
+                $(this).find('i').removeClass('icon-folder-close').addClass('icon-folder-open');
+                $('.body-single').addClass('hidden');
+            });
+
+            $(document).on('click','.sample-card', function () {
+                $('.card').removeClass('selected');
+                $(this).addClass('selected');
+                $('.body-single').removeClass('hidden');
+            });
+
+            $('.icon-copy').parents('a').on('click', function () {
+                var tmp_card = $('.sample-card.selected').clone();
+                tmp_card.removeClass('selected').removeAttr('id');
+                tmp_card.find('h4').text('Copy of ' + tmp_card.find('h4').text());
+                $('.sample-card.selected').parents('#template-wrapper').find('.tab-pane.active').append(tmp_card);
+            });
+
+            $('.icon-edit-sign').parents('a').on('click', function () {
+                $('.sample-card.selected').find('h4').attr('contenteditable', true).focus();
+            });
+
+            $('a:contains("Download More")').on('click', function () {
+                $('#dash-example-tabs-newusers >div').hide(function () {
+                    $('#template-download-center').show().removeClass('hidden');
+                });
+            });
+
+            $('#template-download-center').on('click', 'a:contains("Return")', function () {
+                $('#template-download-center').hide(function () {                    
+                    $('#dash-example-tabs-newusers >div').show();
+                    $('#template-download-center').addClass('hidden');
+                });
+            });
+
+            $('#fileBrowserButtons .icon-edit').parent().on('click', function (e) {
+                $('.dash-tile-content-inner-fluid').hide(function () {
+                    $('#config-template').show().removeClass('hidden');
+                    console.log(e);
+                });
+            });
+
+            $(document).on('dblclick', '.sample-card', function (e) {
+                $('#fileBrowserButtons .icon-edit').trigger('click');                
+            });
+
+            $('a:contains("click to edit")').on('click', function () {
+                var url = $(this).parents('tr').find('td:eq(0)').text();
+                console.log(url);
+                $.ajax({
+                    url:url,
+                    dataType:'text',
+                    success: function (data) {                        
+                        $('#product-tabs-features textarea').html(data);
+                    }
+                });
+            });
+
+            $('#config-template a:contains("Launch"), #fileBrowserButtons a:contains("Launch")').on('click', function () {
+                try{showModelessDialog('dashboard.html', '', "scroll:yes;resizable:no;help:no;center:yes;status:false;dialogWidth:1010px;dialogHeight:500px");}
+                catch (e) {
+                    try { showModalDialog('dashboard.html', '', "scroll:yes;resizable:no;help:no;center:yes;status:false;dialogWidth:1010px;dialogHeight:500px"); }
+                    catch (e2) { window.open('dashboard.html', '', 'width=1010px, height=500px, scrollbars=no,status=no,resizable=no,menubar=no'); }
+                }
+            });
+
+            $('#example-datatables_wrapper a:contains("Apply Template")').on('click', function () {
+                $('#dash-example-tabs a[href="#dash-example-tabs-newusers"]').tab('show');
+            });
         });
 
     </script>

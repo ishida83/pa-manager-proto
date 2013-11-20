@@ -1,0 +1,111 @@
+/*
+ * Dashboard Specific CSS : TopLists
+ *
+ *
+ */
+
+
+.WDdataCellBody{
+}
+
+.WDdataCellBody #pieChartObj {
+  margin-top:55px;  
+}
+
+
+.WDdataCellBody  tbody td.column0,
+.WDdataCellBody  tbody td:first-child {
+  border-left: solid 1px #d1d1d1;
+}
+.WDdataCellBody tbody td.column6,
+.WDdataCellBody  tbody td:last-child {
+  border-right: solid 1px #d1d1d1;
+}
+
+.WDdataCellBody  tbody td { 
+  background: #555555; /* Old browsers */  
+}
+.svg .WDdataCellBody  tbody td {
+}
+.no-svg .WDdataCellBody  tbody td { 
+}
+
+.WDdataCellBody  tbody tr:hover td { 
+  background: #666; /* Old browsers */
+
+}
+.svg .WDdataCellBody  tbody tr:hover td {
+}
+.no-svg .WDdataCellBody  tbody tr:hover td {
+}
+
+.WDdataCellBody  tbody tr:hover td.expandingClass,
+.svg .WDdataCellBody  tbody tr:hover td.expandingClass,
+.no-svg .WDdataCellBody  tbody tr:hover td.expandingClass,
+.WDdataCellBody tbody td.expandingClass,
+.svg .WDdataCellBody tbody td.expandingClass, 
+.no-svg .WDdataCellBody tbody td.expandingClass {
+  background:none;  
+}
+
+
+
+.WDdataCellBody tbody td .cellWrapper {
+  display:block;
+  height:100%;
+  font-weight: 300;
+  font-size: 13px;
+}
+.WDdataCellBody tbody td.column0 .cellWrapper,
+.WDdataCellBody tbody td.column1 .cellWrapper,
+.WDdataCellBody tbody  td.column2 .cellWrapper,
+.WDdataCellBody tbody td.column3 .cellWrapper,
+.WDdataCellBody tbody td.column4 .cellWrapper,
+.WDdataCellBody tbody td.column5 .cellWrapper {
+  border-right: solid 1px #343434;
+}
+.WDdataCellBody tbody td.column1 .cellWrapper,
+.WDdataCellBody tbody td.column2 .cellWrapper,
+.WDdataCellBody tbody td.column3 .cellWrapper,
+.WDdataCellBody tbody td.column4 .cellWrapper,
+.WDdataCellBody tbody td.column5 .cellWrapper,
+.WDdataCellBody tbody td.column6 .cellWrapper {
+  border-left: solid 1px #555555;
+}
+
+.WDdataCellBody tbody td.column0 .cellWrapper .value {
+  margin-right:5px;
+}
+.WDdataCellBody tbody td.column1 .cellWrapper,
+.WDdataCellBody tbody td.column2 .cellWrapper,
+.WDdataCellBody tbody td.column3 .cellWrapper,
+.WDdataCellBody tbody td.column4 .cellWrapper,
+.WDdataCellBody tbody td.column5 .cellWrapper {
+  padding-left:12px;
+  text-align:left;
+}
+.WDdataCellBody tbody td.column6 .cellWrapper .trend {
+  margin-right:10px;
+}
+.WDdataCellBody tbody td.column6 .cellWrapper .value .old {
+  margin-left:10px;
+}
+
+
+.WDdataCellBody tbody td.column5 .cellWrapper {
+  padding-left:26px;
+  position:relative;
+}
+.WDdataCellBody tbody td.column5 .cellWrapper > * {
+  position:absolute;
+  top:10px;
+  
+  }
+  
+#headerTable3 {
+    border-top: none;
+}
+
+#sortByFilterLabel {
+    font-size: 10px;   
+}

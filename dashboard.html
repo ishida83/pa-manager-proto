@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<!-- saved from url=(0115)http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf -->
+<html class=" js flexbox canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Demo Dashboard 1</title><script type="text/javascript" src="./Demo Dashboard 1_files/scripts.js"></script><script type="text/javascript" src="./Demo Dashboard 1_files/jquery.sparkline.js"></script>
+<link href="./Demo Dashboard 1_files/styles.css" rel="stylesheet" type="text/css"><link rel="stylesheet" type="text/css" href="./Demo Dashboard 1_files/jquery-ui-1.8.custom.css">
+<!--[if lte IE 8]><link rel="stylesheet" href="/pentaho/content/pentaho-cdf/js/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->		<script language="javascript" type="text/javascript" src="./Demo Dashboard 1_files/CDF.js"></script>		<link href="./Demo Dashboard 1_files/CDF-CSS.css" rel="stylesheet" type="text/css">
+<script language="javascript" type="text/javascript">
+  Dashboards.context = {
+  "file": "Content01.wcdf",
+  "fullPath": "/Demo/Dashboards/Content01.wcdf",
+  "isAdmin": false,
+  "locale": "zh_TW",
+  "params": {},
+  "path": "/Dashboards",
+  "queryData": {},
+  "roles": ["Anonymous"],
+  "serverLocalDate": 1384970949341,
+  "serverUTCDate": 1384970949341,
+  "sessionAttributes": {},
+  "sessionTimeout": 1800,
+  "solution": "Demo",
+  "user": "anonymousUser"
+}
+Dashboards.initialStorage = {}
+</script>
+
+	<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+	<body>
+	
+		
+  <div class="container">
+    <script language="javascript" type="text/javascript" src="./Demo Dashboard 1_files/date.js"></script>
+
+    
+    <link rel="stylesheet" type="text/css" href="./Demo Dashboard 1_files/content02.css">
+
+    
+    <script language="javascript" type="text/javascript" src="./Demo Dashboard 1_files/demoInit.js"></script>
+
+    
+    <link rel="stylesheet" type="text/css" href="./Demo Dashboard 1_files/borderBox.css">
+
+    
+    <script language="javascript" type="text/javascript" src="./Demo Dashboard 1_files/demo.js"></script>
+
+    
+    <link rel="stylesheet" type="text/css" href="./Demo Dashboard 1_files/demo.css">
+
+    
+    <hr class="space " style="height:15px;">
+    
+    <div id="header" class="WDheader clearfix " style="height:40px;">
+      <div id="logo" class="span-3 ">
+        &nbsp; 
+        
+      </div>
+      <div id="siteMapObj" class="span-8 append-1 prepend-1 "><ul class="siteMap siteMapLevel0"><li class="siteMapItem  siteMapSelected siteMapInitial" '="">  <a href="./Demo Dashboard 1_files/Demo Dashboard 1.htm">Content 01</a></li></ul></div>
+      <div id="f985016b-110e-946a-aa01-253c0728a300" class="floatRight span-11 last ">
+        <div id="d03eb399-1259-57e4-f549-2ef49d546415" class="clearfix ">
+          <div id="labelFilterObj" class="span-4 "><select class="chzn-select chzn-done" id="selE3E" style="display: none;"><option value="all">All</option><option value="labelA">Label A</option><option value="labelB">Label B</option><option value="labelC">Label C</option><option value="labelD">Label D</option></select><div id="selE3E_chzn" class="chzn-container  chzn-container-single" style="width: 69px;"><a href="javascript:void(0)" class="chzn-single"><span>All</span><div><b></b></div></a><div class="chzn-drop" style="left: -9000px; width: 67px; top: 29px;"><div class="chzn-search"><input type="text" autocomplete="off" style="width: 67px;"></div><ul class="chzn-results"><li id="selE3E_chzn_o_0" class="active-result result-selected selectedOption">All</li><li id="selE3E_chzn_o_1" class="active-result">Label A</li><li id="selE3E_chzn_o_2" class="active-result">Label B</li><li id="selE3E_chzn_o_3" class="active-result">Label C</li><li id="selE3E_chzn_o_4" class="active-result">Label D</li></ul></div></div></div>
+          <div id="dateFilterObj" class="span-7 last "><div class="datepicker-outcontainer"><div class="datepicker-title "><div class="datepicker-title-text"><span class="option">Yesterday:</span><span class="range">Nov 20</span></div><div class="datepicker-title-pushdown"><span>&nbsp;</span></div></div><div class="datepicker-outerbox" style="display: none;"><div id="calendarWrapper" class="calendarWrapper"><div class="datepicker-options"><div class="datepicker-option datepicker-option-selected" data-id="1" data-offset="-1">Yesterday</div><div class="datepicker-option" data-id="2" data-offset="-1" data-days="-6">Last 7 Days</div><div class="datepicker-option" data-id="3" data-offset="-1" data-week="true" data-weeks="-1" data-weeks-duration="1">Last Week</div><div class="datepicker-option" data-id="4" data-offset="-1" data-month="true" data-mtd="true">Month to Date</div><div class="datepicker-option" data-id="5" data-offset="-1" data-year="true" data-ytd="true">Year to Date </div><div class="datepicker-option" data-manual="true">Specific Date</div></div><div id="datepicker" style="display: none;"><div class="ui-datepicker-picker"><div class="datepicker" id="datepicker_890" style="display: block; position: relative;"><div class="datepickerBorderT"></div><div class="datepickerBorderB"></div><div class="datepickerBorderL"></div><div class="datepickerBorderR"></div><div class="datepickerBorderTL"></div><div class="datepickerBorderTR"></div><div class="datepickerBorderBL"></div><div class="datepickerBorderBR"></div><div class="datepickerContainer"><table cellspacing="0" cellpadding="0"><tbody><tr><td><table cellspacing="0" cellpadding="0" class="datepickerViewDays"><thead><tr class="datePickerMonthLine"><th class="datepickerGoPrev"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span style="width: 15px; height: 15px;"></span></a></th><th colspan="5" class="datepickerMonth"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>November 2013</span></a></th><th class="datepickerGoNext"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span style="width: 15px; height: 15px;"></span></a></th></tr><tr class="datepickerDoW"><th><span>Mon</span></th><th><span>Tue</span></th><th><span>Wed</span></th><th><span>Thu</span></th><th><span>Fri</span></th><th><span>Sat</span></th><th><span>Sun</span></th></tr></thead><tbody class="datepickerMonths"><tr><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Jan</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Feb</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Mar</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Apr</span></a></td></tr><tr><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>May</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Jun</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Jul</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Aug</span></a></td></tr><tr><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Sep</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Oct</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Nov</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>Dec</span></a></td></tr></tbody><tbody class="datepickerDays"><tr><td class="datepickerNotInMonth"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>28</span></a></td><td class="datepickerNotInMonth"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>29</span></a></td><td class="datepickerNotInMonth"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>30</span></a></td><td class="datepickerNotInMonth"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>31</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>1</span></a></td><td class="datepickerSaturday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2</span></a></td><td class="datepickerSunday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>3</span></a></td></tr><tr><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>4</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>5</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>6</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>7</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>8</span></a></td><td class="datepickerSaturday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>9</span></a></td><td class="datepickerSunday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>10</span></a></td></tr><tr><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>11</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>12</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>13</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>14</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>15</span></a></td><td class="datepickerSaturday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>16</span></a></td><td class="datepickerSunday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>17</span></a></td></tr><tr><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>18</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>19</span></a></td><td class="datepickerSelected"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>20</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>21</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>22</span></a></td><td class="datepickerSaturday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>23</span></a></td><td class="datepickerSunday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>24</span></a></td></tr><tr><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>25</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>26</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>27</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>28</span></a></td><td class=""><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>29</span></a></td><td class="datepickerSaturday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>30</span></a></td><td class="datepickerNotInMonth datepickerSunday"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>1</span></a></td></tr><tr><td class="datepickerNotInMonth" style="visibility: hidden;"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2</span></a></td><td class="datepickerNotInMonth" style="visibility: hidden;"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>3</span></a></td><td class="datepickerNotInMonth" style="visibility: hidden;"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>4</span></a></td><td class="datepickerNotInMonth" style="visibility: hidden;"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>5</span></a></td><td class="datepickerNotInMonth" style="visibility: hidden;"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>6</span></a></td><td class="datepickerNotInMonth datepickerSaturday" style="visibility: hidden;"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>7</span></a></td><td class="datepickerNotInMonth datepickerSunday" style="visibility: hidden;"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>8</span></a></td></tr></tbody><tbody class="datepickerYears"><tr><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2007</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2008</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2009</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2010</span></a></td></tr><tr><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2011</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2012</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2013</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2014</span></a></td></tr><tr><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2015</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2016</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2017</span></a></td><td colspan="2"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#"><span>2018</span></a></td></tr></tbody></table></td></tr></tbody></table></div></div></div><div class="datepicker-applyButtonContainer"><div class="applyButton">Apply</div><div class="cancelButton">Cancel</div></div></div></div></div></div></div>
+        </div>
+      </div>
+    </div>
+    <hr class="space " style="height:40px;">
+    
+    <div id="dataCell3" class="WDdataCell clearfix ">
+      <div id="2e9d5377-a9cb-4c0a-d2b1-b2853677d5dd" class="last ">
+        <div id="dataCellHeader2" class="WDdataCellHeader WDh1 clearfix ">
+          <div id="cb43e94c-d4f6-cba8-d2f9-b3d738e90836" class="last ">
+            Overview 
+            
+            <div id="exportButtonObj3" class="WDexport clearfix "><div class="popupTitle">Export</div></div>
+          </div>
+        </div>
+        <div id="headerTable3" class="WDdataCellHeader clearfix ">
+          <div id="headerTableObj3" class="last ">
+          </div>
+        </div>
+        <div id="filtersRow3" class="WDdataCellHeader WDfilterCell clearfix ">
+          <div id="sortByFilterLabel" class="span-2 ">
+            Sort By: 
+            
+          </div>
+          <div id="sortByFilterObj" class="span-20 last "><ul class="toggleGroup horizontal"><li class="toggleGroup horizontal"><label class="checked"><div class="buttonWrapper"><input onclick="ToggleButtonBaseComponent.prototype.callAjaxAfterRender(&quot;render_sortByFilter&quot;)" checked="" type="radio" class="render_sortByFilter" name="render_sortByFilter" value="artist"></div> Artist</label></li><li class="toggleGroup horizontal"><label><div class="buttonWrapper"><input onclick="ToggleButtonBaseComponent.prototype.callAjaxAfterRender(&quot;render_sortByFilter&quot;)" type="radio" class="render_sortByFilter" name="render_sortByFilter" value="album"></div> Album</label></li><li class="toggleGroup horizontal"><label><div class="buttonWrapper"><input onclick="ToggleButtonBaseComponent.prototype.callAjaxAfterRender(&quot;render_sortByFilter&quot;)" type="radio" class="render_sortByFilter" name="render_sortByFilter" value="Track"></div> track</label></li></ul></div>
+        </div>
+        <div id="dataCellBody1" class="WDdataCellBody clearfix ">
+          <div id="pieChartObj" class="span-8 prepend-1 "><div id="pieChartObjprotovis" style="display: inline-block;"><svg font-size="10px" font-family="sans-serif" fill="none" stroke="none" stroke-width="1.5" style="-webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;" unselectable="on" width="312" height="312"><defs></defs><rect pointer-events="all" width="312" height="312" fill="rgb(127,127,127)" fill-opacity="0.00001"></rect><g><g transform="translate(3,3)"><g><g transform="translate(30.6,30.6)"><path transform="translate(122.4,122.4)" d="M7.49459088539295e-15,-122.4A122.4,122.4 0 0,1 117.25791630741584,35.104715683837426L67.05926586208422,20.076226289776308A70,70 0 0,0 4.2861222383783204e-15,-70Z" fill="rgb(95,6,14)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path><path transform="translate(122.4,122.4)" d="M117.25791630741584,35.104715683837426A122.4,122.4 0 0,1 32.82432780190205,117.91659554258375L18.772082893244637,67.43596150311161A70,70 0 0,0 67.05926586208422,20.076226289776308Z" fill="rgb(177,12,27)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path><path transform="translate(122.4,122.4)" d="M32.82432780190205,117.91659554258375A122.4,122.4 0 0,1 -59.1329821539085,107.16832751137595L-33.817881950764665,61.28907619114638A70,70 0 0,0 18.772082893244637,67.43596150311161Z" fill="rgb(215,82,0)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path><path transform="translate(122.4,122.4)" d="M-59.1329821539085,107.16832751137595A122.4,122.4 0 0,1 -114.18496545919685,44.0857535160966L-65.30185933124002,25.212440736329754A70,70 0 0,0 -33.817881950764665,61.28907619114638Z" fill="rgb(255,110,20)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path><path transform="translate(122.4,122.4)" d="M-114.18496545919685,44.0857535160966A122.4,122.4 0 0,1 -118.53093116860344,-30.531596032696875L-67.78729723694642,-17.46088008405867A70,70 0 0,0 -65.30185933124002,25.212440736329754Z" fill="rgb(255,170,117)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path><path transform="translate(122.4,122.4)" d="M-118.53093116860344,-30.531596032696875A122.4,122.4 0 0,1 -78.67720342563244,-93.7638398377629L-44.995132678057765,-53.62311101832845A70,70 0 0,0 -67.78729723694642,-17.46088008405867Z" fill="rgb(40,42,46)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path><path transform="translate(122.4,122.4)" d="M-78.67720342563244,-93.7638398377629A122.4,122.4 0 0,1 -46.29166264020907,-113.30861383851219L-26.47399007201499,-64.80067784882232A70,70 0 0,0 -44.995132678057765,-53.62311101832845Z" fill="rgb(73,78,84)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path><path transform="translate(122.4,122.4)" d="M-46.29166264020907,-113.30861383851219A122.4,122.4 0 0,1 -18.9131002396797,-120.92995757596141L-10.816315496548848,-69.15928946337662A70,70 0 0,0 -26.47399007201499,-64.80067784882232Z" fill="rgb(109,115,125)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path><path transform="translate(122.4,122.4)" d="M-18.9131002396797,-120.92995757596141A122.4,122.4 0 0,1 -9.485072290244371,-122.03193599893775L-5.42446944703518,-69.78950588174544A70,70 0 0,0 -10.816315496548848,-69.15928946337662Z" fill="rgb(154,159,167)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path><path transform="translate(122.4,122.4)" d="M-9.485072290244371,-122.03193599893775A122.4,122.4 0 0,1 -2.2483772656178848e-14,-122.4L-1.2858366715134961e-14,-70A70,70 0 0,0 -5.42446944703518,-69.78950588174544Z" fill="rgb(209,211,215)" fill-rule="evenodd" stroke="rgb(246,248,247)" stroke-width="3"></path></g></g></g></g><rect pointer-events="stroke" width="312" height="312" stroke-opacity="0"></rect></svg></div></div>
+          <div id="supportTableObj" class="span-14 last "><div class="dataTables_wrapper" id="supportTableObjTable_wrapper"><table id="supportTableObjTable" class="tableComponent" width="100%"><thead><tr><th class="column0 string" style="width: 39%;">Label</th><th class="column1 numeric" style="width: 10%;">Value</th><th class="column2 dataBar" style="width: 260px;">Bar</th></tr></thead><tbody><tr class="odd"><td class="column0 string">Hurry Up We're Dreaming</td><td class="column1 numeric">24.5%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="239.12" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-73900e140b7b404189912024c55509de" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#5f060e" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#5f060e" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 24.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="239.12" height="12" r="0" rx="0" ry="0" fill="url(#r-73900e140b7b404189912024c55509de)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr><tr class="even"><td class="column0 string">Small Things</td><td class="column1 numeric">23.1%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="225.45600000000002" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-5844e651993f470c84c6921171ef0102" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#b10c1b" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#b10c1b" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 23.1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="225.45600000000002" height="12" r="0" rx="0" ry="0" fill="url(#r-5844e651993f470c84c6921171ef0102)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr><tr class="odd"><td class="column0 string">Dandelion</td><td class="column1 numeric">10.2%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="99.552" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-2806b381ad264c5c88985d241ada58ed" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#d75200" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#d75200" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 10.2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="99.552" height="12" r="0" rx="0" ry="0" fill="url(#r-2806b381ad264c5c88985d241ada58ed)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr><tr class="even"><td class="column0 string">Float</td><td class="column1 numeric">9.7%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="94.672" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-df8d60d7ace5453eb8bef43dfc6ce642" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#ff6e14" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#ff6e14" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 9.7" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="94.672" height="12" r="0" rx="0" ry="0" fill="url(#r-df8d60d7ace5453eb8bef43dfc6ce642)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr><tr class="odd"><td class="column0 string">The Last</td><td class="column1 numeric">8.3%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="81.00800000000001" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-1e3d93c18cd346e18662d8bf349c694d" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#ffaa75" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#ffaa75" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 8.3" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="81.00800000000001" height="12" r="0" rx="0" ry="0" fill="url(#r-1e3d93c18cd346e18662d8bf349c694d)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr><tr class="even"><td class="column0 string">We're Dreaming</td><td class="column1 numeric">8.1%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="79.056" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-a3f1711a1ef34d5b9701883bfeed1556" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#282a2e" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#282a2e" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 8.1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="79.056" height="12" r="0" rx="0" ry="0" fill="url(#r-a3f1711a1ef34d5b9701883bfeed1556)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr><tr class="odd"><td class="column0 string">We Stay Together</td><td class="column1 numeric">4.6%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="44.895999999999994" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-cb444616b2b5410e84494bb1f2802f40" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#494e54" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#494e54" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 4.6" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="44.895999999999994" height="12" r="0" rx="0" ry="0" fill="url(#r-cb444616b2b5410e84494bb1f2802f40)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr><tr class="even"><td class="column0 string">One</td><td class="column1 numeric">3.1%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="30.255999999999997" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-7ee9e89f47c043c988ecdcdd90c6f2e0" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#6d737d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#6d737d" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 3.1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="30.255999999999997" height="12" r="0" rx="0" ry="0" fill="url(#r-7ee9e89f47c043c988ecdcdd90c6f2e0)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr><tr class="odd"><td class="column0 string">Fennesz01</td><td class="column1 numeric">1.9%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="18.544" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-ca3a121276844e088015f0853fe8acb5" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#9a9fa7" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#9a9fa7" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 1.9" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="18.544" height="12" r="0" rx="0" ry="0" fill="url(#r-ca3a121276844e088015f0853fe8acb5)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr><tr class="even"><td class="column0 string">Passed Me By</td><td class="column1 numeric">1.2%</td><td class="column2 dataBar"><div class="dataBarContainer"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="11.712" height="12" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël</desc><defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><lineargradient id="r-b5f818605a8342ff8a6389b72a60e110" x1="0" y1="1" x2="6.123031769111886e-17" y2="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><stop offset="0%" stop-color="#d1d3d7" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop><stop offset="100%" stop-color="#d1d3d7" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></stop></lineargradient></defs><a title="Value: 1.2" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><rect x="0" y="0" width="11.712" height="12" r="0" rx="0" ry="0" fill="url(#r-b5f818605a8342ff8a6389b72a60e110)" stroke="none" opacity="1" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); opacity: 1; fill-opacity: 1;"></rect></a></svg>&nbsp;</div></td></tr></tbody></table></div></div>
+        </div>
+        <div id="dataCellBody3" class="WDdataCellBody clearfix ">
+          <div id="tableObj3" class="last "><div class="dataTables_wrapper" id="tableObj3Table_wrapper"><table id="tableObj3Table" class="tableComponent" width="100%"><thead><tr><th class="column0 imageLink" style="width: 8%;">Ranking</th><th class="column1 string" style="width: 24%;">Track</th><th class="column2 numeric" style="width: 9%;">Nr Streams</th><th class="column3 string" style="width: 16%;">Artist</th><th class="column4 string" style="width: 22%;">Album</th><th class="column5 sparkline" style="width: 14%;">Trend</th><th class="column6 trendArrow" style="width: 7%;">Change</th></tr></thead><tbody><tr class="odd"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">1</div><div class="image"><img src="./Demo Dashboard 1_files/album_10.png"></div></div></td><td class="column1 string"><div class="cellWrapper">Hurry Up We're Dreaming</div></td><td class="column2 numeric"><div class="cellWrapper">5,236</div></td><td class="column3 string"><div class="cellWrapper">Aeroplane</div></td><td class="column4 string"><div class="cellWrapper">In Flight Entertainment</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="old">2<span></span></span></div><div class="trend up good">&nbsp;</div></div></td></tr><tr class="even"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">2</div><div class="image"><img src="./Demo Dashboard 1_files/album_05.png"></div></div></td><td class="column1 string"><div class="cellWrapper">Small Things</div></td><td class="column2 numeric"><div class="cellWrapper">4,563</div></td><td class="column3 string"><div class="cellWrapper">Ricardo Donoso</div></td><td class="column4 string"><div class="cellWrapper">Morning Criminal</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="old">3<span></span></span></div><div class="trend down good">&nbsp;</div></div></td></tr><tr class="odd"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">3</div><div class="image"><img src="./Demo Dashboard 1_files/album_09.png"></div></div></td><td class="column1 string"><div class="cellWrapper">Dandelion</div></td><td class="column2 numeric"><div class="cellWrapper">4,022</div></td><td class="column3 string"><div class="cellWrapper">Stay +</div></td><td class="column4 string"><div class="cellWrapper">Dandelion</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="old">6<span></span></span></div><div class="trend up good">&nbsp;</div></div></td></tr><tr class="even"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">4</div><div class="image"><img src="./Demo Dashboard 1_files/default.png"></div></div></td><td class="column1 string"><div class="cellWrapper">Float</div></td><td class="column2 numeric"><div class="cellWrapper">3,785</div></td><td class="column3 string"><div class="cellWrapper">Peter Broderick</div></td><td class="column4 string"><div class="cellWrapper">Music for Confluence</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="old">8<span></span></span></div><div class="trend up good">&nbsp;</div></div></td></tr><tr class="odd"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">5</div><div class="image"><img src="./Demo Dashboard 1_files/album_02.png"></div></div></td><td class="column1 string"><div class="cellWrapper">The Last</div></td><td class="column2 numeric"><div class="cellWrapper">3,102</div></td><td class="column3 string"><div class="cellWrapper">Kuedo</div></td><td class="column4 string"><div class="cellWrapper">Whisper Fate</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="old">1<span></span></span></div><div class="trend down good">&nbsp;</div></div></td></tr><tr class="even"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">6</div><div class="image"><img src="./Demo Dashboard 1_files/album_08.png"></div></div></td><td class="column1 string"><div class="cellWrapper">We're Dreaming</div></td><td class="column2 numeric"><div class="cellWrapper">4,563</div></td><td class="column3 string"><div class="cellWrapper">M83</div></td><td class="column4 string"><div class="cellWrapper">Audio</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="new">New</span></div><div class="trend invalid good">&nbsp;</div></div></td></tr><tr class="odd"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">7</div><div class="image"><img src="./Demo Dashboard 1_files/album_06.png"></div></div></td><td class="column1 string"><div class="cellWrapper">We Stay Together</div></td><td class="column2 numeric"><div class="cellWrapper">2,956</div></td><td class="column3 string"><div class="cellWrapper">Patten</div></td><td class="column4 string"><div class="cellWrapper">Self Assessment</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="old">5<span></span></span></div><div class="trend down good">&nbsp;</div></div></td></tr><tr class="even"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">8</div><div class="image"><img src="./Demo Dashboard 1_files/default.png"></div></div></td><td class="column1 string"><div class="cellWrapper">One</div></td><td class="column2 numeric"><div class="cellWrapper">2,854</div></td><td class="column3 string"><div class="cellWrapper">Nate Young</div></td><td class="column4 string"><div class="cellWrapper">Cast Circle</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="old">12<span></span></span></div><div class="trend up good">&nbsp;</div></div></td></tr><tr class="odd"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">9</div><div class="image"><img src="./Demo Dashboard 1_files/default.png"></div></div></td><td class="column1 string"><div class="cellWrapper">Fennesz01</div></td><td class="column2 numeric"><div class="cellWrapper">2,820</div></td><td class="column3 string"><div class="cellWrapper">Fennesz</div></td><td class="column4 string"><div class="cellWrapper">Flumina</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="old">11<span></span></span></div><div class="trend up good">&nbsp;</div></div></td></tr><tr class="even"><td class="column0 imageLink"><div class="cellWrapper"><div class="value">10</div><div class="image"><img src="./Demo Dashboard 1_files/default.png"></div></div></td><td class="column1 string"><div class="cellWrapper">Passed Me By</div></td><td class="column2 numeric"><div class="cellWrapper">2,310</div></td><td class="column3 string"><div class="cellWrapper">Andy Stot</div></td><td class="column4 string"><div class="cellWrapper">You</div></td><td class="column5"><div class="cellWrapper"><canvas width="69" height="17" style="display: inline-block; width: 69px; height: 17px; vertical-align: top;"></canvas></div></td><td class="column6 trendArrow"><div class="cellWrapper"><div class="value"><span class="old">7<span></span></span></div><div class="trend up good">&nbsp;</div></div></td></tr></tbody></table><div class="dataTables_paginate paging_custom" id="tableObj3Table_paginate"><div class="paginate_page paginate_option selected">Page 1 of 3</div><div class="paginate_all paginate_option">View All</div><div class="paginate_button previous disabled" id="tableObj3Table_previous"></div><div class="paginate_button next" id="tableObj3Table_next"></div></div></div></div>
+        </div>
+      </div>
+    </div>
+    <hr class="space " style="height:40px;">
+    
+    <div id="expandableRow1" class="hidden clearfix ">
+      <div id="expandObj1" class="last ">
+      </div>
+    </div>
+    <div id="expandableRow2" class="hidden clearfix ">
+      <div id="expandObj2" class="last ">
+      </div>
+    </div>
+    <div id="expandableRow3" class="hidden clearfix ">
+      <div id="expandObj3" class="last ">
+      </div>
+    </div>
+  </div>
+<script language="javascript" type="text/javascript">
+wcdfSettings = {
+  "title": "Demo Dashboard 1",
+  "author": "",
+  "description": "",
+  "style": "Clean",
+  "widgetName": "",
+  "widget": false,
+  "rendererType": "blueprint",
+  "widgetParameters": []
+};
+
+var dashboardID = "c1";
+Dashboards.setParameterViewMode("dashboardID", "unused");
+
+siteMapParam = demo.siteMap();
+
+var labelParam = "";
+Dashboards.setParameterViewMode("labelParam", "unused");
+
+var dateRangeParam = "";
+Dashboards.setParameterViewMode("dateRangeParam", "unused");
+
+countryParam3 = ["no"];
+
+regionParam = [];
+
+ageParam = [];
+
+allClear = false;
+
+var sortByParam = "artist";
+Dashboards.setParameterViewMode("sortByParam", "unused");
+
+expandParam3 = { track: undefined, album: undefined, artist: undefined, label: undefined, image:undefined };
+
+var expandEvent3 = "";
+Dashboards.setParameterViewMode("expandEvent3", "unused");
+
+var render_siteMap = {
+	type: "siteMap",
+	name: "render_siteMap",
+	parameters: [],
+	executeAtStart: true,
+	siteMapParameter: "siteMapParam",
+	siteMapSelectedParameter: "dashboardID",
+	htmlObject: "siteMapObj",
+	listeners: []
+};
+
+var render_dateRange = {
+	type: "CalendarComponent",
+	name: "render_dateRange",
+	executeAtStart: true,
+	htmlObject: "dateFilterObj",
+	mode: "range",
+	parameter: "dateRangeParam",
+	listeners: []
+};
+
+var render_labelFilter = {
+	type: "Select",
+	name: "render_labelFilter",
+	parameter: "labelParam",
+	htmlObject: "labelFilterObj",
+	listeners: [],
+	parameters: [],
+	valuesArray: [],
+	valueAsId: false,
+	externalPlugin: "chosen",
+	executeAtStart: true,
+	postExecution: function (){
+    var obj = $('#' + this.htmlObject);    
+    var selectedIdx = obj.find('option:selected').index();
+    
+    obj.find('.chzn-results li').each( function (idx, el) {
+         $(el).toggleClass( 'selectedOption', idx == selectedIdx);
+    });  
+},
+	postChange: function (){
+    var obj = $('#' + this.htmlObject);    
+    var selectedIdx = obj.find('option:selected').index();
+    
+    obj.find('.chzn-results li').each( function (idx, el) {
+         $(el).toggleClass( 'selectedOption', idx == selectedIdx );
+    });
+},
+	queryDefinition:  {
+		dataAccessId: "labelQuery",
+		path: "/Demo/Dashboards/Content01.cda"
+	}
+};
+
+var render_regionFilter = {
+	type: "radio",
+	name: "render_regionFilter",
+	parameter: "regionParam",
+	htmlObject: "regionFilterObj",
+	listeners: [],
+	parameters: [],
+	valuesArray: [["N","Northern"],["S","Southern"],["W","Western"],["E","Eastern"]],
+	valueAsId: false,
+	executeAtStart: true,
+	postExecution: function () {
+    
+    var obj = $('#' + this.htmlObject);
+    var labels  = obj.find('label');
+    
+    labels.each( function () {
+        var wrapper = $('<div></div>').addClass('buttonWrapper');
+        $(this).find('input').wrap(wrapper);       
+    });
+    
+    labels.each( function () {
+        $(this).toggleClass( 'checked' , $(this).find('input').is(':checked') );       
+    });
+
+},
+	postChange: function () {
+    
+    var obj = $('#' + this.htmlObject);
+    var labels  = obj.find('label');
+    
+    labels.each( function () {
+        $(this).toggleClass( 'checked' , $(this).find('input').is(':checked') );       
+    });
+
+},
+	queryDefinition:  {
+
+	}
+};
+
+var render_ageFilter = {
+	type: "radio",
+	name: "render_ageFilter",
+	parameter: "ageParam",
+	htmlObject: "ageFilterObj",
+	listeners: [],
+	parameters: [],
+	valuesArray: [["0_19","0-19"],["20_29","20-29"],["30_39","30-39"],["40_49","40-49"],["50_59","50-59"],["60_69","60-69"],["70_","70+"]],
+	valueAsId: false,
+	executeAtStart: true,
+	postExecution: function () {
+    
+    var obj = $('#' + this.htmlObject);
+    var labels  = obj.find('label');
+    
+    labels.each( function () {
+        var wrapper = $('<div></div>').addClass('buttonWrapper');
+        $(this).find('input').wrap(wrapper); 
+    });
+    
+    labels.each( function () {
+        $(this).toggleClass( 'checked' , $(this).find('input').is(':checked') );       
+    });
+
+},
+	postChange: function () {
+    
+    var obj = $('#' + this.htmlObject);
+    var labels  = obj.find('label');
+    
+    labels.each( function () {
+        $(this).toggleClass( 'checked' , $(this).find('input').is(':checked') );       
+    });
+
+},
+	queryDefinition:  {
+
+	}
+};
+
+var render_sortByFilter = {
+	type: "radio",
+	name: "render_sortByFilter",
+	parameter: "sortByParam",
+	htmlObject: "sortByFilterObj",
+	listeners: [],
+	parameters: [],
+	valuesArray: [["artist","Artist"],["album","Album"],["Track","track"]],
+	valueAsId: false,
+	executeAtStart: true,
+	postExecution: function () {
+    
+    var obj = $('#' + this.htmlObject);
+    var labels  = obj.find('label');
+    
+    labels.each( function () {
+        var wrapper = $('<div></div>').addClass('buttonWrapper');
+        $(this).find('input').wrap(wrapper); 
+    });
+    
+    labels.each( function () {
+        $(this).toggleClass( 'checked' , $(this).find('input').is(':checked') );       
+    });
+
+},
+	postChange: function () {
+    
+    var obj = $('#' + this.htmlObject);
+    var labels  = obj.find('label');
+    
+    labels.each( function () {
+        $(this).toggleClass( 'checked' , $(this).find('input').is(':checked') );       
+    });
+    
+
+},
+	queryDefinition:  {
+
+	}
+};
+
+var render_countryFilter3 = {
+	type: "multiButton",
+	name: "render_countryFilter3",
+	parameter: "countryParam3",
+	listeners: [],
+	parameters: [],
+	valuesArray: [],
+	valueAsId: false,
+	isMultiple: false,
+	executeAtStart: false,
+	queryDefinition:  {
+		dataAccessId: "countryQuery",
+		path: "/Demo/Dashboards/Content01.cda"
+	}
+};
+
+var render_headerTable3 = {
+	type: "Table",
+	name: "render_headerTable3",
+	htmlObject: "headerTableObj3",
+	listeners: ['labelParam','dateRangeParam','countryParam3'],
+	parameters: [["countryQueryParam","countryParam3"],["labelQueryParam","labelParam"],["startDateQueryParam","dateRangeParam[0][0]"],["endDateQueryParam","dateRangeParam[0][1]"]],
+	executeAtStart: false,
+	preExecution: function () {
+    
+    if (!Dashboards.getParameterValue("allClear")) {
+        return false;
+    }
+    
+    var trendOpts = {
+        includeValue: true,
+        valueFormat: function(v,format) {return sprintf(format,Math.abs(v));}
+        
+    }
+    this.setAddInOptions("colType","trendArrow",trendOpts);
+    
+},
+	extraOptions: [],
+	expandParameters: [],
+	expandOnClick: false,
+	chartDefinition:  {
+		dataAccessId: "headerTableQuery3",
+		path: "/Demo/Dashboards/Content01.cda",
+		colHeaders: [],
+		colTypes: ["numeric","numeric","numeric","numeric","trendArrow"],
+		colFormats: ["%d","%.0f%%","%d","%.1f%%","%.1f%%"],
+		colWidths: ["16%","16%","26%","26%","16%"],
+		colSortable: [],
+		colSearchable: [],
+		paginate: false,
+		paginateServerside: false,
+		paginationType: "two_button",
+		filter: false,
+		info: false,
+		sort: false,
+		sortBy: [],
+		lengthChange: false,
+		tableStyle: "classic"
+	}
+};
+
+var render_table3 = {
+	type: "Table",
+	name: "render_table3",
+	htmlObject: "tableObj3",
+	listeners: ['labelParam','dateRangeParam','countryParam3','sortByParam'],
+	parameters: [["countryQueryParam","countryParam3"],["labelQueryParam","labelParam"],["startDateQueryParam","dateRangeParam[0][0]"],["endDateQueryParam","dateRangeParam[0][1]"],["sortByQueryParam","sortByParam"]],
+	executeAtStart: false,
+	preExecution: function () {
+    
+    function sparklineOpts(state) {
+        var so =  {
+                    type:'bar',
+                    barColor: demo.settings.sparkline.barColor,
+                    barWidth: demo.settings.sparkline.barWidth,
+                    barSpacing: demo.settings.sparkline.barSpacing
+                  };
+        return so;
+    }
+    this.setAddInOptions("colType","sparkline",sparklineOpts);
+    
+    var imgOpts = {
+        includeValue: true,
+        defaultSrc: demo.settings.defaultCoverPath
+    }
+    this.setAddInOptions("colType","imageLink",imgOpts);
+    
+    var trendOpts = {
+        includeValue: true,
+        valueFormat: function(v,format) {
+            if ( isNaN(v) ){
+                return $('<span class="new">New</span>');
+            }
+            return $('<span class="old">' + sprintf(format,Math.abs(v)) + '<span>');
+        }
+    }
+    this.setAddInOptions("colType","trendArrow",trendOpts);
+},
+	extraOptions: [["sPaginationType","custom"]],
+	expandParameters: [["1","expandParam3.track"],["3","expandParam3.artist"],["4","expandParam3.album"],["0","expandParam3.image"],["0","expandEvent3"]],
+	expandOnClick: true,
+	expandContainerObject: "expandableRow3",
+	chartDefinition:  {
+		dataAccessId: "tableQuery3",
+		path: "/Demo/Dashboards/Content01.cda",
+		colHeaders: ["Ranking","Track","Nr Streams","Artist","Album","Trend","Change"],
+		colTypes: ["imageLink","string","numeric","string","string","sparkline","trendArrow"],
+		colFormats: ["%s","%s","%d","%s","%s","%s","%d"],
+		colWidths: ["8%","24%","9%","16%","22%","14%","7%"],
+		colSortable: [],
+		colSearchable: [],
+		paginate: true,
+		paginateServerside: false,
+		paginationType: "two_button",
+		filter: false,
+		info: false,
+		sort: false,
+		sortBy: [],
+		displayLength: 10,
+		lengthChange: false,
+		tableStyle: "classic",
+		drawCallback: function () {
+    var obj = $('#' + this.htmlObject);
+    
+    obj.find('tbody td').each ( function () {
+        if ( $(this).find('.cellWrapper').length == 0 ){
+            $(this).wrapInner( $('<div/>').addClass('cellWrapper') );
+        }
+    } );
+    
+}
+	}
+};
+
+var render_expand3 = {
+	type: "Query",
+	name: "render_expand3",
+	parameters: [["countryQueryParam","countryParam3"],["startDateQueryParam","dateRangeParam[0][0]"],["endDateQueryParam","dateRangeParam[0][1]"],["artistQueryParam","expandParam3.artist"],["trackQueryParam","expandParam3.track"],["labelQueryParam","expandParam3.label"],["albumQueryParam","expandParam3.album"]],
+	executeAtStart: false,
+	listeners: ['expandEvent3'],
+	htmlObject: "expandObj3",
+	postFetch: function (data){
+    var ph = $('#' + this.htmlObject),
+        param = Dashboards.getParameterValue( 'expandParam3');
+    ph.empty();
+    
+   demo.createExpand(ph, data, param);
+},
+	queryDefinition:  {
+		dataAccessId: "expandQuery3",
+		path: "/Demo/Dashboards/Content01.cda"
+	}
+};
+
+var render_exportButton3 = {
+	type: "ExportPopupComponent",
+	name: "render_exportButton3",
+	executeAtStart: true,
+	htmlObject: "exportButtonObj3",
+	gravity: "S",
+	chartExportType: "png",
+	chartExportLabel: "Export Chart",
+	dataExportComponent: "table3",
+	dataExportType: "xls",
+	dataExportLabel: "Excel",
+	dataExportAttachmentName: "top100",
+	contentLinks: [],
+	preExecution: function () {
+    var myself = this;
+    
+    myself.contentLinks = 
+        [ [ 'CSV'    , function() { myself.exportData.call( myself, 'csv') }  ] ];
+        
+},
+	postExecution: function () {
+        $('#' + this.htmlObject + ' .popupTitle').bind('click', 
+            function() { $('.popupComponent').draggable("option", "cancel", "div"); });
+},
+	listeners: []
+};
+
+var render_supportTable = {
+	type: "Table",
+	name: "render_supportTable",
+	htmlObject: "supportTableObj",
+	listeners: [],
+	parameters: [],
+	executeAtStart: true,
+	preExecution: function (){
+    
+    function dataBarOpts(state) {
+        var colors = demo.colors.palette,
+        color = colors[state.rowIdx % colors.length];
+        return {
+            startColor: color,
+            endColor: color,
+            widthRatio:0.98,
+            height: 12
+        };
+    }
+    this.setAddInOptions("colType","dataBar",dataBarOpts);
+    
+},
+	extraOptions: [],
+	expandParameters: [],
+	expandOnClick: false,
+	chartDefinition:  {
+		dataAccessId: "supportTableQuery",
+		path: "/Demo/Dashboards/Content01.cda",
+		colHeaders: [],
+		colTypes: ["string","numeric","dataBar"],
+		colFormats: ["%s","%.1f%%","%f"],
+		colWidths: ["39%","10%","260px"],
+		colSortable: [],
+		colSearchable: [],
+		paginate: false,
+		paginateServerside: false,
+		paginationType: "two_button",
+		filter: false,
+		info: false,
+		sort: false,
+		sortBy: [],
+		lengthChange: false,
+		tableStyle: "classic"
+	}
+};
+
+Dashboards.postInit = function() {
+    Dashboards.setParameter("allClear", true );
+    
+}
+
+demo.createExpand = function ( ph, data , param ) {
+    
+    // Image
+    var df = demo.settings.defaultCoverPath,
+        imgSrc = param.image,
+        imgPh = $('<div class="expandImg">')
+                    .append( ( imgSrc == null || imgSrc == "") ? (df === undefined ) ? 
+                             '' : ( '<img src=' + df + ' />') : ( '<img src=' + imgSrc + ' />') );                 
+    //Info
+    var info = ['artist', 'track', 'album'],
+        infoPh = $('<div class="expandInfo">'); 
+    $(info).each ( function (idx, el){
+        var str =  ( el == 'artist') ? param[el] + "  |" :
+                        ( el == 'track') ? "\"" + param[el] + "\"" : param[el];
+        $('<div/>').addClass(el).append(str).appendTo(infoPh);    
+    });
+    
+    // Details
+    var detailsPh = $('<div class="expandDetails">').appendTo(infoPh),
+        rs = data.resultset[0],
+        md = data.metadata;
+    $(rs).each( function (idx, el) {
+        if (idx < 5){
+            var val = (idx == 4) ? 
+                Date.parse(el).toString( demo.settings.date.formats['month']) : el;
+            $('<div class="detail"/>').append(
+                    $('<span class="value" />').append( val ) )
+                .appendTo( detailsPh);       
+        }
+    });
+
+    // Date
+    var datePh = $('<div class="expandDate">').append( '<div>Total Streams</div>'),
+        rangePh = $('<div class="range">').appendTo( datePh ),
+        start =  Date.parse( dateRangeParam[0][0] ),
+        end =  Date.parse( dateRangeParam[0][1] );
+    demo.appendHeaderRange( rangePh , start, end );
+    
+    // Close
+    var closePh = $('<div class="expandClose">');
+    closePh.bind('click', function() {
+        ph.parents('table').find('tr.expandingClass td.column0').click();
+    });
+    
+    ph.append(imgPh, infoPh, datePh, closePh);
+    
+    // Bar
+      var barPh =$("<div>&nbsp;</div>").addClass('expandBar').appendTo(ph),
+          wtmp = demo.settings.expand.bar.width,
+          htmp = demo.settings.expand.bar.height,
+          streams = data.resultset[0][5];
+
+      var xx = pv.Scale.linear(0,100).range(0,wtmp); 
+      
+      var paper = Raphael(barPh.get(0), xx(100) , htmp),
+          c1 = paper.rect(0, 0, wtmp, htmp)
+                    .attr({ fill: demo.settings.expand.bar.bgColor, stroke:null }),
+          c2 = paper.rect(0, 0, xx(streams), htmp)
+                    .attr({ fill: demo.settings.expand.bar.color, title: "Value: "+ streams, stroke:null});
+
+      $("<span></span>").addClass('value')
+            .append( sprintf( "%.1f%%", streams) )
+            .appendTo( barPh );
+    
+}
+
+var render_pieChart = {
+	type: "cccPieChart",
+	name: "render_pieChart",
+	parameters: [],
+	executeAtStart: true,
+	htmlObject: "pieChartObj",
+	preExecution: function () {
+    var myself = this,
+        defs = myself.chartDefinition;
+        
+    defs.colors = demo.settings.pieChart.colors;
+
+    defs.extensionPoints.push.apply( defs.extensionPoints, demo.settings.pieChart.extensionPoints );
+                 
+},
+	listeners: [],
+	chartDefinition:  {
+		dataAccessId: "pieChartQuery",
+		path: "/Demo/Dashboards/Content01.cda",
+		width: 312,
+		height: 312,
+		extensionPoints: [],
+		colors: [],
+		animate: false,
+		clickable: false,
+		crosstabMode: true,
+		explodedSliceIndex: 0,
+		explodedSliceRadius: "0",
+		legendAlign: "center",
+		legendPosition: "bottom",
+		seriesInRows: false,
+		timeSeries: false,
+		timeSeriesFormat: "%Y-%m-%d",
+		titlePosition: "top",
+		titleSize: "25",
+		valuesAnchor: "right",
+		innerGap: 0.8,
+		orientation: "vertical",
+		showValues: false,
+		showLegend: false,
+		showXScale: true,
+		xAxisPosition: "bottom",
+		xAxisSize: 30,
+		showYScale: true,
+		yAxisPosition: "left",
+		yAxisSize: 50,
+		xAxisFullGrid: false,
+		yAxisFullGrid: false,
+		axisOffset: 0,
+		originIsZero: true
+	}
+};
+
+Dashboards.addComponents([render_siteMap, render_dateRange, render_labelFilter, render_regionFilter, render_ageFilter, render_sortByFilter, render_countryFilter3, render_headerTable3, render_table3, render_expand3, render_exportButton3, render_supportTable, render_pieChart]);
+
+</script>
+
+<script language="javascript" type="text/javascript">
+Dashboards.init();
+</script>
+
+		
+				<script type="text/javascript">
+		$( function(){
+				//$(".round").corner();
+				$(".cdfdd-round").corner();
+				$(".cdfdd-bevel").corner("bevel");
+				$(".cdfdd-notch").corner("notch");
+				$(".cdfdd-bite").corner("bite");
+				$(".cdfdd-bevel_top").corner("bevel top");
+				$(".cdfdd-dog_tr").corner("dog tr");
+			} ) ;
+		</script>
+		
+
+	
+
+
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><div id="cdfErrorDiv"></div><div id="window-resizer-tooltip"><a href="http://www.webdetails.pt/pentaho/content/pentaho-cdf-dd/Render?solution=Demo&path=%2FDashboards&file=Content01.wcdf#" title="Edit settings" style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div><div class="popupComponent exportOptions" style="display: none;"><div class="exportElement">Excel</div><div class="exportElement">CSV</div><a class="close">&nbsp;</a><div class="arrow"></div></div><div id="tooltip" style="display: none;"><h3></h3><div class="body"></div><div class="url"></div></div></body></html>

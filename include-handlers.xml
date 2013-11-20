@@ -1,0 +1,21 @@
+<handlers xmlns="http://www.cisco.com/pa/handlers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.cisco.com/pa/handlers handlers.xsd ">
+  <chain id="syslog_udp">
+    <udpsyslog>
+      <port>8514</port>
+      <rcvbufsize>16000000</rcvbufsize>
+    </udpsyslog>
+    <syslog>
+      <location>apachelogdef.xml</location>
+    </syslog>
+    <commit>
+      <rows>5</rows>
+    </commit>
+    <pump>
+      <type>COPY</type>
+      <mode>CSV</mode>
+      <schema>apachelog</schema>
+      <stream>sapachelog</stream>
+    </pump>
+  </chain>
+</handlers>

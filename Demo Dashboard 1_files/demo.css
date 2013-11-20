@@ -1,0 +1,2106 @@
+/*
+ * WDStyleGuide Template CSS  
+ *
+ * Use this as a template to format the styles of specific projects. Most of 
+ * the most commonly used classes/rules are already written here. The file is
+ * divided in the following sections:
+ *
+ *    Fonts
+ *    Style Resets
+ *    1. BACKGROUND 
+ *    2. HEADER 
+ *    3. FILTER CELLS
+ *    4. DATA CELLS
+ *    5. TABLES
+ *    6. CHARTS 
+ *    7. SELECTORS AND BUTTONS
+ *    8. SITE MAP
+ *    Other 
+ *    Project Specific Items  
+ *
+ */
+
+
+/* =============================================================================
+   Fonts
+   ========================================================================== */
+@font-face { 
+  font-family: Tar;
+  src: url('fonts/TARBook.otf');
+} 
+
+
+/* =============================================================================
+   Style Resets
+   ========================================================================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Open Sans, Arial, sans-serif;
+  }
+
+.hidden{
+  display:none;
+
+}
+
+/* =============================================================================
+   1. BACKGROUND 
+   ========================================================================== */
+
+/* Window Background */
+body{
+  background: #F5F8F6;
+}
+/* Dashboard Background / Blueprint Container */
+div.container  {
+  padding:0px;
+}
+
+/* =============================================================================
+   2. HEADER 
+   ========================================================================== */
+.WDheader {
+  border-bottom:solid 1px #e1e3e2;
+  background: url("img/logo_WD.png") 0% 50% no-repeat;
+  position:relative;
+}
+.WDheader > div > ul {
+  position:absolute;
+  bottom:0px;
+}
+.WDheader > div > div {
+  position:absolute;
+  bottom:6px;
+}
+
+.WDh1 * { cursor: default; }
+.WDh2 {}
+
+#sortByFilterLabel { cursor: default; }
+
+
+
+/* =============================================================================
+   3. FILTER CELLS
+   ========================================================================== */
+
+/* Filter Cells */
+.WDfilterCell{
+  text-transform:uppercase;
+  font-family: Open Sans, Arial, sans-serif;
+  font-size:12px;
+  color: #888;
+  text-align:right;
+  font-weight:300;
+  height:40px;
+  line-height: 37px;
+}
+
+.WDfilterCell > div {
+}
+
+
+/* Filter Cells header */
+.WDfilterCellHeader{
+}
+
+
+/* Filter Cells body */
+.WDfilterCellBody{
+}
+.no-svg .WDfilterCellBody{
+}
+.svg  .WDfilterCellBody{
+}
+
+.WDfilterCellBody *{
+}
+
+
+/********** FILTER ELEMENTS *********/
+
+
+/* .buttonWrapper and .checked classes added for this project using jquery */
+.WDfilterCell ul.toggleGroup {
+ padding:0;
+ margin:0;
+ display:inline-block;
+ float:left;
+}
+.WDfilterCell ul.toggleGroup li {
+  display:inline-block;
+  position:relative;
+  width:auto;
+  padding-left:25px;
+}
+.WDfilterCell ul.toggleGroup li input {
+  max-height:0px;
+  max-width:0px;
+  position:absolute;
+  z-index:-500;
+}
+.WDfilterCell ul.toggleGroup label {
+  text-transform:uppercase;
+  font-family: Open Sans, Arial, sans-serif;
+  font-size:12px;
+  color: #555555;
+  text-align:right;
+  font-weight:300;
+  display:block;
+  height:18px;
+  line-height:18px;
+  cursor: pointer;
+}
+
+.WDfilterCell ul.toggleGroup label:hover {
+  color: #005ca8;  
+}
+
+.WDfilterCell ul.toggleGroup label .buttonWrapper {
+  display:inline-block;
+  float:right;
+  margin-left:5px;
+  height:19px;
+  width:19px;
+}
+.WDfilterCell ul.toggleGroup label.checked .buttonWrapper {
+}
+.WDfilterCell ul.toggleGroup label.checked {
+  color: #555;
+  font-weight: 600;
+  cursor: default;
+}
+.WDfilterCell ul.toggleGroup label.disabled .buttonWrapper {
+}
+.WDfilterCell ul.toggleGroup label.disabled {
+  color: #888;
+}
+
+
+
+
+/* .buttonWrapper and .checked classes added for this project using jquery */
+.WDfilterCell.slider ul.toggleGroup {
+ padding:0;
+ margin:0;
+ display:inline-block;
+ float:left;
+}
+.WDfilterCell.slider ul.toggleGroup li {
+  display:inline-block;
+  position:relative;
+  width:auto;
+  padding-left:18px;
+}
+.WDfilterCell.slider ul.toggleGroup li input {
+  max-height:0px;
+  max-width:0px;
+  position:absolute;
+  z-index:-500;
+}
+.WDfilterCell.slider ul.toggleGroup label {
+  text-transform:uppercase;
+  font-family: Open Sans, Arial, sans-serif;
+  font-size:12px;
+  color: #555555;
+  text-align:right;
+  font-weight:300;
+  display:block;
+  height:18px;
+  line-height:18px;
+}
+.WDfilterCell.slider ul.toggleGroup label .buttonWrapper {
+  display:inline-block;
+  float:right;
+  margin-left:5px;
+  width:80px;
+}
+.WDfilterCell.slider ul.toggleGroup label .buttonWrapper .on {
+  font-size: 10px;
+  text-transform:none;
+  float:right;
+  color: #888;
+}
+.WDfilterCell.slider ul.toggleGroup label.checked .buttonWrapper .on {
+  color: #9c237d;  
+}
+.WDfilterCell.slider ul.toggleGroup label .buttonWrapper .off {
+  font-size: 10px;
+  text-transform:none;
+  color: #555555; 
+  float:left;
+}
+.WDfilterCell.slider ul.toggleGroup label.checked .buttonWrapper .off {
+  color: #888;
+}
+.WDfilterCell.slider ul.toggleGroup label.checked .buttonWrapper {
+}
+.WDfilterCell.slider ul.toggleGroup label.checked {
+  color: #9c237d;
+}
+
+
+.WDfilterCell.slider button {
+  background: #555555; /* Old browsers */
+  font-family: Open Sans, Arial, sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size:12px;
+  border: solid 1px #d1d1d1;  
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -o-border-radius: 0px 0px 0px 0px;  
+  border-radius: 0px 0px 0px 0px;
+  -webkit-box-shadow:none ;
+  -moz-box-shadow: none ;
+  box-shadow: none ;
+  -o-box-shadow:none
+  height:28px;
+  line-height:20px;
+  position:relative;
+  top:-4px;
+  z-index:500;
+  cursor:pointer;
+}
+.no-svg .WDfilterCell.slider button {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a8a8a', endColorstr='#555555',GradientType=0 ); /* IE6-8 */  
+}
+.svg .WDfilterCell.slider button {
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhhOGE4YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1NTU1NTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #8a8a8a 0%, #555555 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8a8a8a), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* IE10+ */
+  background: linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* W3C */
+  filter: none;  
+}
+.WDfilterCell.slider button:hover {
+  background: #b3339b; /* Old browsers */
+}
+.no-svg .WDfilterCell.slider button:hover {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3339b', endColorstr='#9c237d',GradientType=0 ); /* IE6-8 */  
+}
+.svg .WDfilterCell.slider button:hover {
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IzMzM5YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YzIzN2QiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); 
+  background: -moz-linear-gradient(top,  #b3339b 0%, #9c237d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b3339b), color-stop(100%,#9c237d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* IE10+ */
+  background: linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* W3C */
+  filter:none;
+}
+.WDfilterCell.slider button:active {
+  
+}
+
+
+/* =============================================================================
+   4. DATA CELLS
+   ========================================================================== */
+
+/* Data Cells */
+.WDdataCell {
+  border:solid 1px #d1d1d1;
+  -webkit-box-shadow: 3px 3px 6px 0px #A1A3A2;
+  -moz-box-shadow: 3px 3px 6px 0px #A1A3A2;
+  box-shadow: 3px 3px 6px 0px #A1A3A2;
+  -o-box-shadow: 3px 3px 6px 0px #A1A3A2;  
+}  
+
+/* Data Cells header*/
+
+.WDdataCellHeader {
+  background: #d1d1d1; /* Old browsers */
+  border-top:solid 1px #d1d1d1;   
+}
+.svg   .WDdataCellHeader {
+}
+.no-svg   .WDdataCellHeader {
+}
+
+.WDdataCellHeader.WDh1 {
+  height:55px;
+  line-height:50px;
+  font-family: Tar, Arial, sans-serif; 
+  font-size:38px;
+  text-transform: uppercase;
+  color:#555;
+  text-indent:30px;
+  border-bottom:solid 1px #8a8a8a;
+  overflow:hidden;
+}
+.WDdataCellHeader.WDh1 span {
+  font-size:12px;
+}
+.WDdataCellHeader.WDh1 > div {
+  width:auto;
+  display:block;
+  height:54px;
+  border-bottom:solid 2px #b8b8b8;
+  position:relative;
+}
+.WDdataCellHeader.WDh1 span {
+  font-size:12px;
+}
+.WDdataCellHeader:first-child {
+  border-top:none; 
+}
+
+.WDdataCellHeader .WDexport{
+  position:absolute;
+  z-index:500;
+  width:24px;
+  height:24px;
+  top: 14px;
+  right: 14px;
+  background: url('img/export_demo.png') 0px 50% no-repeat transparent ;
+}
+.WDdataCellHeader .WDexport .popupTitle{
+  position:absolute;
+  width:24px;
+  height:24px;
+  top:0px;
+  right:0px;
+  background: none;
+  color:transparent;
+  text-indent: 1000px;
+  cursor: pointer;
+}
+.WDdataCellHeader .WDexport:hover,
+.WDdataCellHeader .WDexport:focus {
+  background: url('img/export_demo.png') -25px 50% no-repeat transparent ;  
+}
+/* Outside of div container */
+.popupComponent a.close {
+  display:none;
+}
+.popupComponent.south .arrow {
+  background:none;
+}
+.popupComponent .exportElement {
+    font-family: Tar, Arial, sans-serif; 
+  font-size:20px;
+  text-transform:uppercase;
+  height:28px;
+  line-height:31px;
+  color:#888;
+  border-top:solid 1px #d1d1d1;
+  padding:0;
+  padding-left:7px;
+}
+.popupComponent .exportElement:hover {
+  color:#555;  
+}
+.popupComponent {
+    min-width:140px;
+  border:solid 1px #d1d1d1;
+  background: #e3e3e3;
+  padding:0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;
+  border-radius: 0px;
+    -webkit-box-shadow:none ;
+  -moz-box-shadow: none ;
+  box-shadow: none ;
+  -o-box-shadow:none;
+  margin-top:-10px;
+  z-index:500;
+}
+
+
+
+
+
+.WDdataCellHeader.WDfilterCellHeader {
+  background: #8a8a8a; /* Old browsers */
+  border-bottom: solid 1px #4e4e4e;
+  height:38px;
+}
+.svg .WDdataCellHeader.WDfilterCellHeader {
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhhOGE4YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1NTU1NTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #8a8a8a 0%, #555555 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8a8a8a), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* IE10+ */
+  background: linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* W3C */
+  filter: none;   
+}
+.no-svg .WDdataCellHeader.WDfilterCellHeader {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a8a8a', endColorstr='#555555',GradientType=0 ); /* IE6-8 */
+}
+.WDdataCellHeader.WDfilterCellHeader > div{
+  height: 100%;
+  text-align:center;
+  width:100%;
+}
+.WDdataCellHeader.WDfilterCellHeader > div{
+  display:inline-block;
+}
+
+
+
+
+
+
+/* Data Cells body */
+.WDdataCellBody {
+  background: #FFFFFF;
+}
+.WDdataCellBody.supportCell {
+  border-top:solid 1px #d1d1d1;     
+}
+
+
+
+/* =============================================================================
+   5. TABLES
+   ========================================================================== */
+
+/********************** Data Cell Header support tables ***********************/
+
+.WDdataCellHeader table {
+  padding-top:11px;
+  padding-bottom:11px;
+  background: #8a8a8a; /* Old browsers */
+}
+.svg .WDdataCellHeader table {
+}
+.no-svg .WDdataCellHeader table {
+}
+
+/* Header */
+.WDdataCellHeader  thead th {
+  background:none;
+  font-family: Open Sans, Arial, sans-serif;
+  font-size: 9px;
+  color: #FFFFFF;
+  text-align:left;
+  padding-left:35px;
+  border-right: solid 1px #4d4d4d;
+  border-left: solid 1px #848484;
+}
+.WDdataCellHeader  thead th:first-child {
+  border-left:none;
+}
+
+.WDdataCellHeader  thead th:last-child {
+  border-right:none;
+}
+
+
+/* Body */
+.WDdataCellHeader  tbody {}
+.WDdataCellHeader  tbody tr,
+.WDdataCellHeader  tbody tr.odd,
+.WDdataCellHeader  tbody tr.even {
+  background:none;  
+}
+
+.WDdataCellHeader  tbody td,
+.WDdataCellHeader  tbody td.numeric, 
+.WDdataCellHeader  tbody td.string {
+  font-family: Open Sans, Arial, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align:left;
+  padding-left:35px;
+  border-right: solid 1px #4d4d4d;
+  border-left: solid 1px #848484;
+}
+.WDdataCellHeader  tbody td:first-child {
+  border-left:none;
+}
+.WDdataCellHeader  tbody td:first-child .year {
+  border-left:none;
+  font-size:12px;
+  bottom:8px;
+  position:relative;
+  padding-left:3px;
+  font-weight:300;
+}
+
+.WDdataCellHeader  tbody td:last-child {
+  border-right:none;
+}
+
+/* DataTables */
+.WDdataCellHeader  .dataTables_wrapper{
+  min-height:0;
+}
+
+
+.WDdataCellHeader  tfoot td .trend,
+.WDdataCellHeader  tbody td .trend,
+.WDdataCellHeader  thead th .trend {
+  width: 15px;
+  height: 100%;
+  margin-right: 5px;
+  margin-left:-5px;
+  float:left;
+}
+.WDdataCellHeader  tfoot td .trend.down.good,
+.WDdataCellHeader  tbody td .trend.down.good,
+.WDdataCellHeader  thead th .trend.down.good {
+  background: url("img/DownArrow.png") 0% 50% no-repeat;
+}
+.WDdataCellHeader  tfoot td .trend.up.good,
+.WDdataCellHeader  tbody td .trend.up.good,
+.WDdataCellHeader  thead th .trend.up.good {
+  background: url("img/UpArrow.png") 0% 50% no-repeat;  
+}
+.WDdataCellHeader  tfoot td .trend.neutral.good,
+.WDdataCellHeader  tbody td .trend.neutral.good,
+.WDdataCellHeader  thead th .trend.neutral.good {
+  background: none;  
+}
+
+
+
+/************************ Data Cell Body main tables **************************/
+
+.WDdataCellBody table {
+  border-collapse:separate;
+  border-spacing: 0px 4px;  
+}
+
+/* Header */
+.WDdataCellBody  thead {}
+.WDdataCellBody thead tr {
+
+}
+.WDdataCellBody  thead th {
+  background:none;
+  font-family: Open Sans, Arial, sans-serif;
+  font-size:10px;
+  font-weight:300;
+  text-transform: uppercase;
+  color: #555555;
+  text-align:left;
+  padding:0px;
+  padding-left:7px;
+}
+.WDdataCellBody thead th.sorting{
+}
+.WDdataCellBody thead th.sorting_asc{
+}
+.WDdataCellBody  thead th.sorting_desc{
+}
+.WDdataCellBody  thead th:first-child {
+}
+
+/* Body */
+.WDdataCellBody  tbody {}
+.WDdataCellBody  tbody tr {
+  height:38px;
+  line-height:38px;
+  box-shadow: 0px 4px 2px -2px #BEBEBE;
+  -moz-box-shadow: 0px 4px 2px -2px #BEBEBE;
+  -webkit-box-shadow: 0px 4px 2px -2px #BEBEBE;
+  -o-box-shadow: 0px 4px 2px -2px #BEBEBE;   
+}
+.WDdataCellBody  tbody td,
+.WDdataCellBody  tbody td.numeric, 
+.WDdataCellBody  tbody td.string {
+  border-top: solid 1px #d1d1d1;
+  border-bottom: solid 1px #d1d1d1;
+  font-family: Open Sans, Arial, sans-serif;
+  font-size:15px;
+  color: #FFFFFF;
+  font-weight:600;
+  padding:0;
+  height:inherit;
+  cursor:pointer;
+}
+
+
+
+
+/* DataTables */
+.WDdataCellBody  .dataTables_wrapper{
+  min-height:0;
+  padding:17px;
+}
+.WDdataCellBody  .dataTables_wrapper tbody tr.odd td.sorting_1,
+  .WDdataCellBody  .dataTables_wrapper tbody tr.odd{
+  }
+.WDdataCellBody  .dataTables_wrapper tbody tr.even td.sorting_1,
+  .WDdataCellBody  .dataTables_wrapper tbody tr.even{
+  }
+
+/* Pagination and Page Info */
+
+.WDdataCellBody  .dataTables_paginate{
+  display:block;
+  width:100%;
+  border-bottom:solid 1px #e1e3e2; 
+  margin-bottom:20px;
+  margin-top:20px;
+  padding-left:40px;
+  position:relative;
+}
+.WDdataCellBody  .dataTables_paginate > div {
+  display:inline-block;
+}
+.WDdataCellBody .dataTables_paginate > div.paginate_option{
+  text-transform:uppercase;
+  text-decoration:none;
+  font-size: 12px;
+  font-family: Open Sans, Arial, sans-serif;
+  color: #888;
+  cursor:pointer;
+  text-align:center;
+  float:left;
+  display:inline-block;
+  padding-left:5px;
+  padding-right:5px;
+  padding-bottom:10px;
+  margin-left:10px;
+  margin-right:10px;
+}
+.WDdataCellBody .dataTables_paginate > div.paginate_option.selected{
+  border-bottom: solid #e1e3e2 4px;  
+ color:#555555;
+}
+.WDdataCellBody .dataTables_paginate > div.paginate_option:hover {
+ color:#555555;
+}
+
+
+.WDdataCellBody .dataTables_paginate .paginate_button.previous {
+  background: url('img/Pag_left.png') -2px 50% no-repeat;
+  position:absolute;
+  right:35px;
+  width:8px;
+  height:19px;
+}
+.WDdataCellBody .dataTables_paginate .paginate_button.next {
+  background: url('img/Pag_right.png') -2px 50% no-repeat;  
+  position:absolute;
+  right:8px;
+  width:8px;
+  height:19px;
+}
+.WDdataCellBody .dataTables_paginate .paginate_button.previous:hover {
+  background: url('img/Pag_left.png') -13px 50% no-repeat;
+  cursor: pointer;
+}
+.WDdataCellBody .dataTables_paginate .paginate_button.next:hover {
+  background: url('img/Pag_right.png') -13px 50% no-repeat;  
+  cursor: pointer;
+}
+.WDdataCellBody .dataTables_paginate .paginate_button.previous.disabled {
+  background: url('img/Pag_left.png') -25px 50% no-repeat;
+  cursor: default;
+}
+.WDdataCellBody .dataTables_paginate .paginate_button.next.disabled {
+  background: url('img/Pag_right.png') -25px 50% no-repeat;  
+  cursor: default;
+}
+
+
+
+
+
+
+/* Add Ins */
+.WDdataCellBody  tfoot td.trendArrow .trend,
+.WDdataCellBody  tbody td.trendArrow .trend,
+.WDdataCellBody  thead th.trendArrow .trend {
+  width: 15px;
+  height:15px;
+  float:right;
+  position:relative;
+  top: 12px;
+}
+.WDdataCellBody  tfoot td.trendArrow .value ,
+.WDdataCellBody  tbody td.trendArrow .value ,
+.WDdataCellBody  thead th.trendArrow .value {
+  float:left;
+  position:relative;
+  display:inline-block;
+}
+/* .old and .new refer to span elements added in this project. Not part of the default trendArrow addIn */
+.WDdataCellBody  tfoot td.trendArrow .value .new,
+.WDdataCellBody  tbody td.trendArrow .value .new,
+.WDdataCellBody  thead th.trendArrow .value .new {
+  margin:0;
+  padding:0;
+  margin-left:12px;
+  position:absolute;
+}
+.WDdataCellBody  tfoot td.trendArrow .value .old,
+.WDdataCellBody  tbody td.trendArrow .value .old,
+.WDdataCellBody  thead th.trendArrow .value .old {
+  margin:0;
+  padding:0;
+  margin-left:5px;
+  position:absolute;
+}
+
+.WDdataCellBody  tfoot td.trendArrow .trend.down.good,
+.WDdataCellBody  tbody td.trendArrow .trend.down.good,
+.WDdataCellBody  thead th.trendArrow .trend.down.good {
+  background: url("img/DownArrow.png") 0% 50% no-repeat;
+}
+.WDdataCellBody  tfoot td.trendArrow .trend.up.good,
+.WDdataCellBody  tbody td.trendArrow .trend.up.good,
+.WDdataCellBody  thead th.trendArrow .trend.up.good {
+  background: url("img/UpArrow.png") 0% 50% no-repeat;  
+}
+.WDdataCellBody  tfoot td.trendArrow .trend.neutral.good,
+.WDdataCellBody  tbody td.trendArrow .trend.neutral.good,
+.WDdataCellBody  thead th.trendArrow .trend.neutral.good {
+  background: none;  
+}
+
+
+.WDdataCellBody  tfoot td.imageLink .image,
+.WDdataCellBody  tbody td.imageLink .image,
+.WDdataCellBody  thead th.imageLink .image {
+  float:left;
+  display:inline-block;
+  position:relative;
+}
+.WDdataCellBody  tfoot td.imageLink img,
+.WDdataCellBody  tbody td.imageLink img,
+.WDdataCellBody  thead th.imageLink img {
+  height:30px;
+  position:absolute;
+  top:4px;
+  left:4px;
+}
+.WDdataCellBody  tfoot td.imageLink .value,
+.WDdataCellBody  tbody td.imageLink .value,
+.WDdataCellBody  thead th.imageLink .value {
+  float:right;
+  display:inline-block;
+}
+
+
+/* Expandable Row + Drill Down */
+.WDdataCellBody  tbody td.expandingClass {
+ color:#555555;
+ vertical-align:top;
+ height:220px;
+ cursor:default;
+  border: solid 1px #d1d1d1; 
+}
+.WDdataCellBody  tbody td.expandingClass > div {
+ position:relative;
+ height:220px;
+}
+
+.WDdataCellBody   .expandImg {
+  display:inline-block;
+  width:20%;
+  height:70%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding-top: 17px;
+  padding-left: 10px;
+}
+.WDdataCellBody   .expandInfo {
+  display:inline-block;
+  width:80%;
+  height:70%;
+  position:absolute;
+  top:0px;
+  left:20%;
+  padding-top: 17px;
+}
+.WDdataCellBody   .expandDate {
+  display:inline-block;
+  width:20%;
+  height:30%;
+  position:absolute;
+  top:70%;
+  left:0px;
+}
+.WDdataCellBody   .expandBar {
+  display:inline-block;
+  width:80%;
+  height:30%;
+  position:absolute;
+  top:70%;
+  left:20%;
+  padding-top:18px;
+}
+.WDdataCellBody   .expandClose {
+  position:absolute;
+  top:0px;
+  right:-1px;
+  height:29px;
+  width:29px;
+  background: url('img/close_expand.png') 2px 0px no-repeat;
+  z-index:500;
+  cursor:pointer;
+}
+.WDdataCellBody   .expandClose:hover {
+  position:absolute;
+  top:0px;
+  right:-1px;
+  height:29px;
+  width:29px;
+  background: url('img/close_expand.png') -29px 0px no-repeat;
+  z-index:500;
+}
+
+.WDdataCellBody   .expandImg img {
+  border:solid 1px #d1d1d1;
+  height:125px;
+}
+
+.WDdataCellBody   .expandInfo > .artist {
+  display:inline-block;
+  font-size:22px;
+  height:25px;
+  line-height:25px;
+}
+.WDdataCellBody   .expandInfo > .track {
+  display:inline-block;
+  font-size:22px;
+  height:25px;
+  line-height:25px;
+  padding-left:10px;
+}
+.WDdataCellBody   .expandInfo > .album {
+  display:block;
+  font-size:15px;
+  height:20px;
+  line-height:20px;
+  font-weight:normal;
+  position:relative;
+  top:-4px;
+}
+.WDdataCellBody   .expandInfo > .label {
+  display:block;
+  text-transform:uppercase;
+  font-size:13px;
+  font-weight:300;
+  height:20px;
+  line-height:20px;
+}
+
+
+.WDdataCellBody  .expandInfo .expandDetails {
+  display:inline-block;
+  width:100%;
+  position:absolute;
+  bottom:20px;
+  height:15px;
+}
+.WDdataCellBody  .expandInfo .expandDetails .detail {
+  display:inline-block;
+  font-size:10px;
+  width:18%;
+  height:15px;
+}
+.WDdataCellBody .expandInfo .expandDetails .detail:first-child {
+  display:inline-block;
+  font-size:10px;
+  width:28%;
+}
+
+.WDdataCellBody .expandInfo .expandDetails .detail .label {
+  font-weight:300;
+}
+.WDdataCellBody .expandInfo .expandDetails .detail .value {
+  font-weight:bold;
+}
+
+.WDdataCellBody  .expandDate > div {
+  font-size:10px;
+  display:block;
+  width:125px;
+  margin-left:10px;
+  text-align:center;
+  height:18px;
+}
+.WDdataCellBody  .expandDate .year {
+  display:none;
+}
+
+.WDdataCellBody  .expandBar {
+ font-size:18px;
+}
+.WDdataCellBody  .expandBar .value {
+  position:absolute;
+  right:20px;
+  height:100%;
+  line-height: 36px;
+}
+
+
+
+
+/******* Support table specific styling **************/
+
+.WDdataCellBody #supportTableObj  {
+  padding-top:22px;
+  padding-bottom:22px;
+}
+
+.WDdataCellBody #supportTableObj table {
+  background:none;  
+}
+
+/* Header */
+.WDdataCellBody #supportTableObj  thead {
+}
+.WDdataCellBody #supportTableObj thead tr {
+  height:27px; 
+}
+.svg .WDdataCellBody #supportTableObj  thead th,
+.no-svg .WDdataCellBody #supportTableObj  thead th,
+.WDdataCellBody #supportTableObj  thead th {
+  font-family: Open Sans, Arial, sans-serif;
+  font-size:9px;
+  color: #282a2e;
+  text-transform:uppercase;
+  font-weight:bold;
+  background: none; 
+  border:none;
+  filter:none;
+}
+
+/* Body */
+.WDdataCellBody #supportTableObj  tbody {}
+.WDdataCellBody #supportTableObj  tbody tr {
+  height:27px;
+  line-height: 27px;
+}
+.WDdataCellBody #supportTableObj  tbody td{
+  font-size:10px;
+  color:#282a2e;
+  background:none;
+}
+.WDdataCellBody #supportTableObj  tbody td,
+.WDdataCellBody #supportTableObj  tbody td.numeric, 
+.WDdataCellBody #supportTableObj  tbody td.string {
+  font-family: Open Sans, Arial, sans-serif;
+  text-decoration:none;
+}
+.WDdataCellBody #supportTableObj  tbody tr.odd,
+.WDdataCellBody #supportTableObj  tbody tr.even {
+  background:none;
+}
+.WDdataCellBody #supportTableObj tbody td.column1 {
+  font-weight:bold;  
+} 
+.WDdataCellBody #supportTableObj  tbody tr.odd td,
+.WDdataCellBody #supportTableObj tbody tr.odd td.sorting_1 {
+  border:none;
+}
+.WDdataCellBody #supportTableObj tbody tr.even td,
+.WDdataCellBody #supportTableObj tbody tr.even td.sorting_1 {
+  border:none;
+}
+
+/* Alignments */
+.WDdataCellBody #supportTableObj thead th.column0,
+.WDdataCellBody #supportTableObj tbody td.column0,
+.WDdataCellBody #supportTableObj thead th.column1,
+.WDdataCellBody #supportTableObj tbody td.column1 {
+  text-align:right;
+} 
+.WDdataCellBody #supportTableObj thead th.column2,
+.WDdataCellBody #supportTableObj tbody td.column2 {
+  padding-left:20px;
+}
+
+.WDdataCellBody #supportTableObj tbody tr:last-child td {
+  padding-bottom:0px;
+}
+.WDdataCellBody  #supportTableObj tbody tr:first-child td {
+  padding-top:0px;
+}
+.WDdataCellBody #supportTableObj tbody tr:first-child {
+  height:27px;
+}
+
+
+
+
+/* DataTables */
+.WDdataCellBody #supportTableObj  .dataTables_wrapper{
+  min-height:0;
+}
+
+/* Add Ins */
+.WDdataCellBody #supportTableObj td.trendArrow{
+  padding-right:150px;
+  text-align:right;
+}
+
+.WDdataCellBody #supportTableObj .dataBarContainer{
+  height:12px;
+  padding:0;
+  margin:0;
+  background-color:#FFFFFF;
+}
+
+
+
+
+/* =============================================================================
+   6. CHARTS 
+   ========================================================================== */
+
+
+
+
+/* =============================================================================
+   7. SELECTORS AND BUTTONS 
+   ========================================================================== */
+
+
+
+
+/* =============================================================================
+   8. SITE MAP
+   ========================================================================== */
+
+.siteMap, .siteMap * {
+  margin:     0;
+  padding:    0;
+  list-style:   none;
+}
+.siteMap {
+  padding-top:10px;
+  line-height:  1.0;
+  float:left;
+}
+.siteMap ul {
+
+}
+.siteMap ul li {
+  width:      100%;
+}
+.siteMap li:hover {
+  visibility:   inherit; /* fixes IE7 'sticky bug' */
+}
+.siteMap li {
+  display:inline-block;
+  padding-left:5px;
+  padding-right:5px;
+  padding-bottom:10px;
+  margin-left:10px;
+  margin-right:10px;
+}
+.siteMap a {
+  text-transform:uppercase;
+  text-decoration:none;
+  font-size: 12px;
+  font-family: Open Sans, Arial, sans-serif;
+  color: #888;
+  cursor:pointer;  
+  line-height: 20px;
+}
+.siteMap li a:hover {
+  color: #676767;  
+}
+.siteMap li.siteMapSelected a{
+  color: #555;  
+}
+.siteMap li.siteMapSelected{
+}
+
+
+
+
+
+
+
+
+/* =============================================================================
+   Other 
+   ========================================================================== */
+
+
+
+/* =============================================================================
+   Project Specific Items 
+   ========================================================================== */
+
+
+
+
+/* =============================================================================
+   Sandbox 
+   ========================================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* TODO: Add .WDdataCellHeader class before each rule */
+
+
+/**** Chosen Select *****/
+/* All Chosen elements */
+ .chzn-container-multi{
+  min-width:100%;
+  height:100%;
+  display:block;
+}
+.chzn-container-multi .chzn-drop{
+  min-width:140px;
+  border:solid 1px #d1d1d1;
+  background: #e3e3e3;
+  margin-top:5px;
+   
+}
+ .chzn-container-multi .chzn-drop  .chzn-search{
+}
+ .chzn-container-multi .chzn-drop .chzn-search input{
+}
+ .chzn-container-multi .chzn-drop  .chzn-results{
+}
+.svg  .chzn-container-multi .chzn-drop  .chzn-results{
+}
+.no-svg  .chzn-container-multi .chzn-drop  .chzn-results{
+}
+
+.chzn-container-multi .chzn-drop .chzn-results li {
+  font-family: Tar, Arial, sans-serif; 
+  font-size:20px;
+  text-transform:uppercase;
+  height:29px;
+  line-height:28px;
+  color:#888;  
+  border-top:solid 1px #d1d1d1;
+  display:block !important;
+  padding:0;
+  padding-left:8px;
+}
+.chzn-container-multi .chzn-drop  .chzn-results li:first-child {
+  border-top:none;  
+}
+
+.chzn-container-multi .chzn-drop .chzn-results em{
+}
+.chzn-container-multi .chzn-drop  .chzn-results .active-result{
+}
+.chzn-container-multi .chzn-drop  .chzn-results .highlighted{
+  background:none;
+  color:#9c237d;
+}
+.chzn-container-multi .chzn-drop  .chzn-results .highlighted:first-child {
+}
+
+.chzn-container-multi .chzn-drop  .chzn-results .result-selected{
+  color: #FFFFFF;
+}
+.chzn-container-multi .chzn-drop  .chzn-results .no-results {
+}
+
+.chzn-container-multi .chzn-choices {
+  border:none;
+  background: none;
+  min-height:100%;
+  max-height:100%;
+  margin:0;
+  padding:0;
+  border:none;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -o-border-radius: 0px 0px 0px 0px;  
+  border-radius: 0px 0px 0px 0px;
+  -webkit-box-shadow:none ;
+  -moz-box-shadow: none ;
+  box-shadow: none ;
+  -o-box-shadow:none;
+  filter:none;
+}
+
+
+.chzn-container-multi:hover .chzn-choices,
+.chzn-container-multi.chzn-container-active .chzn-choices{
+}
+.chzn-container-multi .chzn-choices  .search-choice {
+  height:28px;
+  line-height:33px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -o-border-radius: 0px 0px 0px 0px;  
+  border-radius: 0px 0px 0px 0px;
+  background: #b3339b; /* Old browsers */
+  border:none;
+  color:#FFFFFF;
+  font-family: Tar, Arial, sans-serif;
+  font-size:23px;
+  text-transform:uppercase;
+  margin-top:3px;
+  margin-bottom:3px;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+.no-svg    .chzn-container-multi .chzn-choices  .search-choice {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3339b', endColorstr='#9c237d',GradientType=0 ); /* IE6-8 */  
+}
+.svg    .chzn-container-multi .chzn-choices  .search-choice {
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IzMzM5YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YzIzN2QiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); 
+  background: -moz-linear-gradient(top,  #b3339b 0%, #9c237d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b3339b), color-stop(100%,#9c237d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* IE10+ */
+  background: linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* W3C */
+  filter:none;
+}
+.chzn-container-multi .chzn-choices .search-choice span{
+}
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close{
+  top:10px;
+  right:6px;
+  background: url('img/Close.png') 0% 50% no-repeat transparent;
+}
+.chzn-container-multi .chzn-choices .search-choice .search-choice-close:hover {
+  background: url('img/Close.png') 0% 50% no-repeat transparent;  
+}
+.chzn-container-multi .chzn-choices .search-field {
+    color:#FFFFFF; 
+  width:300px;
+}
+.chzn-container-multi .chzn-choices .search-field input{
+  min-width:100%;
+  height:28px;
+  line-height:28px;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -o-border-radius: 0px 0px 0px 0px;  
+  border-radius: 0px 0px 0px 0px;
+  background: none;
+  border:none;
+  color:#FFFFFF !important;
+  font-family: Open Sans, Arial, sans-serif;
+  font-size:22px;
+  text-transform:uppercase;
+}
+.chzn-container-multi .chzn-choices .search-field .default{
+  color:#FFFFFF; 
+}
+
+
+
+.WDdataCellHeader.WDfilterCellHeader .pentaho-toggle-button {
+  display:inline-block;
+  height:34px;
+  width:150px;
+  border-right: solid 1px #4D4D4D;
+  border-left: solid 1px #848484;
+}
+.WDdataCellHeader.WDfilterCellHeader .pentaho-toggle-button button {
+  height:100%;
+  width:100%;
+  background:none;
+    -webkit-box-shadow:none ;
+  -moz-box-shadow: none ;
+  box-shadow: none ;
+  -o-box-shadow:none;
+   color:#929292;
+  font-family: Tar, Arial, sans-serif;
+  font-size:23px;
+  border:none;  
+  cursor:pointer;
+  text-transform:uppercase;
+  padding-top:4px;
+  top:0px;
+}
+.WDdataCellHeader.WDfilterCellHeader .pentaho-toggle-button-down {
+  border:none;
+}
+
+.WDdataCellHeader.WDfilterCellHeader .pentaho-toggle-button-down button {
+  color: #FFFFFF;
+  background: #b3339b; /* Old browsers */
+  border:none;}
+.no-svg .WDdataCellHeader.WDfilterCellHeader .pentaho-toggle-button-down button {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3339b', endColorstr='#9c237d',GradientType=0 ); /* IE6-8 */  
+}
+.svg .WDdataCellHeader.WDfilterCellHeader .pentaho-toggle-button-down button {    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+ background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IzMzM5YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM5YzIzN2QiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+); 
+  background: -moz-linear-gradient(top,  #b3339b 0%, #9c237d 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b3339b), color-stop(100%,#9c237d)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* IE10+ */
+  background: linear-gradient(top,  #b3339b 0%,#9c237d 100%); /* W3C */
+  filter:none;
+}
+.WDdataCellHeader.WDfilterCellHeader .pentaho-toggle-button:hover button,
+.WDdataCellHeader.WDfilterCellHeader .pentaho-toggle-button button:hover {
+  color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**** Chosen Select *****/
+/* All Chosen elements */
+.chzn-container-single{
+  min-width:100%;
+  width:100%;
+  max-width:100%; 
+  height:29px;
+  line-height:21px;
+  display:block;
+  border:none;
+}
+.chzn-container-single * {
+}
+.chzn-container-active{
+}
+.chzn-container-single .chzn-drop{
+  min-width:100%;
+  width:100%;
+  max-width:100%;
+  border:solid 1px #d1d1d1;
+  background: #e3e3e3;
+  margin-top:0px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+ .chzn-container-single .chzn-drop  .chzn-search{
+   background: url('img/Search_17x17.png') no-repeat 98% 50% #FFFFFF;   
+   padding:3px 0px;
+}
+ .chzn-container-single .chzn-drop .chzn-search input{
+   margin:0;
+   padding:0;
+   height:23px ;
+   line-height:23px ;
+   border:none;
+   display:block;
+   max-width:87%;
+   min-width:87%;
+   font-family: Open Sans, Arial, sans-serif;
+   color: #555555;
+   text-transform: uppercase;
+   font-size:12px;
+   text-indent:8px;
+   background:none;
+}
+ .chzn-container-single .chzn-drop  .chzn-results{
+   margin:0;
+   padding:0;
+   overflow:hidden;
+}
+.svg  .chzn-container-single .chzn-drop  .chzn-results{
+}
+.no-svg  .chzn-container-single .chzn-drop  .chzn-results{
+}
+
+.chzn-container-single .chzn-drop  .chzn-results li{
+  font-family: Tar, Arial, sans-serif; 
+  font-size:20px;
+  text-transform:uppercase;
+  height:28px;
+  line-height:31px;
+  color:#888;
+  border-top:solid 1px #d1d1d1;
+  padding:0;
+  padding-left:7px;
+}
+.chzn-container-single .chzn-drop  .chzn-results li:first-child {
+  border-top:solid 1px #d1d1d1;  
+}
+/* .selectedOption class added for this project with jquery */
+.chzn-container-single .chzn-drop  .chzn-results .selectedOption{
+  color: #555555;
+}
+
+.chzn-container-single .chzn-drop .chzn-results em{
+}
+.chzn-container-single .chzn-drop  .chzn-results .active-result{
+}
+.chzn-container-single .chzn-drop  .chzn-results .highlighted{
+  background:none;
+  color:#555;
+}
+.chzn-container-single .chzn-drop  .chzn-results .highlighted:first-child {
+}
+
+.chzn-container-single .chzn-drop  .chzn-results .result-selected{
+}
+.chzn-container-single .chzn-drop  .chzn-results .no-results {
+  border-top:solid 1px #d1d1d1;    
+  height:auto;
+  font-size: 13px;
+}
+
+
+/* Single Select */
+.chzn-container-single .chzn-single{
+  background: none;
+  font-family: Open Sans, Arial, sans-serif;
+  color: #555;
+  text-transform: uppercase;
+  font-size:12px;
+  border: solid 1px #d1d1d1;  
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -o-border-radius: 0px 0px 0px 0px;  
+  border-radius: 0px 0px 0px 0px;
+  -webkit-box-shadow:none ;
+  -moz-box-shadow: none ;
+  box-shadow: none ;
+  -o-box-shadow:none;
+  height:100%;
+  line-height:28px;
+}
+.no-svg .chzn-container-single .chzn-single{
+}
+.svg  .chzn-container-single .chzn-single{
+
+}
+.chzn-container-single .chzn-single-with-drop,
+.chzn-container-single:hover .chzn-single{
+  color: #FFFFFF;
+  background: #555555; /* Old browsers */
+}
+.no-svg .chzn-container-single .chzn-single-with-drop,
+.no-svg .chzn-container-single:hover .chzn-single{
+}
+.svg .chzn-container-single .chzn-single-with-drop,
+.svg .chzn-container-single:hover .chzn-single{ 
+}
+
+.chzn-container-single .chzn-single span{
+  height:100%;
+}
+.chzn-container-single .chzn-single div{ /* Arrow container */
+  background:none;
+  filter:none;
+  border:none;
+}
+.chzn-container-single .chzn-single div b,
+.chzn-container-single .chzn-single-with-drop div b{ /* Arrow */
+  background: url('img/Arrow_selector_normal.png') 0% 50% no-repeat transparent;
+}
+.chzn-container-single:hover .chzn-single div b,
+.chzn-container-single:hover .chzn-single-with-drop div b{ /* Arrow */
+  background: url('img/Arrow_selector.png') 0% 50% no-repeat transparent;  
+}
+.chzn-container-single .chzn-single.chzn-single-with-drop{
+}
+.chzn-container-single .chzn-single-with-drop span{
+}
+.chzn-container-single .chzn-single-with-drop div{ /* Arrow container */
+}
+.chzn-container-single .chzn-single-with-drop div b{
+} 
+
+
+
+
+
+
+
+
+
+.datepicker-outcontainer{
+    width:auto;
+    display:block;
+    border:none;
+    height:29px;
+    line-height:28px;
+}
+
+.WDheader .datepicker-title{
+  background: none; /* Old browsers */
+  font-family: Open Sans, Arial, sans-serif;
+  color: #555;
+  text-transform: uppercase;
+  font-size:12px;
+  border: solid 1px #d1d1d1;
+  -webkit-border-radius: 0px 0px 0px 0px;
+  -moz-border-radius: 0px 0px 0px 0px;
+  -o-border-radius: 0px 0px 0px 0px;  
+  border-radius: 0px 0px 0px 0px;
+  -webkit-box-shadow:none ;
+  -moz-box-shadow: none ;
+  box-shadow: none ;
+  -o-box-shadow:none;
+  height:100%;
+  width:100%;
+}
+
+.svg .WDheader .datepicker-title{
+
+}
+.no-svg .WDheader .datepicker-title{
+}
+
+.WDheader .datepicker-title:hover,
+.WDheader .datepicker-title.datepicker-title-visible{
+  color: #FFFFFF;
+  background: #555555; /* Old browsers */  
+}
+
+.svg .WDheader .datepicker-title:hover,
+.svg .WDheader .datepicker-title.datepicker-title-visible {
+}
+.no-svg .WDheader .datepicker-title:hover,
+.no-svg .WDheader .datepicker-title.datepicker-title-visible {
+}
+
+
+
+
+.datepicker-title-text {
+  float:left;
+  padding-right: 3px;
+  padding-left:8px;
+}
+.datepicker-title-text .option {
+}
+
+.datepicker-title-text .range {
+  margin-left:10px;
+  font-weight:bold;  
+}
+
+
+
+
+
+
+
+
+.datepicker-title-pushdown {
+  background: url('img/Arrow_selector_normal.png') 0% 50% no-repeat transparent;
+  float:right;
+  height:100%;
+}
+
+
+.datepicker-title-pushdown:hover,
+.datepicker-outcontainer:hover .datepicker-title-pushdown {
+    background: url('img/Arrow_selector.png') 0% 50% no-repeat transparent;
+    float:right;
+    height:100%;
+}
+
+
+
+
+
+.datepicker-outerbox #datepicker label, 
+.datepicker-outerbox #datepicker2 label,
+.datepicker-outerbox #datepicker3 label{
+    font-size: 11px;
+    font-weight: 400;
+    text-align: left;
+    color: #333;
+    line-height: 16px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.datepicker-outerbox #datepicker3 {
+    margin-right: 0px;
+}
+
+
+
+.datepicker-outerbox  .datepicker-topbox-topleft{
+/*    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #b6b6b6;    */
+}
+
+.datepicker-outerbox .datepicker-topbox-topright{
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #fff;    
+}
+
+.datepicker-outcontainer{
+  position:relative;
+}
+.datepicker-outerbox{
+  position: absolute;
+  z-index: 1000;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -o-border-radius: 0px;  
+  border-radius: 0px;
+  width: 100%;
+  border: solid 1px #d1d1d1;
+  top: 28px;
+  background:#E3E3E3;
+  
+-webkit-box-shadow: 0 4px 5px rgba(0,0,0,.15);
+-moz-box-shadow: 0 4px 5px rgba(0,0,0,.15);
+-o-box-shadow: 0 4px 5px rgba(0,0,0,.15);
+box-shadow: 0 4px 5px rgba(0,0,0,.15);
+}
+
+.datepicker-outerbox-compare {
+}
+
+.datepicker-outerbox div{
+    z-index:100;
+/*  position:relative;*/
+}
+
+
+.datepicker-outerbox #calendarWrapper {
+    margin: 0px;
+    padding: 0px;
+    height:auto;
+}
+
+.calendarWrapper {
+     
+}
+
+
+.datepicker-outerbox #datepicker{ 
+    padding: 0px;
+    margin:0px;
+    width:100%;
+    background:#FFFFFF;
+    border-top:solid 1px #d1d1d1;
+    height:auto;
+}
+.datepicker-outerbox .ui-datepicker-picker{ 
+    padding: 0px;
+    margin:15px;
+    margin-top:15px;
+    width:auto;
+    height:auto;
+    background:#E3E3E3;
+    display:block;
+}
+.datepicker-outerbox .datepicker{ 
+    padding: 0px;
+    margin:0px;
+    width:100%;
+    height:auto;
+}
+.datepicker-outerbox .datepickerContainer{ 
+    padding: 0px;
+    margin:0px;
+    position:relative;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:auto;
+    background:none;
+}
+
+
+
+.calendarWrapperCompare {
+}
+
+.datepicker-outerbox .datepicker-radio-container{
+    display: inline-block;
+    float:right;
+    padding: 100px 10px 0px 0px;
+
+}
+
+.datepicker-outerbox div.datepicker-applyButtonContainer{
+   bottom: 0;
+    display: block;
+    margin: 0;
+    padding-top: 2px;
+    position: relative;
+    width: 100%;
+    padding-left:35%;
+    padding-right:35%;
+}
+
+
+
+.datepicker-outerbox .datepicker-applyButtonContainer div.applyButton,
+.datepicker-outerbox .datepicker-applyButtonContainer div.cancelButton { 
+    border-style: solid solid none solid;
+    border-width: 1px;
+    border-color: #d1d1d1;
+    display:block;
+    color: #555;
+    text-transform:uppercase;
+    font-weight:300;
+    cursor: pointer;
+    font-size: 11px;
+    margin: 0px;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -o-border-radius: 0px;  
+    border-radius: 0px;
+    background:none;
+}
+.no-svg .datepicker-outerbox .datepicker-applyButtonContainer div.applyButton,
+.no-svg .datepicker-outerbox .datepicker-applyButtonContainer div.cancelButton{
+}
+.svg .datepicker-outerbox .datepicker-applyButtonContainer div.applyButton,
+.svg .datepicker-outerbox .datepicker-applyButtonContainer div.cancelButton{
+}
+
+
+.datepicker-outerbox .datepicker-applyButtonContainer div.applyButton {
+
+}
+
+
+.datepicker-outerbox .datepicker-applyButtonContainer div.cancelButton {
+  display: none;
+}
+
+.datepicker-outerbox .datepicker-applyButtonContainer div.applyButton:hover,
+.datepicker-outerbox .datepicker-applyButtonContainer div.cancelButton:hover {
+  color: #FFFFFF;
+  background: #555555; /* Old browsers */  
+}
+.no-svg .datepicker-outerbox .datepicker-applyButtonContainer div.applyButton:hover,
+.no-svg .datepicker-outerbox .datepicker-applyButtonContainer div.cancelButton:hover {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a8a8a', endColorstr='#555555',GradientType=0 ); /* IE6-8 */      
+}
+.svg .datepicker-outerbox .datepicker-applyButtonContainer div.applyButton:hover,
+.svg .datepicker-outerbox .datepicker-applyButtonContainer div.cancelButton:hover {
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhhOGE4YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1NTU1NTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #8a8a8a 0%, #555555 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8a8a8a), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* IE10+ */
+  background: linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* W3C */
+  filter: none; 
+}
+
+
+
+
+
+
+.datepicker-outerbox div.ui-datepicker { 
+    float: left;
+    padding: 0px;
+    margin-right: 20px;
+}
+
+.datepicker-outerbox div.ui-datepicker-inactive { 
+    opacity: 0.4; 
+}
+
+
+.datepicker-outerbox div.ui-datepicker-warning {
+    background: red;
+    padding: 20px;
+}
+
+.datepicker-outerbox tr.datePickerMonthLine th{
+    vertical-align:middle;
+}
+
+.datepicker-outerbox th.datepickerMonth a span{
+    text-align: center;
+    font-weight: normal;
+}
+
+
+.datepicker-outerbox tr, 
+.datepicker-outerbox tr td, 
+.datepicker-outerbox thead th {
+  background: none repeat scroll 0 0 transparent;
+  line-height: 1;
+}
+
+
+
+.datepicker-outerbox .datepickerBorderT,
+.datepicker-outerbox .datepickerBorderB,
+.datepicker-outerbox .datepickerBorderL,
+.datepicker-outerbox .datepickerBorderR,
+.datepicker-outerbox .datepickerBorderBL,
+.datepicker-outerbox .datepickerBorderBR,
+.datepicker-outerbox .datepickerBorderTL,
+.datepicker-outerbox .datepickerBorderTR{    
+    height: 0px;
+}
+
+
+
+
+.datepicker-outerbox table.datepickerViewDays {
+  border: solid 2px #d1d1d1;
+  padding: 0px;
+  margin:0;
+}
+
+.datepicker-outerbox table.datepickerViewDays th {
+  padding: 0px;  
+  border:none;
+}
+.datepicker-outerbox table.datepickerViewDays .datepickerMonth span {
+  text-transform:uppercase;
+  font-weight:300;
+  font-size:13px;
+}
+.datepicker-outerbox table.datepickerViewDays .datepickerDoW th {
+  border:none;
+  border-bottom: solid 2px #d1d1d1;  
+  font-size:8px;
+  color:#888;  
+}
+.datepicker-outerbox table.datepickerViewDays .datepickerDoW th span{
+  color:#888;  
+}
+
+
+
+.datepicker-outerbox table.datepickerViewDays td {
+  border: solid 2px #d1d1d1;
+  padding:0;
+}
+.datepicker-outerbox table.datepickerViewDays td a {
+  display: block;
+  height: auto;
+  margin: 0;
+  text-align: center;
+  width: auto;
+}
+
+
+.no-svg .datepicker-outerbox table.datepickerViewDays td {
+}
+.svg .datepicker-outerbox table.datepickerViewDays td {
+}
+
+.datepicker-outerbox table.datepickerViewDays td.datepickerSelected {
+  color:#FFFFFF;
+  margin:0;
+  -webkit-box-shadow: inset 0px 4px 8px -4px #000000;
+  -moz-box-shadow: inset 0px 4px 8px -4px #000000;
+  -o-box-shadow: inset 0px 4px 8px -4px #000000;  
+  box-shadow: inset 0px 4px 8px -4px #000000;
+  background: #555555; /* Old browsers */    
+}
+.no-svg .datepicker-outerbox table.datepickerViewDays td.datepickerSelected {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a8a8a', endColorstr='#555555',GradientType=0 ); /* IE6-8 */      
+
+}
+.svg .datepicker-outerbox table.datepickerViewDays td.datepickerSelected {
+  /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzhhOGE4YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1NTU1NTUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top,  #8a8a8a 0%, #555555 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8a8a8a), color-stop(100%,#555555)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* IE10+ */
+  background: linear-gradient(top,  #8a8a8a 0%,#555555 100%); /* W3C */
+  filter: none; 
+}
+
+
+
+.datepicker-outerbox table.datepickerViewDays td:hover,
+.no-svg .datepicker-outerbox table.datepickerViewDays td:hover,
+.svg .datepicker-outerbox table.datepickerViewDays td:hover {
+    background:white;  
+}
+
+
+
+.datepicker-outerbox table.datepickerViewDays td.datepickerSelected:hover,
+.no-svg .datepicker-outerbox table.datepickerViewDays td.datepickerSelected:hover,
+.svg .datepicker-outerbox table.datepickerViewDays td.datepickerSelected:hover {
+    background:white;   
+}
+
+.datepicker-outerbox table.datepickerViewDays td.datepickerSelected:hover a span {
+  color:black;
+}
+
+
+.datepicker-outerbox table.datepickerViewDays td.datepickerSelected a {
+  padding:0;
+  margin:0;
+  height:100%;
+  width:100%;
+  line-height:auto;
+  text-align:center;
+  background:none;
+}
+.datepicker-outerbox table.datepickerViewDays td:hover a{
+  background:none;
+  }
+.datepicker-outerbox table.datepickerViewDays td:hover a span{
+  color:#555 !important;
+}
+
+.datepicker-outerbox table.datepickerViewDays td.datepickerNotInMonth {
+}
+.datepicker-outerbox .datepickerGoPrev a ,
+.datepicker-outerbox .datepickerGoNext a {
+  width:6px;
+  height:19px;
+}
+.datepicker-outerbox .datepickerGoPrev a{
+  background: url('img/Datepicker_left.png') 0px 50% no-repeat;
+  cursor: pointer;
+  margin-left:5px;
+}
+.datepicker-outerbox .datepickerGoNext a {
+  background: url('img/Datepicker_right.png') 0px 50% no-repeat;  
+  cursor: pointer;
+  margin-right:5px;
+}
+.datepicker-outerbox .datepickerGoPrev a:hover {
+  background: url('img/Datepicker_left.png') -7px 50% no-repeat;
+  cursor: pointer;
+}
+.datepicker-outerbox .datepickerGoNext a:hover {
+  background: url('img/Datepicker_right.png') -7px 50% no-repeat;  
+  cursor: pointer;
+}
+
+
+
+
+
+.datepicker-outerbox #calendarWrapper div.datepicker table {
+  border-collapse:collapse;
+}
+.datepicker-outerbox #calendarWrapper div.datepicker a {
+  color: #555555;
+  text-decoration: none;
+  cursor: default;
+  outline: none;
+}
+.datepicker-outerbox #calendarWrapper div.datepicker table td {
+  text-align: right;
+  padding: 0;
+  margin: 0px;
+}
+.datepicker-outerbox #calendarWrapper div.datepicker th {
+  text-align: center;
+  color: white;
+  font-weight: normal;
+
+}
+
+
+.datepicker-outerbox #calendarWrapper td.datepickerDisabled a,
+.datepicker-outerbox #calendarWrapper td.datepickerDisabled.datepickerNotInMonth a {
+  color: #d1d1d1;
+}
+
+
+
+.datepicker-options {
+}
+.datepicker-option {
+  font-family: Tar, Arial, sans-serif;
+  font-size:20px;
+  text-transform:uppercase;
+  height:28px;
+  line-height:31px;
+  color:#888;
+  border-bottom:solid 1px #d1d1d1;
+  padding:0;
+  padding-left:7px;
+  cursor:pointer;
+}
+.datepicker-option:hover {
+  color:#555;  
+}
+.datepicker-option-selected {
+  color: #555;  
+}
+.datepicker-option:last-child {
+  border-bottom:none;
+}
+
+.datepicker-picker-title-right {
+  float:right;
+}
+
+.datepicker-picker-title-selected {
+  color: #4e99d9;
+}
+
+
+.datepicker-outbox-datefields {
+
+
+}
+
+.datepicker-outbox-options {
+  margin-top:25px;
+  padding-top: 26px;
+}
+
+
+
+
+.datePickerMonthLine {
+  height:21px;
+}
+
+.datePickerMonthLine th {
+  vertical-align: top;
+}
+
+
+
+
+.floatRight{
+    float:right;    
+}
